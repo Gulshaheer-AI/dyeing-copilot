@@ -24,6 +24,9 @@ def main():
     parser.add_argument('--private-env',type=Path)
     parser.add_argument('--history',action='store_true')
     args=parser.parse_args();root=args.repository.resolve()
+    # Trust only this explicitly reviewed checkout for this process, not globally.
+    # The authenticated Windows account can differ from the sandbox file owner.
+    git=['git','-c','safe.directory='+root.as_posix()]
     marker=json.loads((root/'PUBLIC_DISTRIBUTION.json').read_text(encoding='utf-8'))
     names=marker['files'];findings=[];known=[];checked=0;archive_members=0
     if args.private_env:
@@ -56,18 +59,18 @@ def main():
     example=dotenv_values(root/'.env.example')
     if set(example)!={'AMD_API_KEY','AMD_BASE_URL','AMD_MODEL'} or not all(v and v.startswith('PASTE_') for v in example.values()):
         findings.append({'file':'.env.example','rule':'example must contain placeholders only'})
-    tracked=subprocess.run(['git','ls-files','-z'],cwd=root,capture_output=True)
+    tracked=subprocess.run([*git,'ls-files','-z'],cwd=root,capture_output=True)
     if tracked.returncode==0:
         for name in tracked.stdout.decode().split('\0'):
             if name and name not in names:findings.append({'file':name,'rule':'tracked outside reviewed file selection'})
     history_blobs=0
     if args.history:
-        objects=subprocess.run(['git','rev-list','--objects','HEAD','--not','--remotes'],cwd=root,capture_output=True,text=True,check=True)
+        objects=subprocess.run([*git,'rev-list','--objects','HEAD','--not','--remotes'],cwd=root,capture_output=True,text=True,check=True)
         for row in objects.stdout.splitlines():
             oid=row.split(' ',1)[0]
-            kind=subprocess.run(['git','cat-file','-t',oid],cwd=root,capture_output=True,text=True,check=True).stdout.strip()
+            kind=subprocess.run([*git,'cat-file','-t',oid],cwd=root,capture_output=True,text=True,check=True).stdout.strip()
             if kind=='blob':
-                content=subprocess.run(['git','cat-file','blob',oid],cwd=root,capture_output=True,check=True).stdout
+                content=subprocess.run([*git,'cat-file','blob',oid],cwd=root,capture_output=True,check=True).stdout
                 inspect('outgoing-history:'+oid,content);history_blobs+=1
     result={'selected_files':len(names),'checked_payloads_including_archives':checked,'archive_members':archive_members,
         'outgoing_history_blobs':history_blobs,'known_local_credentials_checked':len(known),'findings':findings,
