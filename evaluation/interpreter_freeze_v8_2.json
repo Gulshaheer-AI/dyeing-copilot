@@ -1,0 +1,17 @@
+{
+  "version": "8.2",
+  "files": {
+    "copilot/planning_interpreter.py": "2215597193b457a673a011827f410c0d4fd667d99b8e2ec8bc8caddad9575c6c",
+    "copilot/planning_schema.py": "3048023c34d37c896b4fa42d1b6c0370a7019c516d58e02d874222bea2225e78",
+    "copilot/planning_guard.py": "7e4866379460d58b414d64c7fc496f75343dee8d3f680d5e2edf3249b7e9c60a",
+    "copilot/planning_contract.py": "0462a7929ebe7dfe80af88b5b028adb35f9b6b4ba3bafc104fa31e5ea6c4fcf7",
+    "copilot/planning_diagnostics.py": "888aeb702387ca52582968f42ba9d90d8b29ca46fdd61e9041acb2c27c2673a4",
+    "copilot/planning_manual.py": "b8bfca10acace9115d5accced29db4d78f950f0a544995a431e6faeb6ad59564",
+    "planner/change_requests.py": "4e65624fecca436e62ac5c937834fae93ce59682532eeec92d6d2f1acf7a7e36",
+    "evaluation/planning_requests_v8_2.json": "168124f02faaaa695f9739cebc4323218fbc1c0cfbfc39505d5a8fe30bac274f",
+    "evaluation/protocol_v8_2.json": "af24faecb2a3135b41db35b0a53538166d465eae22e008232f923fba467d5348",
+    "tools/evaluate_planning_requests_v8_2.py": "f83773277297dfe22a7829cba2ed00306ff20a771e4de8b58d72f8de9db0c262"
+  },
+  "timestamp_utc": "2026-10-15T02:52:49.907746+00:00",
+  "frozen_before_live_evaluation": true
+}

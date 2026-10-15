@@ -1,0 +1,98 @@
+{
+  "timestamp_utc": "2026-10-15T13:41:52.658857+00:00",
+  "maximum_logical_calls": 1,
+  "semantic_repairs": 0,
+  "transport_attempt_limit": 2,
+  "outcome": "validated_live",
+  "scope": "One smoke check, not an accuracy evaluation or factory validation.",
+  "requested_model": "DeepSeek-V4-Flash",
+  "evidence_fingerprint": "437ebdc055d7ff9a80f0e33c98f12c12ae76c1a71254db26734303a14379ccbc",
+  "scenario_fingerprint": "5b51b31e73c4c28c41502cca5bea03f4c624497de76a963f81d16ee30e7b29b2",
+  "question": "Explain order 12 in the selected schedule and what the planner should review.",
+  "independently_verified": true,
+  "receipt": {
+    "origin": "live_amd",
+    "requested_model": "DeepSeek-V4-Flash",
+    "actual_model": "self-dploy/DeepSeek-V4-Flash",
+    "timestamp_utc": "2026-10-15T13:41:53.253824+00:00",
+    "latency_seconds": 31.395,
+    "attempts": 1,
+    "http_status": 200,
+    "validation": "passed"
+  },
+  "explanation": {
+    "explanation": [
+      {
+        "statement_id": "selected_orders",
+        "text": "Order 12 follows order 11 on \"virtual-Pressure-PolyCotton\" at position 2; cleaning is required because of exemptions disabled. It completes at 2019-12-01 22:00:00; its quantity remains 1500 source quantity units.",
+        "evidence_references": [
+          "fact:selected.order.12"
+        ]
+      },
+      {
+        "statement_id": "selected_summary",
+        "text": "The selected cp_sat schedule passes independent scenario verification: 35 orders, 39 cleaning events (4 initial, 31 between orders, 4 terminal). All 35 orders are on time; minimum deadline slack is 201 scenario hours.",
+        "evidence_references": [
+          "fact:selected.identity",
+          "fact:selected.verification",
+          "fact:selected.cleaning",
+          "fact:selected.deadlines",
+          "doc:scenario-model#deterministic-equations"
+        ]
+      },
+      {
+        "statement_id": "selected_solver",
+        "text": "Solver Stage A is OPTIMAL and Stage B is OPTIMAL; the displayed schedule is from stage B. Cleaning optimality proven: True; maximum minimum slack proven at the fixed cleaning count: True. Bounds and exact time scaling are in the cited solver receipt.",
+        "evidence_references": [
+          "fact:selected.solver"
+        ]
+      },
+      {
+        "statement_id": "selected_origin",
+        "text": "The cited backend identity is the origin of this freshly verified selected schedule; inference receipts are separate from solver evidence.",
+        "evidence_references": [
+          "fact:selected.identity"
+        ]
+      },
+      {
+        "statement_id": "selected_comparison",
+        "text": "Against the independently verified EDD heuristic, baseline-minus-selected cleaning events are 0 and the modelled resource difference is 0.00 modelled source units (unchanged selected demand). This is a same-scenario comparison, not realised factory savings.",
+        "evidence_references": [
+          "fact:selected.comparison"
+        ]
+      },
+      {
+        "statement_id": "selected_assumptions",
+        "text": "Virtual capacities, calendars, durations, initial/terminal states and exact directed recipe/quality permissions remain hypothetical. Factory specialists must validate them before use.",
+        "evidence_references": [
+          "fact:selected.assumptions",
+          "doc:scenario-model#deterministic-equations"
+        ]
+      }
+    ],
+    "evidence_references": [
+      "fact:selected.order.12",
+      "fact:selected.identity",
+      "fact:selected.verification",
+      "fact:selected.cleaning",
+      "fact:selected.deadlines",
+      "fact:selected.solver",
+      "fact:selected.comparison",
+      "fact:selected.assumptions",
+      "doc:scenario-model#deterministic-equations"
+    ],
+    "assumptions": [
+      "source_units",
+      "scenario_config"
+    ],
+    "limitations": [
+      "not_sops",
+      "no_factory_approval",
+      "limited_scope",
+      "unresolved_source"
+    ],
+    "proposed_review_action": "validate_scenario_assumptions",
+    "quantitative_claims": []
+  },
+  "total_elapsed_seconds": 31.989
+}

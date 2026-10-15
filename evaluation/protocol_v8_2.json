@@ -1,0 +1,8 @@
+{
+  "version": "8.2",
+  "corpus_sha256": "168124f02faaaa695f9739cebc4323218fbc1c0cfbfc39505d5a8fe30bac274f",
+  "development": "6 exposed 8.1 cases; live development before final freeze",
+  "held_out_supported": 12,
+  "held_out_local": 6,
+  "policy": "Freeze interpreter and scorer before first held-out call. One pass only; zero semantic repairs. Existing transport retry at most two attempts is separately receipted. Exact normalized operations/status plus full preview/apply/verify/reset scoring. Rejections are not credited as understanding. Raw diagnostics limited to this non-sensitive bundled corpus and screened for credentials. Local/manual are never AMD successes. All older cases are exposed development regressions."
+}

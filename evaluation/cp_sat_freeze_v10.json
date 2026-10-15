@@ -1,0 +1,23 @@
+{
+  "version": "cp-sat-dyeing-v1",
+  "files": {
+    "planner/cp_sat.py": "77f468eb78ee9209c68bc350039cd3db71ce091960c4c91fc72a1730e512e528",
+    "tools/benchmark_cp_sat.py": "923bb6e5a52854274bc969dee77f09cec78a79a2981f5f85abd3433df4571d3b",
+    "evaluation/scheduling_scenarios_v9.json": "2f6a9cf3ca96af8bbf611d8813b79c65cb7ac7a1545489dd53bdd1637f188063",
+    "planner/search.py": "a53641cd5bb27dd207cd15acae46c7e09d224ce98287998f17a10561ba5a779b",
+    "planner/comparators.py": "8a8b444bb64b68697df2a0b193782e4fe29281baa0a870f9e1365fa094698e52",
+    "planner/verifier.py": "a9a7227f453734e3d7da95e983243229442fd21bc30609d46549b09ac9662703",
+    "planner/evaluator.py": "b4a6709652a89cd52568e7443aba12600d35b20a801c75fa8a4986393a5a4a68",
+    "planner/scenario.py": "db69a3aa9de808bb86d4c9ac46d93b0a1dc1a3d704cbdf80e87230db88eda593"
+  },
+  "budget_seconds": 10,
+  "workers": 1,
+  "seed": 20261015,
+  "gap_limits": {
+    "relative": 0,
+    "absolute": 0
+  },
+  "stage_a_budget_fraction": 0.6,
+  "historical_manifest_unchanged": true,
+  "no_post_result_tuning": true
+}

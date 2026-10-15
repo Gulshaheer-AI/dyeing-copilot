@@ -1,0 +1,3041 @@
+{
+  "summary": {
+    "n": 26,
+    "verified_cp": 24,
+    "cp_statuses": {
+      "FEASIBLE": 5,
+      "INFEASIBLE": 2,
+      "OPTIMAL": 19
+    },
+    "cleaning_optimal": 24,
+    "legacy": {
+      "scenario_count": 26,
+      "independent_factory_datasets": 0,
+      "methods": {
+        "edd": {
+          "reported": 26,
+          "valid": 24,
+          "construction_failures": 2,
+          "verification_failures": 2,
+          "not_verified": 0,
+          "total_runtime_seconds": 0.028633300040382892
+        },
+        "grouping": {
+          "reported": 26,
+          "valid": 5,
+          "construction_failures": 21,
+          "verification_failures": 21,
+          "not_verified": 0,
+          "total_runtime_seconds": 0.020210000016959384
+        },
+        "optimiser": {
+          "reported": 26,
+          "valid": 24,
+          "construction_failures": 2,
+          "verification_failures": 0,
+          "not_verified": 2,
+          "total_runtime_seconds": 7.920488599978853
+        }
+      },
+      "paired": {
+        "edd": {
+          "eligible_denominator": 24,
+          "excluded": 2,
+          "optimiser_fewer_cleanings": 7,
+          "equal_cleanings": 17,
+          "optimiser_more_cleanings": 0,
+          "signed_cleaning_events_difference_sum": 26
+        },
+        "grouping": {
+          "eligible_denominator": 5,
+          "excluded": 21,
+          "optimiser_fewer_cleanings": 0,
+          "equal_cleanings": 5,
+          "optimiser_more_cleanings": 0,
+          "signed_cleaning_events_difference_sum": 0
+        }
+      },
+      "scenario_errors": 0
+    },
+    "pairs": {
+      "edd": {
+        "eligible": 24,
+        "excluded": 2,
+        "cp_fewer": 9,
+        "equal": 15,
+        "cp_more": 0
+      },
+      "grouping": {
+        "eligible": 5,
+        "excluded": 21,
+        "cp_fewer": 0,
+        "equal": 5,
+        "cp_more": 0
+      },
+      "optimiser": {
+        "eligible": 24,
+        "excluded": 2,
+        "cp_fewer": 8,
+        "equal": 16,
+        "cp_more": 0
+      }
+    }
+  },
+  "scenarios": [
+    {
+      "id": "full_false",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 31,
+            "terminal": 4,
+            "total": 39
+          },
+          "slack_hours": {
+            "minimum": "201",
+            "median": "469",
+            "completed_orders": 35
+          },
+          "runtime_seconds": 0.003674399995361455
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 21,
+            "terminal": 4,
+            "total": 29
+          },
+          "slack_hours": {
+            "minimum": "1",
+            "median": "243",
+            "completed_orders": 25
+          },
+          "runtime_seconds": 0.0030083000019658357
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 31,
+            "terminal": 4,
+            "total": 39
+          },
+          "slack_hours": {
+            "minimum": "201",
+            "median": "469",
+            "completed_orders": 35
+          },
+          "runtime_seconds": 0.4050628999975743
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 31,
+            "terminal": 4,
+            "total": 39
+          },
+          "minimum_slack_hours": "201",
+          "median_slack_hours": "469",
+          "runtime_seconds": 0.23158070001227316,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.0806622999953106,
+            "budget_seconds": 5.985573119993205,
+            "objective": 39,
+            "best_bound": 39.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 39,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.12417039999854751,
+            "budget_seconds": 9.89398289998644,
+            "objective": 201,
+            "best_bound": 201.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        }
+      }
+    },
+    {
+      "id": "full_true",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 26,
+            "terminal": 4,
+            "total": 34
+          },
+          "slack_hours": {
+            "minimum": "201",
+            "median": "469",
+            "completed_orders": 35
+          },
+          "runtime_seconds": 0.0020684999908553436
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 13,
+            "terminal": 4,
+            "total": 21
+          },
+          "slack_hours": {
+            "minimum": "6",
+            "median": "243",
+            "completed_orders": 25
+          },
+          "runtime_seconds": 0.0011778999905800447
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 21,
+            "terminal": 4,
+            "total": 29
+          },
+          "slack_hours": {
+            "minimum": "6",
+            "median": "242",
+            "completed_orders": 35
+          },
+          "runtime_seconds": 1.3118871000042418
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 20,
+            "terminal": 4,
+            "total": 28
+          },
+          "minimum_slack_hours": "123",
+          "median_slack_hours": "298",
+          "runtime_seconds": 10.004761700009112,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.1437688000005437,
+            "budget_seconds": 5.986146179999923,
+            "objective": 28,
+            "best_bound": 28.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "FEASIBLE",
+            "fixed_cleaning_count": 28,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 9.835313400006271,
+            "budget_seconds": 9.83182449999731,
+            "objective": 123,
+            "best_bound": 202.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 6,
+            "minimum_slack_hours": "-78",
+            "resource_score": "2100.00",
+            "percentage": "8.219178082191780821917808219"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 1,
+            "minimum_slack_hours": "117",
+            "resource_score": "350.00",
+            "percentage": "1.470588235294117647058823529"
+          }
+        }
+      }
+    },
+    {
+      "id": "subset_901_6_False",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 3,
+            "terminal": 3,
+            "total": 9
+          },
+          "slack_hours": {
+            "minimum": "243",
+            "median": "592.5",
+            "completed_orders": 6
+          },
+          "runtime_seconds": 0.0005699000030290335
+        },
+        "grouping": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 3,
+            "terminal": 3,
+            "total": 9
+          },
+          "slack_hours": {
+            "minimum": "222",
+            "median": "500",
+            "completed_orders": 6
+          },
+          "runtime_seconds": 0.0005259999888949096
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 3,
+            "terminal": 3,
+            "total": 9
+          },
+          "slack_hours": {
+            "minimum": "243",
+            "median": "592.5",
+            "completed_orders": 6
+          },
+          "runtime_seconds": 0.0038388999964809045
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 3,
+            "terminal": 3,
+            "total": 9
+          },
+          "minimum_slack_hours": "243",
+          "median_slack_hours": "592.5",
+          "runtime_seconds": 0.013019200006965548,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.004703099999460392,
+            "budget_seconds": 5.998559880000539,
+            "objective": 9,
+            "best_bound": 9.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 9,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.005128799995873123,
+            "budget_seconds": 9.992524399989634,
+            "objective": 243,
+            "best_bound": 243.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "grouping": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "21",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        }
+      }
+    },
+    {
+      "id": "subset_901_6_True",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 3,
+            "terminal": 3,
+            "total": 9
+          },
+          "slack_hours": {
+            "minimum": "243",
+            "median": "592.5",
+            "completed_orders": 6
+          },
+          "runtime_seconds": 0.00043849999201484025
+        },
+        "grouping": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 3,
+            "terminal": 3,
+            "total": 9
+          },
+          "slack_hours": {
+            "minimum": "222",
+            "median": "500",
+            "completed_orders": 6
+          },
+          "runtime_seconds": 0.0003770000039367005
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 3,
+            "terminal": 3,
+            "total": 9
+          },
+          "slack_hours": {
+            "minimum": "243",
+            "median": "592.5",
+            "completed_orders": 6
+          },
+          "runtime_seconds": 0.0043812000076286495
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 3,
+            "terminal": 3,
+            "total": 9
+          },
+          "minimum_slack_hours": "243",
+          "median_slack_hours": "592.5",
+          "runtime_seconds": 0.016785500003607012,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.0045593999966513366,
+            "budget_seconds": 5.998453379992861,
+            "objective": 9,
+            "best_bound": 9.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 9,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.0076289999997243285,
+            "budget_seconds": 9.992482999994536,
+            "objective": 243,
+            "best_bound": 243.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "grouping": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "21",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        }
+      }
+    },
+    {
+      "id": "subset_901_12_False",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 8,
+            "terminal": 4,
+            "total": 16
+          },
+          "slack_hours": {
+            "minimum": "243",
+            "median": "398.5",
+            "completed_orders": 12
+          },
+          "runtime_seconds": 0.0007200000109151006
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 4,
+            "terminal": 4,
+            "total": 12
+          },
+          "slack_hours": {
+            "minimum": "180",
+            "median": "243",
+            "completed_orders": 8
+          },
+          "runtime_seconds": 0.00045249999675434083
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 8,
+            "terminal": 4,
+            "total": 16
+          },
+          "slack_hours": {
+            "minimum": "243",
+            "median": "398.5",
+            "completed_orders": 12
+          },
+          "runtime_seconds": 0.019101300000329502
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 8,
+            "terminal": 4,
+            "total": 16
+          },
+          "minimum_slack_hours": "243",
+          "median_slack_hours": "398.5",
+          "runtime_seconds": 0.028321899997536093,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.01008449999790173,
+            "budget_seconds": 5.997113279995392,
+            "objective": 16,
+            "best_bound": 16.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 16,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.01222990000678692,
+            "budget_seconds": 9.984531699999934,
+            "objective": 243,
+            "best_bound": 243.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        }
+      }
+    },
+    {
+      "id": "subset_901_12_True",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 7,
+            "terminal": 4,
+            "total": 15
+          },
+          "slack_hours": {
+            "minimum": "243",
+            "median": "399",
+            "completed_orders": 12
+          },
+          "runtime_seconds": 0.0006719000084558502
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 4,
+            "terminal": 4,
+            "total": 12
+          },
+          "slack_hours": {
+            "minimum": "180",
+            "median": "243",
+            "completed_orders": 8
+          },
+          "runtime_seconds": 0.0004138999938732013
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 7,
+            "terminal": 4,
+            "total": 15
+          },
+          "slack_hours": {
+            "minimum": "243",
+            "median": "399",
+            "completed_orders": 12
+          },
+          "runtime_seconds": 0.01822419998643454
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 7,
+            "terminal": 4,
+            "total": 15
+          },
+          "minimum_slack_hours": "243",
+          "median_slack_hours": "399",
+          "runtime_seconds": 0.02583700000832323,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.008881999994628131,
+            "budget_seconds": 5.99683200000145,
+            "objective": 15,
+            "best_bound": 15.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 15,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.01048379999701865,
+            "budget_seconds": 9.985252200000104,
+            "objective": 243,
+            "best_bound": 243.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        }
+      }
+    },
+    {
+      "id": "subset_901_20_False",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 16,
+            "terminal": 4,
+            "total": 24
+          },
+          "slack_hours": {
+            "minimum": "222",
+            "median": "473",
+            "completed_orders": 20
+          },
+          "runtime_seconds": 0.0009732000035000965
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 11,
+            "terminal": 4,
+            "total": 19
+          },
+          "slack_hours": {
+            "minimum": "138",
+            "median": "253",
+            "completed_orders": 15
+          },
+          "runtime_seconds": 0.0006407999899238348
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 16,
+            "terminal": 4,
+            "total": 24
+          },
+          "slack_hours": {
+            "minimum": "222",
+            "median": "473",
+            "completed_orders": 20
+          },
+          "runtime_seconds": 0.07695879999664612
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 16,
+            "terminal": 4,
+            "total": 24
+          },
+          "minimum_slack_hours": "222",
+          "median_slack_hours": "404",
+          "runtime_seconds": 0.06482759999926202,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.023936700003105216,
+            "budget_seconds": 5.99421180000063,
+            "objective": 24,
+            "best_bound": 24.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 24,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.029590500009362586,
+            "budget_seconds": 9.96559010000783,
+            "objective": 222,
+            "best_bound": 222.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        }
+      }
+    },
+    {
+      "id": "subset_901_20_True",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 14,
+            "terminal": 4,
+            "total": 22
+          },
+          "slack_hours": {
+            "minimum": "222",
+            "median": "473",
+            "completed_orders": 20
+          },
+          "runtime_seconds": 0.000989600011962466
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 9,
+            "terminal": 4,
+            "total": 17
+          },
+          "slack_hours": {
+            "minimum": "138",
+            "median": "253",
+            "completed_orders": 15
+          },
+          "runtime_seconds": 0.000741399999242276
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 12,
+            "terminal": 4,
+            "total": 20
+          },
+          "slack_hours": {
+            "minimum": "138",
+            "median": "253.5",
+            "completed_orders": 20
+          },
+          "runtime_seconds": 0.16000849999545608
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 11,
+            "terminal": 4,
+            "total": 19
+          },
+          "minimum_slack_hours": "139",
+          "median_slack_hours": "253",
+          "runtime_seconds": 0.060907299994141795,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.028007699991576374,
+            "budget_seconds": 5.994145139999454,
+            "objective": 19,
+            "best_bound": 19.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 19,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.02127269998891279,
+            "budget_seconds": 9.961270400002832,
+            "objective": 139,
+            "best_bound": 139.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 3,
+            "minimum_slack_hours": "-83",
+            "resource_score": "1050.00",
+            "percentage": "6.767644215275539800193361263"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 1,
+            "minimum_slack_hours": "1",
+            "resource_score": "350.00",
+            "percentage": "2.362470469119136010799865002"
+          }
+        }
+      }
+    },
+    {
+      "id": "subset_902_6_False",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 3,
+            "terminal": 3,
+            "total": 9
+          },
+          "slack_hours": {
+            "minimum": "243",
+            "median": "463.5",
+            "completed_orders": 6
+          },
+          "runtime_seconds": 0.0004245000018272549
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 2,
+            "terminal": 3,
+            "total": 8
+          },
+          "slack_hours": {
+            "minimum": "243",
+            "median": "458",
+            "completed_orders": 5
+          },
+          "runtime_seconds": 0.0002759000053629279
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 3,
+            "terminal": 3,
+            "total": 9
+          },
+          "slack_hours": {
+            "minimum": "243",
+            "median": "463.5",
+            "completed_orders": 6
+          },
+          "runtime_seconds": 0.002778999987640418
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 3,
+            "terminal": 3,
+            "total": 9
+          },
+          "minimum_slack_hours": "243",
+          "median_slack_hours": "463.5",
+          "runtime_seconds": 0.01055419999465812,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.003559400007361546,
+            "budget_seconds": 5.998609980006585,
+            "objective": 9,
+            "best_bound": 9.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 9,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.0036063000006834045,
+            "budget_seconds": 9.993551899999147,
+            "objective": 243,
+            "best_bound": 243.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        }
+      }
+    },
+    {
+      "id": "subset_902_6_True",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 3,
+            "terminal": 3,
+            "total": 9
+          },
+          "slack_hours": {
+            "minimum": "243",
+            "median": "463.5",
+            "completed_orders": 6
+          },
+          "runtime_seconds": 0.0004498000052990392
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 2,
+            "terminal": 3,
+            "total": 8
+          },
+          "slack_hours": {
+            "minimum": "243",
+            "median": "458",
+            "completed_orders": 5
+          },
+          "runtime_seconds": 0.00029070000164210796
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 3,
+            "terminal": 3,
+            "total": 9
+          },
+          "slack_hours": {
+            "minimum": "243",
+            "median": "463.5",
+            "completed_orders": 6
+          },
+          "runtime_seconds": 0.0028870999958598986
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 3,
+            "terminal": 3,
+            "total": 9
+          },
+          "minimum_slack_hours": "243",
+          "median_slack_hours": "463.5",
+          "runtime_seconds": 0.010566999990260229,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.003620300005422905,
+            "budget_seconds": 5.998282560001826,
+            "objective": 9,
+            "best_bound": 9.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 9,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.003196699995896779,
+            "budget_seconds": 9.993062800000189,
+            "objective": 243,
+            "best_bound": 243.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        }
+      }
+    },
+    {
+      "id": "subset_902_12_False",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 8,
+            "terminal": 4,
+            "total": 16
+          },
+          "slack_hours": {
+            "minimum": "222",
+            "median": "500",
+            "completed_orders": 12
+          },
+          "runtime_seconds": 0.0008498999959556386
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 5,
+            "terminal": 4,
+            "total": 13
+          },
+          "slack_hours": {
+            "minimum": "180",
+            "median": "458",
+            "completed_orders": 9
+          },
+          "runtime_seconds": 0.0007049999985611066
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 8,
+            "terminal": 4,
+            "total": 16
+          },
+          "slack_hours": {
+            "minimum": "222",
+            "median": "500",
+            "completed_orders": 12
+          },
+          "runtime_seconds": 0.01707830000668764
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 8,
+            "terminal": 4,
+            "total": 16
+          },
+          "minimum_slack_hours": "222",
+          "median_slack_hours": "463.5",
+          "runtime_seconds": 0.029501299999537878,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.010896499996306375,
+            "budget_seconds": 5.9964502800023185,
+            "objective": 16,
+            "best_bound": 16.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 16,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.01132770000549499,
+            "budget_seconds": 9.982494700001553,
+            "objective": 222,
+            "best_bound": 222.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        }
+      }
+    },
+    {
+      "id": "subset_902_12_True",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 8,
+            "terminal": 4,
+            "total": 16
+          },
+          "slack_hours": {
+            "minimum": "222",
+            "median": "500",
+            "completed_orders": 12
+          },
+          "runtime_seconds": 0.0006958000012673438
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 5,
+            "terminal": 4,
+            "total": 13
+          },
+          "slack_hours": {
+            "minimum": "180",
+            "median": "458",
+            "completed_orders": 9
+          },
+          "runtime_seconds": 0.0005012000037822872
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 8,
+            "terminal": 4,
+            "total": 16
+          },
+          "slack_hours": {
+            "minimum": "222",
+            "median": "500",
+            "completed_orders": 12
+          },
+          "runtime_seconds": 0.016923499992117286
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 7,
+            "terminal": 4,
+            "total": 15
+          },
+          "minimum_slack_hours": "222",
+          "median_slack_hours": "399",
+          "runtime_seconds": 0.026238199992803857,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.010160799996810965,
+            "budget_seconds": 5.99674512000347,
+            "objective": 15,
+            "best_bound": 15.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 15,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.009401799994520843,
+            "budget_seconds": 9.983788400000776,
+            "objective": 222,
+            "best_bound": 222.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 1,
+            "minimum_slack_hours": "0",
+            "resource_score": "350.00",
+            "percentage": "3.424657534246575342465753425"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 1,
+            "minimum_slack_hours": "0",
+            "resource_score": "350.00",
+            "percentage": "3.424657534246575342465753425"
+          }
+        }
+      }
+    },
+    {
+      "id": "subset_902_20_False",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 16,
+            "terminal": 4,
+            "total": 24
+          },
+          "slack_hours": {
+            "minimum": "222",
+            "median": "468",
+            "completed_orders": 20
+          },
+          "runtime_seconds": 0.0010005999938584864
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 10,
+            "terminal": 4,
+            "total": 18
+          },
+          "slack_hours": {
+            "minimum": "138",
+            "median": "248",
+            "completed_orders": 14
+          },
+          "runtime_seconds": 0.0006290000019362196
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 16,
+            "terminal": 4,
+            "total": 24
+          },
+          "slack_hours": {
+            "minimum": "222",
+            "median": "468",
+            "completed_orders": 20
+          },
+          "runtime_seconds": 0.07980259999749251
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 16,
+            "terminal": 4,
+            "total": 24
+          },
+          "minimum_slack_hours": "222",
+          "median_slack_hours": "398.5",
+          "runtime_seconds": 0.05690340000728611,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.022915699999430217,
+            "budget_seconds": 5.994464460003655,
+            "objective": 24,
+            "best_bound": 24.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 24,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.023081900013494305,
+            "budget_seconds": 9.967056199995568,
+            "objective": 222,
+            "best_bound": 222.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        }
+      }
+    },
+    {
+      "id": "subset_902_20_True",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 15,
+            "terminal": 4,
+            "total": 23
+          },
+          "slack_hours": {
+            "minimum": "222",
+            "median": "468",
+            "completed_orders": 20
+          },
+          "runtime_seconds": 0.0010080999927595258
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 8,
+            "terminal": 4,
+            "total": 16
+          },
+          "slack_hours": {
+            "minimum": "139",
+            "median": "248.5",
+            "completed_orders": 14
+          },
+          "runtime_seconds": 0.0006305999995674938
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 12,
+            "terminal": 4,
+            "total": 20
+          },
+          "slack_hours": {
+            "minimum": "160",
+            "median": "399",
+            "completed_orders": 20
+          },
+          "runtime_seconds": 0.22500960000616033
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 12,
+            "terminal": 4,
+            "total": 20
+          },
+          "minimum_slack_hours": "223",
+          "median_slack_hours": "329.5",
+          "runtime_seconds": 0.0721447999967495,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.025800200004596263,
+            "budget_seconds": 5.993609760000254,
+            "objective": 20,
+            "best_bound": 20.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 20,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.03388980000454467,
+            "budget_seconds": 9.962665400002152,
+            "objective": 223,
+            "best_bound": 223.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 3,
+            "minimum_slack_hours": "1",
+            "resource_score": "1050.00",
+            "percentage": "6.618342262842735581468641664"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "63",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        }
+      }
+    },
+    {
+      "id": "deadline_tight_order12",
+      "methods": {
+        "edd": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 30,
+            "terminal": 4,
+            "total": 38
+          },
+          "slack_hours": {
+            "minimum": "201",
+            "median": "473",
+            "completed_orders": 34
+          },
+          "runtime_seconds": 0.001239799996255897
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 21,
+            "terminal": 4,
+            "total": 29
+          },
+          "slack_hours": {
+            "minimum": "1",
+            "median": "243",
+            "completed_orders": 25
+          },
+          "runtime_seconds": 0.001026300000376068
+        },
+        "optimiser": {
+          "verified": false,
+          "cleaning": null,
+          "slack_hours": {
+            "minimum": null,
+            "median": null,
+            "completed_orders": 0
+          },
+          "runtime_seconds": 0.0007055000023683533
+        },
+        "cp_sat": {
+          "verified": false,
+          "cleaning": null,
+          "minimum_slack_hours": null,
+          "median_slack_hours": null,
+          "runtime_seconds": 0.02180459999362938,
+          "stage_a": {
+            "status": "INFEASIBLE",
+            "wall_seconds": 0.0011694999993778765,
+            "budget_seconds": 5.9876744999986835,
+            "objective": null,
+            "best_bound": null,
+            "verified": false,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "NOT_RUN"
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        }
+      }
+    },
+    {
+      "id": "deadline_earlier_day",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 26,
+            "terminal": 4,
+            "total": 34
+          },
+          "slack_hours": {
+            "minimum": "177",
+            "median": "445",
+            "completed_orders": 35
+          },
+          "runtime_seconds": 0.0016153000033227727
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 12,
+            "terminal": 4,
+            "total": 20
+          },
+          "slack_hours": {
+            "minimum": "3",
+            "median": "219.5",
+            "completed_orders": 24
+          },
+          "runtime_seconds": 0.0010196000075666234
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 23,
+            "terminal": 4,
+            "total": 31
+          },
+          "slack_hours": {
+            "minimum": "94",
+            "median": "295",
+            "completed_orders": 35
+          },
+          "runtime_seconds": 1.1738422999915201
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 20,
+            "terminal": 4,
+            "total": 28
+          },
+          "minimum_slack_hours": "99",
+          "median_slack_hours": "295",
+          "runtime_seconds": 10.003982499998529,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.18553269999392796,
+            "budget_seconds": 5.986027140001533,
+            "objective": 28,
+            "best_bound": 28.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "FEASIBLE",
+            "fixed_cleaning_count": 28,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 9.792574000006425,
+            "budget_seconds": 9.789892599990708,
+            "objective": 99,
+            "best_bound": 178.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 6,
+            "minimum_slack_hours": "-78",
+            "resource_score": "2100.00",
+            "percentage": "8.219178082191780821917808219"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 3,
+            "minimum_slack_hours": "5",
+            "resource_score": "1050.00",
+            "percentage": "4.285714285714285714285714286"
+          }
+        }
+      }
+    },
+    {
+      "id": "deadline_48h_subset",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 9,
+            "terminal": 3,
+            "total": 15
+          },
+          "slack_hours": {
+            "minimum": "4",
+            "median": "26",
+            "completed_orders": 12
+          },
+          "runtime_seconds": 0.0006823000003350899
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 5,
+            "terminal": 3,
+            "total": 11
+          },
+          "slack_hours": {
+            "minimum": "4",
+            "median": "26",
+            "completed_orders": 8
+          },
+          "runtime_seconds": 0.0004054000019095838
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 9,
+            "terminal": 3,
+            "total": 15
+          },
+          "slack_hours": {
+            "minimum": "4",
+            "median": "26",
+            "completed_orders": 12
+          },
+          "runtime_seconds": 0.02128830000583548
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 8,
+            "terminal": 3,
+            "total": 14
+          },
+          "minimum_slack_hours": "4",
+          "median_slack_hours": "26.5",
+          "runtime_seconds": 0.028364600002532825,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.011990200000582263,
+            "budget_seconds": 5.996972160003497,
+            "objective": 14,
+            "best_bound": 14.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 14,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.010124899999937043,
+            "budget_seconds": 9.982388700009324,
+            "objective": 4,
+            "best_bound": 4.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 1,
+            "minimum_slack_hours": "0",
+            "resource_score": "350.00",
+            "percentage": "4.181600955794504181600955795"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 1,
+            "minimum_slack_hours": "0",
+            "resource_score": "350.00",
+            "percentage": "4.181600955794504181600955795"
+          }
+        }
+      }
+    },
+    {
+      "id": "deadline_later_day",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 31,
+            "terminal": 4,
+            "total": 39
+          },
+          "slack_hours": {
+            "minimum": "225",
+            "median": "493",
+            "completed_orders": 35
+          },
+          "runtime_seconds": 0.0019007000082638115
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 21,
+            "terminal": 4,
+            "total": 29
+          },
+          "slack_hours": {
+            "minimum": "25",
+            "median": "267",
+            "completed_orders": 25
+          },
+          "runtime_seconds": 0.0014236000133678317
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 31,
+            "terminal": 4,
+            "total": 39
+          },
+          "slack_hours": {
+            "minimum": "225",
+            "median": "493",
+            "completed_orders": 35
+          },
+          "runtime_seconds": 0.3937502000044333
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 31,
+            "terminal": 4,
+            "total": 39
+          },
+          "minimum_slack_hours": "225",
+          "median_slack_hours": "480",
+          "runtime_seconds": 0.2157518999883905,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.07643549999920651,
+            "budget_seconds": 5.985615780003718,
+            "objective": 39,
+            "best_bound": 39.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 39,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.1124442000000272,
+            "budget_seconds": 9.897984700000961,
+            "objective": 225,
+            "best_bound": 225.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1992
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        }
+      }
+    },
+    {
+      "id": "calendar_open_closed",
+      "methods": {
+        "edd": {
+          "verified": false,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 10,
+            "terminal": 3,
+            "total": 16
+          },
+          "slack_hours": {
+            "minimum": "244",
+            "median": "473",
+            "completed_orders": 16
+          },
+          "runtime_seconds": 0.0009153000137303025
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 3,
+            "between_orders": 6,
+            "terminal": 3,
+            "total": 12
+          },
+          "slack_hours": {
+            "minimum": "244",
+            "median": "473.5",
+            "completed_orders": 12
+          },
+          "runtime_seconds": 0.0007355999987339601
+        },
+        "optimiser": {
+          "verified": false,
+          "cleaning": null,
+          "slack_hours": {
+            "minimum": null,
+            "median": null,
+            "completed_orders": 0
+          },
+          "runtime_seconds": 0.0005852000031154603
+        },
+        "cp_sat": {
+          "verified": false,
+          "cleaning": null,
+          "minimum_slack_hours": null,
+          "median_slack_hours": null,
+          "runtime_seconds": 0.008913600002415478,
+          "stage_a": {
+            "status": "INFEASIBLE",
+            "wall_seconds": 0.0006288999866228551,
+            "budget_seconds": 5.995086359998095,
+            "objective": null,
+            "best_bound": null,
+            "verified": false,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "NOT_RUN"
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        }
+      }
+    },
+    {
+      "id": "calendar_end_jan28",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 26,
+            "terminal": 4,
+            "total": 34
+          },
+          "slack_hours": {
+            "minimum": "201",
+            "median": "469",
+            "completed_orders": 35
+          },
+          "runtime_seconds": 0.0017578999977558851
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 11,
+            "terminal": 4,
+            "total": 19
+          },
+          "slack_hours": {
+            "minimum": "88",
+            "median": "253",
+            "completed_orders": 21
+          },
+          "runtime_seconds": 0.0010114000033354387
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 23,
+            "terminal": 4,
+            "total": 31
+          },
+          "slack_hours": {
+            "minimum": "118",
+            "median": "319",
+            "completed_orders": 35
+          },
+          "runtime_seconds": 1.1556899999995949
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 20,
+            "terminal": 4,
+            "total": 28
+          },
+          "minimum_slack_hours": "123",
+          "median_slack_hours": "319",
+          "runtime_seconds": 10.003885899990564,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.18028380000032485,
+            "budget_seconds": 5.985594960002345,
+            "objective": 28,
+            "best_bound": 28.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "FEASIBLE",
+            "fixed_cleaning_count": 28,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 9.796904999995604,
+            "budget_seconds": 9.794421700004023,
+            "objective": 123,
+            "best_bound": 202.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 6,
+            "minimum_slack_hours": "-78",
+            "resource_score": "2100.00",
+            "percentage": "8.219178082191780821917808219"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 3,
+            "minimum_slack_hours": "5",
+            "resource_score": "1050.00",
+            "percentage": "4.285714285714285714285714286"
+          }
+        }
+      }
+    },
+    {
+      "id": "outage_open_dec20",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 26,
+            "terminal": 4,
+            "total": 34
+          },
+          "slack_hours": {
+            "minimum": "199",
+            "median": "469",
+            "completed_orders": 35
+          },
+          "runtime_seconds": 0.0016899000038392842
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 13,
+            "terminal": 4,
+            "total": 21
+          },
+          "slack_hours": {
+            "minimum": "6",
+            "median": "243",
+            "completed_orders": 25
+          },
+          "runtime_seconds": 0.0011626000050455332
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 21,
+            "terminal": 4,
+            "total": 29
+          },
+          "slack_hours": {
+            "minimum": "6",
+            "median": "222",
+            "completed_orders": 35
+          },
+          "runtime_seconds": 1.1958525999943959
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 20,
+            "terminal": 4,
+            "total": 28
+          },
+          "minimum_slack_hours": "123",
+          "median_slack_hours": "319",
+          "runtime_seconds": 10.003956400003517,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.16353430000890512,
+            "budget_seconds": 5.985070319997612,
+            "objective": 28,
+            "best_bound": 28.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "FEASIBLE",
+            "fixed_cleaning_count": 28,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 9.812946799997007,
+            "budget_seconds": 9.810319800002617,
+            "objective": 123,
+            "best_bound": 196.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 6,
+            "minimum_slack_hours": "-76",
+            "resource_score": "2100.00",
+            "percentage": "8.219178082191780821917808219"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 1,
+            "minimum_slack_hours": "117",
+            "resource_score": "350.00",
+            "percentage": "1.470588235294117647058823529"
+          }
+        }
+      }
+    },
+    {
+      "id": "outage_all_dec20",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 31,
+            "terminal": 4,
+            "total": 39
+          },
+          "slack_hours": {
+            "minimum": "159",
+            "median": "469",
+            "completed_orders": 35
+          },
+          "runtime_seconds": 0.0017020000086631626
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 21,
+            "terminal": 4,
+            "total": 29
+          },
+          "slack_hours": {
+            "minimum": "1",
+            "median": "222",
+            "completed_orders": 25
+          },
+          "runtime_seconds": 0.0010726000036811456
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 31,
+            "terminal": 4,
+            "total": 39
+          },
+          "slack_hours": {
+            "minimum": "159",
+            "median": "469",
+            "completed_orders": 35
+          },
+          "runtime_seconds": 0.4048739999998361
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 31,
+            "terminal": 4,
+            "total": 39
+          },
+          "minimum_slack_hours": "159",
+          "median_slack_hours": "456",
+          "runtime_seconds": 0.1994964999903459,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.07870960001309868,
+            "budget_seconds": 5.984143800006131,
+            "objective": 39,
+            "best_bound": 39.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 39,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.09179770000628196,
+            "budget_seconds": 9.893572200002382,
+            "objective": 159,
+            "best_bound": 159.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        }
+      }
+    },
+    {
+      "id": "outage_pressure_jan8",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 26,
+            "terminal": 4,
+            "total": 34
+          },
+          "slack_hours": {
+            "minimum": "201",
+            "median": "458",
+            "completed_orders": 35
+          },
+          "runtime_seconds": 0.0016776999982539564
+        },
+        "grouping": {
+          "verified": false,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 13,
+            "terminal": 4,
+            "total": 21
+          },
+          "slack_hours": {
+            "minimum": "6",
+            "median": "243",
+            "completed_orders": 25
+          },
+          "runtime_seconds": 0.001101000001654029
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 21,
+            "terminal": 4,
+            "total": 29
+          },
+          "slack_hours": {
+            "minimum": "6",
+            "median": "242",
+            "completed_orders": 35
+          },
+          "runtime_seconds": 1.2257465000002412
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 4,
+            "between_orders": 20,
+            "terminal": 4,
+            "total": 28
+          },
+          "minimum_slack_hours": "123",
+          "median_slack_hours": "340",
+          "runtime_seconds": 10.00402710000344,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.14223009999841452,
+            "budget_seconds": 5.985446760000195,
+            "objective": 28,
+            "best_bound": 28.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "FEASIBLE",
+            "fixed_cleaning_count": 28,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 9.83503020000353,
+            "budget_seconds": 9.832287800003542,
+            "objective": 123,
+            "best_bound": 177.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 6,
+            "minimum_slack_hours": "-78",
+            "resource_score": "2100.00",
+            "percentage": "8.219178082191780821917808219"
+          }
+        },
+        "grouping": {
+          "eligible": false,
+          "comparator_minus_cp_cleaning_positive_is_less": null
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 1,
+            "minimum_slack_hours": "117",
+            "resource_score": "350.00",
+            "percentage": "1.470588235294117647058823529"
+          }
+        }
+      }
+    },
+    {
+      "id": "single_no_improvement",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 1,
+            "between_orders": 0,
+            "terminal": 1,
+            "total": 2
+          },
+          "slack_hours": {
+            "minimum": "1213",
+            "median": "1213",
+            "completed_orders": 1
+          },
+          "runtime_seconds": 0.00019180000526830554
+        },
+        "grouping": {
+          "verified": true,
+          "cleaning": {
+            "initial": 1,
+            "between_orders": 0,
+            "terminal": 1,
+            "total": 2
+          },
+          "slack_hours": {
+            "minimum": "1213",
+            "median": "1213",
+            "completed_orders": 1
+          },
+          "runtime_seconds": 0.000148899998748675
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 1,
+            "between_orders": 0,
+            "terminal": 1,
+            "total": 2
+          },
+          "slack_hours": {
+            "minimum": "1213",
+            "median": "1213",
+            "completed_orders": 1
+          },
+          "runtime_seconds": 0.0003696000057971105
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 1,
+            "between_orders": 0,
+            "terminal": 1,
+            "total": 2
+          },
+          "minimum_slack_hours": "1213",
+          "median_slack_hours": "1213",
+          "runtime_seconds": 0.0026580999983707443,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.0007626000005984679,
+            "budget_seconds": 5.9994462600006955,
+            "objective": 2,
+            "best_bound": 2.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 2,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.0005566999898292124,
+            "budget_seconds": 9.998098299998674,
+            "objective": 1213,
+            "best_bound": 1213.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "grouping": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        }
+      }
+    },
+    {
+      "id": "first_four_false",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 2,
+            "between_orders": 2,
+            "terminal": 2,
+            "total": 6
+          },
+          "slack_hours": {
+            "minimum": "1191",
+            "median": "1207.5",
+            "completed_orders": 4
+          },
+          "runtime_seconds": 0.0003466000052867457
+        },
+        "grouping": {
+          "verified": true,
+          "cleaning": {
+            "initial": 2,
+            "between_orders": 2,
+            "terminal": 2,
+            "total": 6
+          },
+          "slack_hours": {
+            "minimum": "1191",
+            "median": "1207.5",
+            "completed_orders": 4
+          },
+          "runtime_seconds": 0.0003972999984398484
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 2,
+            "between_orders": 2,
+            "terminal": 2,
+            "total": 6
+          },
+          "slack_hours": {
+            "minimum": "1191",
+            "median": "1207.5",
+            "completed_orders": 4
+          },
+          "runtime_seconds": 0.0019176000059815124
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 2,
+            "between_orders": 2,
+            "terminal": 2,
+            "total": 6
+          },
+          "minimum_slack_hours": "1191",
+          "median_slack_hours": "1207.5",
+          "runtime_seconds": 0.011328499997034669,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.004487400001380593,
+            "budget_seconds": 5.998837919996004,
+            "objective": 6,
+            "best_bound": 6.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 6,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.004279300002963282,
+            "budget_seconds": 9.993266000004951,
+            "objective": 1191,
+            "best_bound": 1191.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "grouping": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        }
+      }
+    },
+    {
+      "id": "first_four_true",
+      "methods": {
+        "edd": {
+          "verified": true,
+          "cleaning": {
+            "initial": 2,
+            "between_orders": 2,
+            "terminal": 2,
+            "total": 6
+          },
+          "slack_hours": {
+            "minimum": "1191",
+            "median": "1207.5",
+            "completed_orders": 4
+          },
+          "runtime_seconds": 0.0003792999923462048
+        },
+        "grouping": {
+          "verified": true,
+          "cleaning": {
+            "initial": 2,
+            "between_orders": 2,
+            "terminal": 2,
+            "total": 6
+          },
+          "slack_hours": {
+            "minimum": "1191",
+            "median": "1207.5",
+            "completed_orders": 4
+          },
+          "runtime_seconds": 0.0003355000080773607
+        },
+        "optimiser": {
+          "verified": true,
+          "cleaning": {
+            "initial": 2,
+            "between_orders": 2,
+            "terminal": 2,
+            "total": 6
+          },
+          "slack_hours": {
+            "minimum": "1191",
+            "median": "1207.5",
+            "completed_orders": 4
+          },
+          "runtime_seconds": 0.0019237999949837103
+        },
+        "cp_sat": {
+          "verified": true,
+          "cleaning": {
+            "initial": 2,
+            "between_orders": 2,
+            "terminal": 2,
+            "total": 6
+          },
+          "minimum_slack_hours": "1191",
+          "median_slack_hours": "1207.5",
+          "runtime_seconds": 0.015557000006083399,
+          "stage_a": {
+            "status": "OPTIMAL",
+            "wall_seconds": 0.006396999990101904,
+            "budget_seconds": 5.998721459999797,
+            "objective": 6,
+            "best_bound": 6.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "stage_b": {
+            "status": "OPTIMAL",
+            "fixed_cleaning_count": 6,
+            "conditional_on_feasible_incumbent": false,
+            "wall_seconds": 0.0060754000005545095,
+            "budget_seconds": 9.990969199992833,
+            "objective": 1191,
+            "best_bound": 1191.0,
+            "verified": true,
+            "verification_errors": [],
+            "relative_gap_limit": 0,
+            "absolute_gap_limit": 0
+          },
+          "scale": {
+            "epoch": "2019-11-10T00:00:00",
+            "tick_microseconds": 3600000000,
+            "horizon_ticks": 1968
+          }
+        }
+      },
+      "differences": {
+        "edd": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "grouping": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        },
+        "optimiser": {
+          "eligible": true,
+          "comparator_minus_cp_cleaning_positive_is_less": {
+            "cleaning_events": 0,
+            "minimum_slack_hours": "0",
+            "resource_score": "0.00",
+            "percentage": "0"
+          }
+        }
+      }
+    }
+  ]
+}

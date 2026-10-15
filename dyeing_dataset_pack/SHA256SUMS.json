@@ -1,0 +1,134 @@
+{
+  "01_sitara_faisalabad/article/PMC9044317.1.json": {
+    "bytes": 5108,
+    "sha256": "93627a7f09788983dbc6ade38f6b2eab8c12b8cd6f12c419bdbf37260640b728"
+  },
+  "01_sitara_faisalabad/article/PMC9044317.1.txt": {
+    "bytes": 52512,
+    "sha256": "3273f2d8138e6e9d284af0487253de7a5b5d650d6ab7f8e7db025883c067af4f"
+  },
+  "01_sitara_faisalabad/article/PMC9044317.1.xml": {
+    "bytes": 152559,
+    "sha256": "989e466600151923e90a6766d85c0d69c13870953f338b5dcd3ee6fb94bbac19"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Data_Set_Sheet1.csv": {
+    "bytes": 2007,
+    "sha256": "5105ae8c034547e7c9654ca687752519c695c3d2e7fbafa2c67950694ad47abc"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/Data_Set_Sheet1.csv": {
+    "bytes": 2007,
+    "sha256": "5105ae8c034547e7c9654ca687752519c695c3d2e7fbafa2c67950694ad47abc"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_1_Sheet1.csv": {
+    "bytes": 2155,
+    "sha256": "cdfc2cdf06098fb5722191ad3356b18a2b5479df54557c021aa7f8d12602c910"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_2_Sheet1.csv": {
+    "bytes": 3180,
+    "sha256": "0f0d4f9a16f46e29b806a9e48a021b43aa1936e76b2af436793d2d7144365d93"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_Sheet1.csv": {
+    "bytes": 3180,
+    "sha256": "0f0d4f9a16f46e29b806a9e48a021b43aa1936e76b2af436793d2d7144365d93"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_set11_Sheet1.csv": {
+    "bytes": 3414,
+    "sha256": "8c9bb79c904c2d9d830d7a54603eba494cf6d2549c5c6ff25d0e3d1de8b6a8bf"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_set1_Sheet1.csv": {
+    "bytes": 3414,
+    "sha256": "8c9bb79c904c2d9d830d7a54603eba494cf6d2549c5c6ff25d0e3d1de8b6a8bf"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_set22_Sheet1.csv": {
+    "bytes": 3414,
+    "sha256": "8c9bb79c904c2d9d830d7a54603eba494cf6d2549c5c6ff25d0e3d1de8b6a8bf"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Textile/Data_Set_Sheet1.csv": {
+    "bytes": 3180,
+    "sha256": "0f0d4f9a16f46e29b806a9e48a021b43aa1936e76b2af436793d2d7144365d93"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Textile/Data_set2_Sheet1.csv": {
+    "bytes": 4600,
+    "sha256": "18560664465f47795059198c6a9dc01241a3f503726544cb5817590fd60571b1"
+  },
+  "01_sitara_faisalabad/csv/text_records_exact_deduplicated_35.csv": {
+    "bytes": 3677,
+    "sha256": "1cdb06f3c23620ec84a5c950cb0a809fa31a7da4b4c4e618b0722808176c82b2"
+  },
+  "01_sitara_faisalabad/original_supplement.zip": {
+    "bytes": 23864935,
+    "sha256": "cb8567590622628f8e79bbe4eb1416161eccc5927e5b9ca8a5496b44ac74d948"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Data_Set.xlsx": {
+    "bytes": 9646,
+    "sha256": "a6efc7a1904355e9ca8125a4ac14b3ef705d956cd8f8ac1e47560d1afae046ad"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/Data_Set.xlsx": {
+    "bytes": 9646,
+    "sha256": "a6efc7a1904355e9ca8125a4ac14b3ef705d956cd8f8ac1e47560d1afae046ad"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set.xlsx": {
+    "bytes": 10563,
+    "sha256": "68652b0c26f602249210ee5120f53f54e27133d45d88d2f65142a292db3d617a"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_1.xlsx": {
+    "bytes": 9812,
+    "sha256": "17466631f5c95bb579502b0946aa301ed67273362a26b486adda9ce9e857974e"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_2.xlsx": {
+    "bytes": 10563,
+    "sha256": "68652b0c26f602249210ee5120f53f54e27133d45d88d2f65142a292db3d617a"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_set1.xls": {
+    "bytes": 32768,
+    "sha256": "989059bbbdcc3f4950797c33008842efac9ac0e93f1b4eebfa6d5ad4f4f6b09c"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_set11.xls": {
+    "bytes": 32768,
+    "sha256": "d831a56fd5281df926ced794689f48ac11d09aa1be4da558b9be5f63721232d7"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_set22.xls": {
+    "bytes": 32768,
+    "sha256": "7c37a3fd8682880fdeda4708d3d29b197f0f57b1beac49312218a393db44f932"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Textile/Data_Set.xlsx": {
+    "bytes": 10554,
+    "sha256": "5f69fd16242dcfef1566f9e4d2269becf69019ceb47b88d7659bb7d6d0081b78"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Textile/Data_set2.xls": {
+    "bytes": 33792,
+    "sha256": "9d570d465617f07f9a9260ddf4831acbbbfc8f2a172128c71bdcb839c7139d91"
+  },
+  "01_sitara_faisalabad/raw/Data_Set.txt": {
+    "bytes": 8536,
+    "sha256": "f56a41e568b4287794724b282d0cc03ee2609285267231f3b119d56e4bd872f8"
+  },
+  "01_sitara_faisalabad/workbook_profiles.json": {
+    "bytes": 2715,
+    "sha256": "a5faadec9533c2c9a5736d7e78c0b5e042d919fdf6b070b2c31c8a174cff72d4"
+  },
+  "02_synthetic_thread_dyeing/csv/Textile_Dyeing_Dataset_Causal_Sheet1.csv": {
+    "bytes": 173958,
+    "sha256": "1e30fdb86b267751b615f6f1c9eb3090c84def01692eef7704da5262bdd82dff"
+  },
+  "02_synthetic_thread_dyeing/file_profiles.json": {
+    "bytes": 1159,
+    "sha256": "21ad5af645185ad06d3bbaf0cb98e065c097b3beddd05ee4c0b7ed2bb721d135"
+  },
+  "02_synthetic_thread_dyeing/original_archive.zip": {
+    "bytes": 7224918,
+    "sha256": "83649c15f540d8b80b536507a1c044eca3c091b6abdfc313204089baf02ce93d"
+  },
+  "02_synthetic_thread_dyeing/raw/Textile_Dyeing_Dataset_Causal.xlsx": {
+    "bytes": 166336,
+    "sha256": "1095853b6228535fe29bb107ebe2337510cd1841413992d827bad3988c9e1d43"
+  },
+  "02_synthetic_thread_dyeing/source_file_checksums.json": {
+    "bytes": 828,
+    "sha256": "b4ffe3560d459dc303efd6f0a24df05da5744c1fdbf7efd74b50a221004e95ed"
+  },
+  "02_synthetic_thread_dyeing/source_metadata.json": {
+    "bytes": 3309,
+    "sha256": "5699a8950ef62fa7194f0688e7b9406afc694aa2e87d5a239e3db107910d0e9e"
+  }
+}

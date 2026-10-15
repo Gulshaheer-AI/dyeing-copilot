@@ -1,0 +1,15 @@
+{
+  "version": "9.0",
+  "frozen_before_aggregate_results": true,
+  "timestamp_utc": "2026-10-15T09:54:07.332217+00:00",
+  "files": {
+    "planner/comparators.py": "8a8b444bb64b68697df2a0b193782e4fe29281baa0a870f9e1365fa094698e52",
+    "planner/search.py": "a53641cd5bb27dd207cd15acae46c7e09d224ce98287998f17a10561ba5a779b",
+    "planner/evaluator.py": "b4a6709652a89cd52568e7443aba12600d35b20a801c75fa8a4986393a5a4a68",
+    "planner/verifier.py": "a9a7227f453734e3d7da95e983243229442fd21bc30609d46549b09ac9662703",
+    "planner/scenario.py": "db69a3aa9de808bb86d4c9ac46d93b0a1dc1a3d704cbdf80e87230db88eda593",
+    "planner/comparison.py": "7ad7a6658c1d0570b9f95647ffd2069c4494ee8c679867043dd7e84efc9b3829",
+    "tools/benchmark_scheduling.py": "8601de8aa677ebd98557299b53027c069f241e6848ad6ea30e2c2db7a92e48aa",
+    "evaluation/scheduling_scenarios_v9.json": "2f6a9cf3ca96af8bbf611d8813b79c65cb7ac7a1545489dd53bdd1637f188063"
+  }
+}

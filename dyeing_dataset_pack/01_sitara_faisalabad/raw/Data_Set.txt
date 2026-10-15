@@ -1,0 +1,85 @@
+
+1   10-11-2019  30-12-2019  CGU     Cotton      76x68x30x30  2000  Gray      Light    Open      10  350  350  350   1050
+1   10-11-2019  30-12-2019  CGU     Cotton      76x68x30x30  2000  Choclate  Medium   Open      10  350  350  350   1050
+1   10-11-2019  30-12-2019  CGU     Cotton      76x68x30x30  2000  NevyBlue  Medium   Open      10  350  350  350   1050
+1   10-11-2019  30-12-2019  CGU     Cotton      76x68x30x30  2000  Burgundy  Dark     Jet       10  350  350  700   1400
+
+2   20-12-2019  30-12-2019  Camric  Cotton      48x52x35x35  1700  Brown     Mdedium  Open      10  350  350  350   1050
+2   20-12-2019  30-12-2019  Camric  Cotton      48x52x35x35  1700  Turqius   Mdedium  Open      10  350  350  350   1050
+2   20-12-2019  30-12-2019  Camric  Cotton      48x52x35x35  1700  Gray      Light    Open      10  350  350  350   1050
+2   20-12-2019  30-12-2019  Camric  Cotton      48x52x35x35  1700  Black     Dark     Jet       10   0   350  350   700
+
+3   01-12-2019  20-12-2019  GSItly  PolyCotton  100x80x40x40 1500  Beige     Light    Pressure  10  350  350  350   1050
+3   01-12-2019  20-12-2019  GSItly  PolyCotton  100x80x40x40 1500  Choclate  Medium   Pressure  10  350  350  350   1050
+3   01-12-2019  20-12-2019  GSItly  PolyCotton  100x80x40x40 1500  Green     Medium   Pressure  10  350  350  350   1050
+3   01-12-2019  20-12-2019  GSItly  PolyCotton  100x80x40x40 1500  Brown     Light    Pressure 	10  350  350  350   1050
+3   01-12-2019  20-12-2019  GSItly  PolyCotton  100x80x40x40 2000  Black     Dark     Jet  	10   0   350  700   1050
+
+4   02-01-2020  30-01-2020  Eadeco  Cotton      60x60x20x20  4000  Green     Dark     Open  	20  350  700  700   1750
+4   02-01-2020  30-01-2020  Eadeco  Cotton      60x60x20x20  2100  Green     Mdedium  Open  	10   0   350  350   700
+4   02-01-2020  30-01-2020  Eadeco  Cotton      60x60x20x20  3000  Blue      Dark     Open  	20  350  700  700   1750
+4   02-01-2020  30-01-2020  Eadeco  Cotton      60x60x20x20  4000  NevyBlue  Mdedium  Open  	20   0   700  700   1400
+4   02-01-2020  30-01-2020  Eadeco  Cotton      60x60x20x20  2500  Red       Mdedium  Open  	20  350  700  700   1750
+4   02-01-2020  30-01-2020  Eadeco  Cotton      60x60x20x20  2500  Red       Dark     Open      20   0   700  700   1400
+4   02-01-2020  30-01-2020  Eadeco  Cotton      60x60x20x20  2000  Black     Dark     Jet       10   0   350  700   1050
+
+5   08-01-2020  30-01-2020  LBC     PolyCotton  76x68x30x30  2000  Red       Light    Pressure  10  350  350  350   1050
+5   08-01-2020  30-01-2020  LBC     PolyCotton  76x68x30x30  2000  Blue      Light    Pressure  10  350  350  350   1050
+5   08-01-2020  30-01-2020  LBC     PolyCotton  76x68x30x30  2000  Yellow    Light    Pressure  10  350  350  350   1050
+5   08-01-2020  30-01-2020  LBC     PolyCotton  76x68x30x30  2500  Orange    Mdedium  Pressure  20  350  700  700   1750
+5   08-01-2020  30-01-2020  LBC     PolyCotton  76x68x30x30  2500  Green     Mdedium  Pressure  20  350  700  700   1750
+5   08-01-2020  30-01-2020  LBC     PolyCotton  76x68x30x30  2500  Gray      Mdedium  Pressure  20  350  700  700   1750
+5   08-01-2020  30-01-2020  LBC     PolyCotton  76x68x30x30  3000  Black     Dark     Jet       20   0   700  1400  2100
+
+6   16-01-2020  30-01-2020  STM     Cotton      80x80x80x80  3700  Brown     Light    Open      20  350  700  700   1750
+6   16-01-2020  30-01-2020  STM     Cotton      80x80x80x80  3700  Gray      Mdedium  Open      20  350  700  700   1750
+6   16-01-2020  30-01-2020  STM     Cotton      80x80x80x80  3700  RoyalBlue Mdedium  Open      20  350  700  700   1750
+6   16-01-2020  30-01-2020  STM     Cotton      80x80x80x80  3700  NevyBlue  Mdedium  Open      20   0   700  700   1400
+
+7   20-01-2020  30-01-2020  STM     Cotton      80x80x60x60  4200  Beige     Mdedium  Open      20  350   700  700   1750
+7   20-01-2020  30-01-2020  STM     Cotton      80x80x60x60  4200  Gray      Mdedium  Open      20  350   700  700   1750
+7   20-01-2020  30-01-2020  STM     Cotton      80x80x60x60  4200  Green     Mdedium  Open      20  350   700  700   1750
+7   20-01-2020  30-01-2020  STM     Cotton      80x80x60x60  4200  Black     Dark     Jet       20   0    700  1400  2100
+
+
+1   10-11-2019  30-12-2019  CGU     Cotton      76x68x30x30  2000  Gray      Light    Open      10  350  350  350   1050
+1   10-11-2019  30-12-2019  CGU     Cotton      76x68x30x30  2000  Choclate  Medium   Open      10  350  350  350   1050
+1   10-11-2019  30-12-2019  CGU     Cotton      76x68x30x30  2000  NevyBlue  Medium   Open      10  350  350  350   1050
+1   10-11-2019  30-12-2019  CGU     Cotton      76x68x30x30  2000  Burgundy  Dark     Jet       10  350  350  700   1400
+
+2   20-12-2019  30-12-2019  Camric  Cotton      48x52x35x35  1700  Brown     Mdedium  Open      10  350  350  350   1050
+2   20-12-2019  30-12-2019  Camric  Cotton      48x52x35x35  1700  Turqius   Mdedium  Open      10  350  350  350   1050
+2   20-12-2019  30-12-2019  Camric  Cotton      48x52x35x35  1700  Gray      Light    Open      10  350  350  350   1050
+2   20-12-2019  30-12-2019  Camric  Cotton      48x52x35x35  1700  Black     Dark     Jet       10   0   350  350   700
+
+3   01-12-2019  20-12-2019  GSItly  PolyCotton  100x80x40x40 1500  Beige     Light    Pressure  10  350  350  350   1050
+3   01-12-2019  20-12-2019  GSItly  PolyCotton  100x80x40x40 1500  Choclate  Medium   Pressure  10  350  350  350   1050
+3   01-12-2019  20-12-2019  GSItly  PolyCotton  100x80x40x40 1500  Green     Medium   Pressure  10  350  350  350   1050
+3   01-12-2019  20-12-2019  GSItly  PolyCotton  100x80x40x40 1500  Brown     Light    Pressure 	10  350  350  350   1050
+3   01-12-2019  20-12-2019  GSItly  PolyCotton  100x80x40x40 2000  Black     Dark     Jet  	10   0   350  700   1050
+
+4   02-01-2020  30-01-2020  Eadeco  Cotton      60x60x20x20  4000  Green     Dark     Open  	20  350  700  700   1750
+4   02-01-2020  30-01-2020  Eadeco  Cotton      60x60x20x20  2100  Green     Mdedium  Open  	10   0   350  350   700
+4   02-01-2020  30-01-2020  Eadeco  Cotton      60x60x20x20  3000  Blue      Dark     Open  	20  350  700  700   1750
+4   02-01-2020  30-01-2020  Eadeco  Cotton      60x60x20x20  4000  NevyBlue  Mdedium  Open  	20   0   700  700   1400
+4   02-01-2020  30-01-2020  Eadeco  Cotton      60x60x20x20  2500  Red       Mdedium  Open  	20  350  700  700   1750
+4   02-01-2020  30-01-2020  Eadeco  Cotton      60x60x20x20  2500  Red       Dark     Open      20   0   700  700   1400
+4   02-01-2020  30-01-2020  Eadeco  Cotton      60x60x20x20  2000  Black     Dark     Jet       10   0   350  700   1050
+
+5   08-01-2020  30-01-2020  LBC     PolyCotton  76x68x30x30  2000  Red       Light    Pressure  10  350  350  350   1050
+5   08-01-2020  30-01-2020  LBC     PolyCotton  76x68x30x30  2000  Blue      Light    Pressure  10  350  350  350   1050
+5   08-01-2020  30-01-2020  LBC     PolyCotton  76x68x30x30  2000  Yellow    Light    Pressure  10  350  350  350   1050
+5   08-01-2020  30-01-2020  LBC     PolyCotton  76x68x30x30  2500  Orange    Mdedium  Pressure  20  350  700  700   1750
+5   08-01-2020  30-01-2020  LBC     PolyCotton  76x68x30x30  2500  Green     Mdedium  Pressure  20  350  700  700   1750
+5   08-01-2020  30-01-2020  LBC     PolyCotton  76x68x30x30  2500  Gray      Mdedium  Pressure  20  350  700  700   1750
+5   08-01-2020  30-01-2020  LBC     PolyCotton  76x68x30x30  3000  Black     Dark     Jet       20   0   700  1400  2100
+
+6   16-01-2020  30-01-2020  STM     Cotton      80x80x80x80  3700  Brown     Light    Open      20  350  700  700   1750
+6   16-01-2020  30-01-2020  STM     Cotton      80x80x80x80  3700  Gray      Mdedium  Open      20  350  700  700   1750
+6   16-01-2020  30-01-2020  STM     Cotton      80x80x80x80  3700  RoyalBlue Mdedium  Open      20  350  700  700   1750
+6   16-01-2020  30-01-2020  STM     Cotton      80x80x80x80  3700  NevyBlue  Mdedium  Open      20   0   700  700   1400
+
+7   20-01-2020  30-01-2020  STM     Cotton      80x80x60x60  4200  Beige     Mdedium  Open      20  350   700  700   1750
+7   20-01-2020  30-01-2020  STM     Cotton      80x80x60x60  4200  Gray      Mdedium  Open      20  350   700  700   1750
+7   20-01-2020  30-01-2020  STM     Cotton      80x80x60x60  4200  Green     Mdedium  Open      20  350   700  700   1750
+7   20-01-2020  30-01-2020  STM     Cotton      80x80x60x60  4200  Black     Dark     Jet       20   0    700  1400  2100

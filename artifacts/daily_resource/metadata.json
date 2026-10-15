@@ -1,0 +1,465 @@
+{
+  "protocol": "# Frozen synthetic daily resource evaluation protocol\n\nDeclared before fitting, settings selection or test evaluation for milestone 5.\n\nPredict the published water L/kg and electricity kWh/kg intensities independently, as retrospective daily aggregates. Allow only Production_Volume_kg, Machine_Utilization_%, Number_of_Workers, Liquor_Ratio_1:x, Temperature_C, Cycle_Time_hr and Dye_Batch_Count. These are retrospective workload/process observations, not documented plans. No causal optimisation or pre-production forecasts are claimed.\n\nExclude both resource targets, their totals/counterparts, wastewater, waste quantities/intensities, BOD/COD/pH, chemicals, fixation, duplicate tonne production, calendar fields, Monthly_Demand_Factor and Day_Type. No target-derived cost or synthetic label is used. Schema/arithmetic profiling is descriptive; full-source audit summaries do not tune the model.\n\nSort by unique calendar date. First floor(0.60n) rows train; next floor(0.20n) validate; remaining rows test. Fit all preprocessing/estimators on train only. Compare a training-median DummyRegressor to one RandomForestRegressor family: 64 trees, depths 3 and 5, minimum leaf size 10, random seed 42, one CPU job. Select depth by validation MAE, then select the regressor only if its validation MAE is strictly better than the median baseline. Otherwise keep the baseline. Do not refit on validation.\n\nCalibrate one upper expected threshold on selected-model validation residuals observed minus predicted. Use sorted residual at rank min(n_val, ceil(0.95*(n_val+1))), one-based, and clamp the resulting offset at zero. Upper threshold = prediction + offset. Strict observed > threshold is an investigation flag on test dates only. This is an empirical one-sided validation calibration, not a two-sided prediction interval or guaranteed conformal coverage: validation is also used for model selection and the daily series need not be exchangeable.\n\nFreeze features, fitted pipelines, selection and residual offsets before test evaluation. Evaluate median, selected regression setting and retained predictor on the untouched final test period once. Report MAE in target units and test flag counts, without precision/recall, fault accuracy, causal root causes or recoverable savings. No anomalies are injected into the training/evaluation dataset.\n",
+  "protocol_sha256": "34a656b9a458ed341ade6d3d08ed5036eff5684e40950475ca321bb1906369ea",
+  "dataset_sha256": "1e30fdb86b267751b615f6f1c9eb3090c84def01692eef7704da5262bdd82dff",
+  "dataset_filename": "02_synthetic_thread_dyeing/csv/Textile_Dyeing_Dataset_Causal_Sheet1.csv",
+  "provenance": "synthetic_daily_thread_dyeing",
+  "features": [
+    "Production_Volume_kg",
+    "Machine_Utilization_%",
+    "Number_of_Workers",
+    "Liquor_Ratio_1:x",
+    "Temperature_C",
+    "Cycle_Time_hr",
+    "Dye_Batch_Count"
+  ],
+  "excluded_fields": [
+    "Acid_g_per_kg",
+    "Acid_kg",
+    "Alkali_g_per_kg",
+    "Alkali_kg",
+    "Auxiliary_g_per_kg",
+    "Auxiliary_kg",
+    "BOD_mg_per_L",
+    "COD_mg_per_L",
+    "Chemical_Waste_kg",
+    "Chemical_Waste_kg_per_1000kg",
+    "Date",
+    "Day_Type",
+    "Dye_Fixation_Ratio_%",
+    "Dye_Used_g_per_kg",
+    "Dye_Used_kg",
+    "Energy_Consumption_kWh_per_kg",
+    "Month",
+    "Monthly_Demand_Factor",
+    "Production_Volume_ton",
+    "Salt_g_per_kg",
+    "Salt_kg",
+    "Solid_Waste_%_of_Production",
+    "Solid_Waste_kg",
+    "Total_Energy_kWh",
+    "Total_Water_Consumption_L",
+    "Wastewater_L",
+    "Wastewater_L_per_kg",
+    "Water_Consumption_L_per_kg",
+    "Yarn_Waste_%_of_Production",
+    "Yarn_Waste_kg",
+    "Year",
+    "pH"
+  ],
+  "sklearn_version": "1.9.1",
+  "splits": {
+    "train": {
+      "count": 438,
+      "start": "2023-01-01",
+      "end": "2024-03-13"
+    },
+    "validation": {
+      "count": 146,
+      "start": "2024-03-14",
+      "end": "2024-08-06"
+    },
+    "test": {
+      "count": 147,
+      "start": "2024-08-07",
+      "end": "2024-12-31"
+    }
+  },
+  "results": {
+    "water": {
+      "target": "Water_Consumption_L_per_kg",
+      "unit": "L/kg",
+      "selected": "random_forest",
+      "selected_depth": 3,
+      "regression_validation_mae_by_depth": {
+        "3": 3.3041578973882824,
+        "5": 3.3519108395754116
+      },
+      "baseline_validation_mae": 4.550205479452054,
+      "baseline_test_mae": 4.081122448979592,
+      "regression_test_mae": 3.55639374707656,
+      "selected_test_mae": 3.55639374707656,
+      "residual_offset": 6.0765502479835405,
+      "test_alert_count": 11,
+      "test_upper_threshold_exceedance_fraction": 0.07482993197278912
+    },
+    "electricity": {
+      "target": "Energy_Consumption_kWh_per_kg",
+      "unit": "kWh/kg",
+      "selected": "random_forest",
+      "selected_depth": 3,
+      "regression_validation_mae_by_depth": {
+        "3": 0.07193869764317737,
+        "5": 0.07195062953692499
+      },
+      "baseline_validation_mae": 0.08432191780821922,
+      "baseline_test_mae": 0.07213265306122446,
+      "regression_test_mae": 0.06627157339180537,
+      "selected_test_mae": 0.06627157339180537,
+      "residual_offset": 0.16006723187095195,
+      "test_alert_count": 3,
+      "test_upper_threshold_exceedance_fraction": 0.02040816326530612
+    }
+  },
+  "profile": {
+    "label": "Synthetic daily thread-dyeing data",
+    "sha256": "1e30fdb86b267751b615f6f1c9eb3090c84def01692eef7704da5262bdd82dff",
+    "rows": 731,
+    "columns": 39,
+    "first_date": "2023-01-01",
+    "last_date": "2024-12-31",
+    "field_roles": {
+      "Date": {
+        "role": "calendar identifiers; excluded",
+        "unit": "date/category"
+      },
+      "Month": {
+        "role": "calendar identifiers; excluded",
+        "unit": "date/category"
+      },
+      "Year": {
+        "role": "calendar identifiers; excluded",
+        "unit": "count/index/dimensionless"
+      },
+      "Day_Type": {
+        "role": "synthetic label/factor; excluded from inputs and ground truth",
+        "unit": "date/category"
+      },
+      "Monthly_Demand_Factor": {
+        "role": "synthetic label/factor; excluded from inputs and ground truth",
+        "unit": "count/index/dimensionless"
+      },
+      "Production_Volume_ton": {
+        "role": "daily production; tonne column is rounded duplicate",
+        "unit": "tonnes"
+      },
+      "Production_Volume_kg": {
+        "role": "daily production; tonne column is rounded duplicate",
+        "unit": "kg"
+      },
+      "Machine_Utilization_%": {
+        "role": "retrospective workload/process observation (fixation conservatively excluded)",
+        "unit": "%"
+      },
+      "Number_of_Workers": {
+        "role": "retrospective workload/process observation (fixation conservatively excluded)",
+        "unit": "count/index/dimensionless"
+      },
+      "Energy_Consumption_kWh_per_kg": {
+        "role": "separate target intensity; excluded from all input features",
+        "unit": "kWh/kg"
+      },
+      "Total_Energy_kWh": {
+        "role": "resource total; direct target counterpart; excluded",
+        "unit": "kWh"
+      },
+      "Water_Consumption_L_per_kg": {
+        "role": "separate target intensity; excluded from all input features",
+        "unit": "L/kg"
+      },
+      "Total_Water_Consumption_L": {
+        "role": "resource total; direct target counterpart; excluded",
+        "unit": "L"
+      },
+      "Dye_Fixation_Ratio_%": {
+        "role": "retrospective workload/process observation (fixation conservatively excluded)",
+        "unit": "%"
+      },
+      "Liquor_Ratio_1:x": {
+        "role": "retrospective workload/process observation (fixation conservatively excluded)",
+        "unit": "ratio"
+      },
+      "Temperature_C": {
+        "role": "retrospective workload/process observation (fixation conservatively excluded)",
+        "unit": "C"
+      },
+      "Cycle_Time_hr": {
+        "role": "retrospective workload/process observation (fixation conservatively excluded)",
+        "unit": "hours"
+      },
+      "Dye_Batch_Count": {
+        "role": "retrospective workload/process observation (fixation conservatively excluded)",
+        "unit": "count/index/dimensionless"
+      },
+      "Dye_Used_g_per_kg": {
+        "role": "chemical mass/intensity arithmetic counterparts; conservatively excluded",
+        "unit": "g/kg"
+      },
+      "Dye_Used_kg": {
+        "role": "chemical mass/intensity arithmetic counterparts; conservatively excluded",
+        "unit": "kg"
+      },
+      "Salt_g_per_kg": {
+        "role": "chemical mass/intensity arithmetic counterparts; conservatively excluded",
+        "unit": "g/kg"
+      },
+      "Salt_kg": {
+        "role": "chemical mass/intensity arithmetic counterparts; conservatively excluded",
+        "unit": "kg"
+      },
+      "Alkali_g_per_kg": {
+        "role": "chemical mass/intensity arithmetic counterparts; conservatively excluded",
+        "unit": "g/kg"
+      },
+      "Alkali_kg": {
+        "role": "chemical mass/intensity arithmetic counterparts; conservatively excluded",
+        "unit": "kg"
+      },
+      "Acid_g_per_kg": {
+        "role": "chemical mass/intensity arithmetic counterparts; conservatively excluded",
+        "unit": "g/kg"
+      },
+      "Acid_kg": {
+        "role": "chemical mass/intensity arithmetic counterparts; conservatively excluded",
+        "unit": "kg"
+      },
+      "Auxiliary_g_per_kg": {
+        "role": "chemical mass/intensity arithmetic counterparts; conservatively excluded",
+        "unit": "g/kg"
+      },
+      "Auxiliary_kg": {
+        "role": "chemical mass/intensity arithmetic counterparts; conservatively excluded",
+        "unit": "kg"
+      },
+      "Solid_Waste_kg": {
+        "role": "post-process waste/wastewater outcome or derived intensity; excluded",
+        "unit": "kg"
+      },
+      "Solid_Waste_%_of_Production": {
+        "role": "post-process waste/wastewater outcome or derived intensity; excluded",
+        "unit": "%"
+      },
+      "Yarn_Waste_kg": {
+        "role": "post-process waste/wastewater outcome or derived intensity; excluded",
+        "unit": "kg"
+      },
+      "Yarn_Waste_%_of_Production": {
+        "role": "post-process waste/wastewater outcome or derived intensity; excluded",
+        "unit": "%"
+      },
+      "Chemical_Waste_kg": {
+        "role": "post-process waste/wastewater outcome or derived intensity; excluded",
+        "unit": "kg"
+      },
+      "Chemical_Waste_kg_per_1000kg": {
+        "role": "post-process waste/wastewater outcome or derived intensity; excluded",
+        "unit": "kg/1000kg"
+      },
+      "Wastewater_L": {
+        "role": "post-process waste/wastewater outcome or derived intensity; excluded",
+        "unit": "L"
+      },
+      "Wastewater_L_per_kg": {
+        "role": "post-process waste/wastewater outcome or derived intensity; excluded",
+        "unit": "L/kg"
+      },
+      "BOD_mg_per_L": {
+        "role": "post-process waste/wastewater outcome or derived intensity; excluded",
+        "unit": "L"
+      },
+      "COD_mg_per_L": {
+        "role": "post-process waste/wastewater outcome or derived intensity; excluded",
+        "unit": "L"
+      },
+      "pH": {
+        "role": "post-process waste/wastewater outcome or derived intensity; excluded",
+        "unit": "count/index/dimensionless"
+      }
+    },
+    "missing_values": 0,
+    "relationships": {
+      "water_total_vs_kg_times_L_per_kg": {
+        "mean_absolute_rounding_difference": 41.96454172366352,
+        "max_absolute_rounding_difference": 131.59999999997672,
+        "max_relative_difference": 0.00023694109984095853
+      },
+      "electricity_total_vs_kg_times_kWh_per_kg": {
+        "mean_absolute_rounding_difference": 3.1865896032829757,
+        "max_absolute_rounding_difference": 11.661999999996624,
+        "max_relative_difference": 0.00035572019950682335
+      },
+      "wastewater_total_vs_kg_times_L_per_kg": {
+        "mean_absolute_rounding_difference": 38.00515731874466,
+        "max_absolute_rounding_difference": 127.68999999994412,
+        "max_relative_difference": 0.00023431955123580242
+      },
+      "Dye_Used_mass_vs_intensity": {
+        "mean_absolute_rounding_difference": 0.04176335157318644,
+        "max_absolute_rounding_difference": 0.15294000000000096,
+        "max_relative_difference": 0.0006142180094786558
+      },
+      "Salt_mass_vs_intensity": {
+        "mean_absolute_rounding_difference": 0.12914912448693114,
+        "max_absolute_rounding_difference": 0.3967499999998836,
+        "max_relative_difference": 0.000140711703914748
+      },
+      "Alkali_mass_vs_intensity": {
+        "mean_absolute_rounding_difference": 0.04737722298220586,
+        "max_absolute_rounding_difference": 0.17944999999986067,
+        "max_relative_difference": 0.00022561643835613984
+      },
+      "Acid_mass_vs_intensity": {
+        "mean_absolute_rounding_difference": 0.04388815321476773,
+        "max_absolute_rounding_difference": 0.1543699999999717,
+        "max_relative_difference": 0.0003822796934866485
+      },
+      "Auxiliary_mass_vs_intensity": {
+        "mean_absolute_rounding_difference": 0.050679083447322595,
+        "max_absolute_rounding_difference": 0.16150000000016007,
+        "max_relative_difference": 0.0002512153759188614
+      }
+    },
+    "numeric_ranges": {
+      "Year": {
+        "min": 2023.0,
+        "max": 2024.0
+      },
+      "Monthly_Demand_Factor": {
+        "min": 0.8,
+        "max": 1.35
+      },
+      "Production_Volume_ton": {
+        "min": 7.01,
+        "max": 21.28
+      },
+      "Production_Volume_kg": {
+        "min": 7008.0,
+        "max": 21279.0
+      },
+      "Machine_Utilization_%": {
+        "min": 75.0,
+        "max": 91.0
+      },
+      "Number_of_Workers": {
+        "min": 52.0,
+        "max": 141.0
+      },
+      "Energy_Consumption_kWh_per_kg": {
+        "min": 1.6,
+        "max": 2.04
+      },
+      "Total_Energy_kWh": {
+        "min": 11493.8,
+        "max": 39127.9
+      },
+      "Water_Consumption_L_per_kg": {
+        "min": 36.94,
+        "max": 65.0
+      },
+      "Total_Water_Consumption_L": {
+        "min": 327477.9,
+        "max": 1283307.6
+      },
+      "Dye_Fixation_Ratio_%": {
+        "min": 65.0,
+        "max": 85.0
+      },
+      "Liquor_Ratio_1:x": {
+        "min": 5.0,
+        "max": 10.0
+      },
+      "Temperature_C": {
+        "min": 62.3,
+        "max": 130.0
+      },
+      "Cycle_Time_hr": {
+        "min": 2.5,
+        "max": 4.61
+      },
+      "Dye_Batch_Count": {
+        "min": 200.0,
+        "max": 350.0
+      },
+      "Dye_Used_g_per_kg": {
+        "min": 10.0,
+        "max": 44.59
+      },
+      "Dye_Used_kg": {
+        "min": 107.3,
+        "max": 685.3
+      },
+      "Salt_g_per_kg": {
+        "min": 150.0,
+        "max": 361.74
+      },
+      "Salt_kg": {
+        "min": 1458.7,
+        "max": 6076.1
+      },
+      "Alkali_g_per_kg": {
+        "min": 40.0,
+        "max": 95.28
+      },
+      "Alkali_kg": {
+        "min": 338.2,
+        "max": 1491.3
+      },
+      "Acid_g_per_kg": {
+        "min": 25.0,
+        "max": 70.69
+      },
+      "Acid_kg": {
+        "min": 208.8,
+        "max": 1264.4
+      },
+      "Auxiliary_g_per_kg": {
+        "min": 40.0,
+        "max": 100.0
+      },
+      "Auxiliary_kg": {
+        "min": 311.5,
+        "max": 1868.2
+      },
+      "Solid_Waste_kg": {
+        "min": 769.5,
+        "max": 3808.8
+      },
+      "Solid_Waste_%_of_Production": {
+        "min": 10.0,
+        "max": 20.0
+      },
+      "Yarn_Waste_kg": {
+        "min": 350.4,
+        "max": 1558.2
+      },
+      "Yarn_Waste_%_of_Production": {
+        "min": 5.0,
+        "max": 8.0
+      },
+      "Chemical_Waste_kg": {
+        "min": 1425.0,
+        "max": 6349.7
+      },
+      "Chemical_Waste_kg_per_1000kg": {
+        "min": 158.8,
+        "max": 353.81
+      },
+      "Wastewater_L": {
+        "min": 275178.4,
+        "max": 1063956.9
+      },
+      "Wastewater_L_per_kg": {
+        "min": 30.0,
+        "max": 50.0
+      },
+      "BOD_mg_per_L": {
+        "min": 194.1,
+        "max": 376.4
+      },
+      "COD_mg_per_L": {
+        "min": 618.0,
+        "max": 1106.7
+      },
+      "pH": {
+        "min": 9.04,
+        "max": 10.5
+      }
+    },
+    "warning": "Arithmetic/rounding audit only. Day_Type is neither a predictor nor anomaly ground truth. No measured factory telemetry."
+  },
+  "trained_at_utc": "2026-10-13T20:17:48.845741+00:00",
+  "threshold_method": "upper: prediction + max(0, validation residual at one-based rank ceil(.95*(n_val+1)), capped at n_val)",
+  "limitation": "Synthetic retrospective daily analysis, no independent anomaly labels, guaranteed coverage, causal claims or real-factory validation.",
+  "model_sha256": "a17ee22808e7b1f9135636e44d6d1fcce24055099321942ecfe85a60df8766a1",
+  "model_version": "synthetic-daily-v1-3bb6653352e92acf"
+}

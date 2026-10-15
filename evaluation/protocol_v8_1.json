@@ -1,0 +1,19 @@
+{
+  "version": "8.1",
+  "created_before_tuning_utc": "2026-10-14T23:10:39.925602+00:00",
+  "corpus_sha256": "b7bfda02deaad3b9d40577c94df89df751e4fb86b72b45a5e58873a4dcf90f75",
+  "development": 20,
+  "fresh_held_out": 12,
+  "maximum_live_calls": 12,
+  "maximum_http_attempts_per_call": 2,
+  "concurrency": 2,
+  "old_cases_are_regressions_not_new_accuracy": true,
+  "metrics": [
+    "local decisions",
+    "AMD admitted structured interpretation",
+    "end-to-end confirmed scheduling/reset correctness",
+    "validation rejections",
+    "transport failures",
+    "latency by route"
+  ]
+}

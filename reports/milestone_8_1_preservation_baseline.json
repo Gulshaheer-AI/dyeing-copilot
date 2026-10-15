@@ -1,0 +1,14 @@
+{
+  "evaluation/frozen_protocol.json": "9e3a68c570480c9793454502c209c090f4986fcb9ce17645a940a730fd9c9e41",
+  "evaluation/interpreter_freeze.json": "8221292ee899d6f6073fece121246ef143f69a8d4230edc3e30b6da214400e2c",
+  "evaluation/planning_requests.json": "a19116d321b9133ca91d88fcc456073aa61ca30b0268e459135b39d0e6f6a3a2",
+  "reports/milestone_8_demo.json": "b2150f6689b285582d8fe3ba76b4de5a285de54f3b83736032cfca23bfd2576f",
+  "reports/milestone_8_demo_change_audit.json": "accf75784badb4a0c9d9800b8659423c5043bd0e1ea1bbc5b03ffc2e8736033a",
+  "reports/milestone_8_integrity.json": "8c055a28e854b75921852d267e70cf4791c02889f25ee3bfa36223a7a0008d4e",
+  "reports/milestone_8_live_evaluation.json": "2464dbdf8af9f9fec752b1c80b1185474c5ed63e96841eb120bb166bae86c65b",
+  "reports/milestone_8_packaged_checks.json": "e8061146eacd632626440b49fd1ef49e2a7f1cc1d81c1852dbfff8bc3c60f4e1",
+  "reports/milestone_8_tests.txt": "439aa9ae142c617128bd0c7d6bd8616b7a82a5b00dc98741e0c9c85798476abc",
+  "reports/milestone_8_tests_initial.txt": "66911cad5ee68d9318c02591abd9945bc635d1b25b329acae60a68b3a86d46a3",
+  "reports/milestone_8_verification.md": "1ff2a70dbbd817b05a775907d1b3e42c44c41609d9167d85fdb597eac56dcd02",
+  "tools/evaluate_planning_requests.py": "a26df53b3397103636fc7f000f6569bd824e21e449a3d4646aa2fc1eb8bed82a"
+}

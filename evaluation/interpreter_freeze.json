@@ -1,0 +1,10 @@
+{
+  "files": {
+    "copilot/planning_interpreter.py": "7a21eec44838029b39b10be062f86a26414af2346f2f54a2805000a9f5273cd5",
+    "copilot/planning_schema.py": "78034b1f205839a5671fd1f8525ba52f723f9daad6b1615777c54b9391911736",
+    "planner/change_requests.py": "4e65624fecca436e62ac5c937834fae93ce59682532eeec92d6d2f1acf7a7e36",
+    "evaluation/planning_requests.json": "a19116d321b9133ca91d88fcc456073aa61ca30b0268e459135b39d0e6f6a3a2"
+  },
+  "frozen_before_live_evaluation": true,
+  "timestamp_utc": "2026-10-14T21:39:57.158285+00:00"
+}

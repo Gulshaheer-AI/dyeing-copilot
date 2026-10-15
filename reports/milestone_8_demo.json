@@ -1,0 +1,48 @@
+{
+  "label": "Replay of previously generated live AMD interpretation; no new inference",
+  "request": "virtual-Jet-PolyCotton outage from 2019-12-21T01:00 to 2019-12-21T11:00. Change order 11 deadline to 2019-12-24T17:00.",
+  "receipt": {
+    "origin": "live_amd",
+    "requested_model": "DeepSeek-V4-Flash",
+    "actual_model": "self-dploy/DeepSeek-V4-Flash",
+    "timestamp_utc": "2026-10-14T21:40:43.859992+00:00",
+    "latency_seconds": 9.684,
+    "attempts": 1,
+    "http_status": 200,
+    "validation": "passed",
+    "purpose": "planning_request_interpretation"
+  },
+  "preview": [
+    {
+      "constraint": "machine availability",
+      "id": "virtual-Jet-PolyCotton",
+      "before": [
+        {
+          "start": "2019-11-10 00:00:00",
+          "end": "2020-01-31 00:00:00"
+        }
+      ],
+      "after": [
+        {
+          "start": "2019-11-10 00:00:00",
+          "end": "2019-12-21 01:00:00"
+        },
+        {
+          "start": "2019-12-21 11:00:00",
+          "end": "2020-01-31 00:00:00"
+        }
+      ]
+    },
+    {
+      "constraint": "completion deadline",
+      "id": "11",
+      "before": "2019-12-21 00:00:00",
+      "after": "2019-12-24 17:00:00"
+    }
+  ],
+  "proposal_valid": true,
+  "orders": 35,
+  "source_unchanged": true,
+  "difference": "0.00",
+  "reset_returns_original_constraints": true
+}

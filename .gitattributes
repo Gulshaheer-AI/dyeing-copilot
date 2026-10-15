@@ -1,0 +1,8 @@
+# Keep original dataset bytes and frozen preservation-fixture checksums intact.
+# Do not let platform line-ending conversion alter tracked files.
+* -text whitespace=cr-at-eol
+*.png binary
+*.zip binary
+*.xlsx binary
+*.xls binary
+*.joblib binary

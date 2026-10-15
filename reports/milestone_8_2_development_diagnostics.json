@@ -1,0 +1,101 @@
+{
+  "scope": "bundled non-sensitive evaluation only; not ordinary user error logs",
+  "records": [
+    {
+      "request": "virtual-Pressure-PolyCotton is unavailable from 2019-12-23T09:15 to 2019-12-23T14:45.",
+      "content": "{\n  \"status\": \"ready\",\n  \"changes\": [\n    {\n      \"operation\": \"machine_unavailability\",\n      \"machine_id\": \"virtual-Pressure-PolyCotton\",\n      \"start\": \"2019-12-23T09:15:00\",\n      \"end\": \"2019-12-23T14:45:00\",\n      \"clause_id\": \"c0\"\n    }\n  ],\n  \"clarification_questions\": [],\n  \"unsupported_reasons\": []\n}",
+      "receipt": {
+        "origin": "live_amd",
+        "requested_model": "DeepSeek-V4-Flash",
+        "actual_model": "self-dploy/DeepSeek-V4-Flash",
+        "timestamp_utc": "2026-10-15T02:51:01.173708+00:00",
+        "latency_seconds": 7.339,
+        "attempts": 1,
+        "http_status": 200,
+        "validation": "passed"
+      },
+      "validation_error": null,
+      "credential_screen": "passed"
+    },
+    {
+      "request": "Order 9 must finish by 2019-12-23T18:30; order 10 must finish by 2019-12-24T19:45.",
+      "content": "{\n  \"status\": \"ready\",\n  \"changes\": [\n    {\n      \"operation\": \"order_deadline\",\n      \"order_id\": \"9\",\n      \"deadline\": \"2019-12-23T18:30\",\n      \"clause_id\": \"c0\"\n    },\n    {\n      \"operation\": \"order_deadline\",\n      \"order_id\": \"10\",\n      \"deadline\": \"2019-12-24T19:45\",\n      \"clause_id\": \"c1\"\n    }\n  ],\n  \"clarification_questions\": [],\n  \"unsupported_reasons\": []\n}",
+      "receipt": {
+        "origin": "live_amd",
+        "requested_model": "DeepSeek-V4-Flash",
+        "actual_model": "self-dploy/DeepSeek-V4-Flash",
+        "timestamp_utc": "2026-10-15T02:51:01.175708+00:00",
+        "latency_seconds": 20.459,
+        "attempts": 1,
+        "http_status": 200,
+        "validation": "passed"
+      },
+      "validation_error": null,
+      "credential_screen": "passed"
+    },
+    {
+      "request": "virtual-Jet-Cotton maintenance from 2019-12-27T02:15 to 2019-12-27T06:45. Order 11 completion deadline 2019-12-25T18:15.",
+      "content": "{\n  \"status\": \"ready\",\n  \"changes\": [\n    {\n      \"operation\": \"machine_unavailability\",\n      \"machine_id\": \"virtual-Jet-Cotton\",\n      \"start\": \"2019-12-27T02:15\",\n      \"end\": \"2019-12-27T06:45\",\n      \"clause_id\": \"c0\"\n    },\n    {\n      \"operation\": \"order_deadline\",\n      \"order_id\": \"11\",\n      \"deadline\": \"2019-12-25T18:15\",\n      \"clause_id\": \"c1\"\n    }\n  ],\n  \"clarification_questions\": [],\n  \"unsupported_reasons\": []\n}",
+      "receipt": {
+        "origin": "live_amd",
+        "requested_model": "DeepSeek-V4-Flash",
+        "actual_model": "self-dploy/DeepSeek-V4-Flash",
+        "timestamp_utc": "2026-10-15T02:51:22.102379+00:00",
+        "latency_seconds": 13.927,
+        "attempts": 1,
+        "http_status": 200,
+        "validation": "passed"
+      },
+      "validation_error": null,
+      "credential_screen": "passed"
+    },
+    {
+      "request": "virtual-Pressure-PolyCotton outage from 2019-12-25T03:00 to 2019-12-25T08:00. virtual-Open-Cotton outage from 2019-12-26T10:00 to 2019-12-26T16:00.",
+      "content": "{\n  \"status\": \"ready\",\n  \"changes\": [\n    {\n      \"operation\": \"machine_unavailability\",\n      \"machine_id\": \"virtual-Pressure-PolyCotton\",\n      \"start\": \"2019-12-25T03:00\",\n      \"end\": \"2019-12-25T08:00\",\n      \"clause_id\": \"c0\"\n    },\n    {\n      \"operation\": \"machine_unavailability\",\n      \"machine_id\": \"virtual-Open-Cotton\",\n      \"start\": \"2019-12-26T10:00\",\n      \"end\": \"2019-12-26T16:00\",\n      \"clause_id\": \"c1\"\n    }\n  ],\n  \"clarification_questions\": [],\n  \"unsupported_reasons\": []\n}",
+      "receipt": {
+        "origin": "live_amd",
+        "requested_model": "DeepSeek-V4-Flash",
+        "actual_model": "self-dploy/DeepSeek-V4-Flash",
+        "timestamp_utc": "2026-10-15T02:51:08.986065+00:00",
+        "latency_seconds": 27.992,
+        "attempts": 1,
+        "http_status": 200,
+        "validation": "passed"
+      },
+      "validation_error": null,
+      "credential_screen": "passed"
+    },
+    {
+      "request": "Order 8 completion deadline 2019-12-30T15:30.",
+      "content": "{\n  \"status\": \"ready\",\n  \"changes\": [\n    {\n      \"operation\": \"order_deadline\",\n      \"order_id\": \"8\",\n      \"deadline\": \"2019-12-30T15:30\",\n      \"clause_id\": \"c0\"\n    }\n  ],\n  \"clarification_questions\": [],\n  \"unsupported_reasons\": []\n}",
+      "receipt": {
+        "origin": "live_amd",
+        "requested_model": "DeepSeek-V4-Flash",
+        "actual_model": "self-dploy/DeepSeek-V4-Flash",
+        "timestamp_utc": "2026-10-15T02:51:36.503278+00:00",
+        "latency_seconds": 8.04,
+        "attempts": 1,
+        "http_status": 200,
+        "validation": "passed"
+      },
+      "validation_error": null,
+      "credential_screen": "passed"
+    },
+    {
+      "request": "virtual-Jet-PolyCotton offline from 2019-12-28T04:00 to 2019-12-28T10:00.",
+      "content": "{\n  \"status\": \"ready\",\n  \"changes\": [\n    {\n      \"operation\": \"machine_unavailability\",\n      \"machine_id\": \"virtual-Jet-PolyCotton\",\n      \"start\": \"2019-12-28T04:00\",\n      \"end\": \"2019-12-28T10:00\",\n      \"clause_id\": \"c0\"\n    }\n  ],\n  \"clarification_questions\": [],\n  \"unsupported_reasons\": []\n}",
+      "receipt": {
+        "origin": "live_amd",
+        "requested_model": "DeepSeek-V4-Flash",
+        "actual_model": "self-dploy/DeepSeek-V4-Flash",
+        "timestamp_utc": "2026-10-15T02:51:37.437856+00:00",
+        "latency_seconds": 16.225,
+        "attempts": 1,
+        "http_status": 200,
+        "validation": "passed"
+      },
+      "validation_error": null,
+      "credential_screen": "passed"
+    }
+  ]
+}

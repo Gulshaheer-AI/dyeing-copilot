@@ -1,0 +1,82 @@
+[
+  {
+    "path": "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Data_Set.xlsx",
+    "sheet": "Sheet1",
+    "rows": 35,
+    "columns": 11,
+    "sha256": "a6efc7a1904355e9ca8125a4ac14b3ef705d956cd8f8ac1e47560d1afae046ad",
+    "missing_cells": 154
+  },
+  {
+    "path": "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/Data_Set.xlsx",
+    "sheet": "Sheet1",
+    "rows": 35,
+    "columns": 11,
+    "sha256": "a6efc7a1904355e9ca8125a4ac14b3ef705d956cd8f8ac1e47560d1afae046ad",
+    "missing_cells": 154
+  },
+  {
+    "path": "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set.xlsx",
+    "sheet": "Sheet1",
+    "rows": 35,
+    "columns": 13,
+    "sha256": "68652b0c26f602249210ee5120f53f54e27133d45d88d2f65142a292db3d617a",
+    "missing_cells": 0
+  },
+  {
+    "path": "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_set1.xls",
+    "sheet": "Sheet1",
+    "rows": 35,
+    "columns": 15,
+    "sha256": "989059bbbdcc3f4950797c33008842efac9ac0e93f1b4eebfa6d5ad4f4f6b09c",
+    "missing_cells": 35
+  },
+  {
+    "path": "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_set11.xls",
+    "sheet": "Sheet1",
+    "rows": 35,
+    "columns": 15,
+    "sha256": "d831a56fd5281df926ced794689f48ac11d09aa1be4da558b9be5f63721232d7",
+    "missing_cells": 35
+  },
+  {
+    "path": "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_set22.xls",
+    "sheet": "Sheet1",
+    "rows": 35,
+    "columns": 15,
+    "sha256": "7c37a3fd8682880fdeda4708d3d29b197f0f57b1beac49312218a393db44f932",
+    "missing_cells": 35
+  },
+  {
+    "path": "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_1.xlsx",
+    "sheet": "Sheet1",
+    "rows": 23,
+    "columns": 13,
+    "sha256": "17466631f5c95bb579502b0946aa301ed67273362a26b486adda9ce9e857974e",
+    "missing_cells": 0
+  },
+  {
+    "path": "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_2.xlsx",
+    "sheet": "Sheet1",
+    "rows": 35,
+    "columns": 13,
+    "sha256": "68652b0c26f602249210ee5120f53f54e27133d45d88d2f65142a292db3d617a",
+    "missing_cells": 0
+  },
+  {
+    "path": "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Textile/Data_Set.xlsx",
+    "sheet": "Sheet1",
+    "rows": 35,
+    "columns": 13,
+    "sha256": "5f69fd16242dcfef1566f9e4d2269becf69019ceb47b88d7659bb7d6d0081b78",
+    "missing_cells": 0
+  },
+  {
+    "path": "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Textile/Data_set2.xls",
+    "sheet": "Sheet1",
+    "rows": 35,
+    "columns": 23,
+    "sha256": "9d570d465617f07f9a9260ddf4831acbbbfc8f2a172128c71bdcb839c7139d91",
+    "missing_cells": 210
+  }
+]

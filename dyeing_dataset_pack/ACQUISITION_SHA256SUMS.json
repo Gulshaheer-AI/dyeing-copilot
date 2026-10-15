@@ -1,0 +1,366 @@
+{
+  "01_sitara_faisalabad/article/PMC9044317.1.json": {
+    "bytes": 5108,
+    "sha256": "93627a7f09788983dbc6ade38f6b2eab8c12b8cd6f12c419bdbf37260640b728"
+  },
+  "01_sitara_faisalabad/article/PMC9044317.1.txt": {
+    "bytes": 52512,
+    "sha256": "3273f2d8138e6e9d284af0487253de7a5b5d650d6ab7f8e7db025883c067af4f"
+  },
+  "01_sitara_faisalabad/article/PMC9044317.1.xml": {
+    "bytes": 152559,
+    "sha256": "989e466600151923e90a6766d85c0d69c13870953f338b5dcd3ee6fb94bbac19"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Data_Set_Sheet1.csv": {
+    "bytes": 2007,
+    "sha256": "5105ae8c034547e7c9654ca687752519c695c3d2e7fbafa2c67950694ad47abc"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/Data_Set_Sheet1.csv": {
+    "bytes": 2007,
+    "sha256": "5105ae8c034547e7c9654ca687752519c695c3d2e7fbafa2c67950694ad47abc"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_1_Sheet1.csv": {
+    "bytes": 2155,
+    "sha256": "cdfc2cdf06098fb5722191ad3356b18a2b5479df54557c021aa7f8d12602c910"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_2_Sheet1.csv": {
+    "bytes": 3180,
+    "sha256": "0f0d4f9a16f46e29b806a9e48a021b43aa1936e76b2af436793d2d7144365d93"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_Sheet1.csv": {
+    "bytes": 3180,
+    "sha256": "0f0d4f9a16f46e29b806a9e48a021b43aa1936e76b2af436793d2d7144365d93"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_set11_Sheet1.csv": {
+    "bytes": 3414,
+    "sha256": "8c9bb79c904c2d9d830d7a54603eba494cf6d2549c5c6ff25d0e3d1de8b6a8bf"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_set1_Sheet1.csv": {
+    "bytes": 3414,
+    "sha256": "8c9bb79c904c2d9d830d7a54603eba494cf6d2549c5c6ff25d0e3d1de8b6a8bf"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_set22_Sheet1.csv": {
+    "bytes": 3414,
+    "sha256": "8c9bb79c904c2d9d830d7a54603eba494cf6d2549c5c6ff25d0e3d1de8b6a8bf"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Textile/Data_Set_Sheet1.csv": {
+    "bytes": 3180,
+    "sha256": "0f0d4f9a16f46e29b806a9e48a021b43aa1936e76b2af436793d2d7144365d93"
+  },
+  "01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Textile/Data_set2_Sheet1.csv": {
+    "bytes": 4600,
+    "sha256": "18560664465f47795059198c6a9dc01241a3f503726544cb5817590fd60571b1"
+  },
+  "01_sitara_faisalabad/csv/text_records_exact_deduplicated_35.csv": {
+    "bytes": 3677,
+    "sha256": "1cdb06f3c23620ec84a5c950cb0a809fa31a7da4b4c4e618b0722808176c82b2"
+  },
+  "01_sitara_faisalabad/original_supplement.zip": {
+    "bytes": 23864935,
+    "sha256": "cb8567590622628f8e79bbe4eb1416161eccc5927e5b9ca8a5496b44ac74d948"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Data_Set.xlsx": {
+    "bytes": 9646,
+    "sha256": "a6efc7a1904355e9ca8125a4ac14b3ef705d956cd8f8ac1e47560d1afae046ad"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/Data_Set.xlsx": {
+    "bytes": 9646,
+    "sha256": "a6efc7a1904355e9ca8125a4ac14b3ef705d956cd8f8ac1e47560d1afae046ad"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set.xlsx": {
+    "bytes": 10563,
+    "sha256": "68652b0c26f602249210ee5120f53f54e27133d45d88d2f65142a292db3d617a"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_1.xlsx": {
+    "bytes": 9812,
+    "sha256": "17466631f5c95bb579502b0946aa301ed67273362a26b486adda9ce9e857974e"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_2.xlsx": {
+    "bytes": 10563,
+    "sha256": "68652b0c26f602249210ee5120f53f54e27133d45d88d2f65142a292db3d617a"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_set1.xls": {
+    "bytes": 32768,
+    "sha256": "989059bbbdcc3f4950797c33008842efac9ac0e93f1b4eebfa6d5ad4f4f6b09c"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_set11.xls": {
+    "bytes": 32768,
+    "sha256": "d831a56fd5281df926ced794689f48ac11d09aa1be4da558b9be5f63721232d7"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_set22.xls": {
+    "bytes": 32768,
+    "sha256": "7c37a3fd8682880fdeda4708d3d29b197f0f57b1beac49312218a393db44f932"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Textile/Data_Set.xlsx": {
+    "bytes": 10554,
+    "sha256": "5f69fd16242dcfef1566f9e4d2269becf69019ceb47b88d7659bb7d6d0081b78"
+  },
+  "01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Textile/Data_set2.xls": {
+    "bytes": 33792,
+    "sha256": "9d570d465617f07f9a9260ddf4831acbbbfc8f2a172128c71bdcb839c7139d91"
+  },
+  "01_sitara_faisalabad/raw/Data_Set.txt": {
+    "bytes": 8536,
+    "sha256": "f56a41e568b4287794724b282d0cc03ee2609285267231f3b119d56e4bd872f8"
+  },
+  "01_sitara_faisalabad/workbook_profiles.json": {
+    "bytes": 2715,
+    "sha256": "a5faadec9533c2c9a5736d7e78c0b5e042d919fdf6b070b2c31c8a174cff72d4"
+  },
+  "02_synthetic_thread_dyeing/csv/Textile_Dyeing_Dataset_Causal_Sheet1.csv": {
+    "bytes": 173958,
+    "sha256": "1e30fdb86b267751b615f6f1c9eb3090c84def01692eef7704da5262bdd82dff"
+  },
+  "02_synthetic_thread_dyeing/file_profiles.json": {
+    "bytes": 1159,
+    "sha256": "21ad5af645185ad06d3bbaf0cb98e065c097b3beddd05ee4c0b7ed2bb721d135"
+  },
+  "02_synthetic_thread_dyeing/original_archive.zip": {
+    "bytes": 7224918,
+    "sha256": "83649c15f540d8b80b536507a1c044eca3c091b6abdfc313204089baf02ce93d"
+  },
+  "02_synthetic_thread_dyeing/raw/Textile_Dyeing_Dataset_Causal.xlsx": {
+    "bytes": 166336,
+    "sha256": "1095853b6228535fe29bb107ebe2337510cd1841413992d827bad3988c9e1d43"
+  },
+  "02_synthetic_thread_dyeing/source_file_checksums.json": {
+    "bytes": 828,
+    "sha256": "b4ffe3560d459dc303efd6f0a24df05da5744c1fdbf7efd74b50a221004e95ed"
+  },
+  "02_synthetic_thread_dyeing/source_metadata.json": {
+    "bytes": 3309,
+    "sha256": "5699a8950ef62fa7194f0688e7b9406afc694aa2e87d5a239e3db107910d0e9e"
+  },
+  "03_industrial_machine_reference/csv/article_table_sequence_01.csv": {
+    "bytes": 1845,
+    "sha256": "ede862c171f562cd785e209310fde609630217b4cb2bd0b4783354d3ae8fe322"
+  },
+  "03_industrial_machine_reference/csv/article_table_sequence_02.csv": {
+    "bytes": 137,
+    "sha256": "bc17bb0dab5d47bbeff17b0993eecdde0c8cb7a539ff21972db6f955d760a658"
+  },
+  "03_industrial_machine_reference/csv/article_table_sequence_03.csv": {
+    "bytes": 174,
+    "sha256": "96b56a1943e403aa9ae01acd1a535065f4b6fc8e9b0900a6a0f8ce62ff2e0dd4"
+  },
+  "03_industrial_machine_reference/csv/article_table_sequence_04.csv": {
+    "bytes": 196,
+    "sha256": "7b34f55df6e0f1bed555f952fc0ae6a97d74ab2f0ca9a5cdf4471a7970a120e2"
+  },
+  "03_industrial_machine_reference/csv/article_table_sequence_05.csv": {
+    "bytes": 177,
+    "sha256": "e44416a7c7fa82ab66a53b8e245e788b6e337710e364b2d83bdbfa306e3c162e"
+  },
+  "03_industrial_machine_reference/raw_table_html/article_table_sequence_01.html": {
+    "bytes": 13728,
+    "sha256": "0d0c4e48768bf94f0dea2802a4a4c42746996cfef8012c1169a9a82e0ad39d21"
+  },
+  "03_industrial_machine_reference/raw_table_html/article_table_sequence_02.html": {
+    "bytes": 1284,
+    "sha256": "0371bb3eedeb25bd70d05ab6d5940c996c42322f6b40555bf005cbbef42652e3"
+  },
+  "03_industrial_machine_reference/raw_table_html/article_table_sequence_03.html": {
+    "bytes": 2263,
+    "sha256": "40e7f416375d2fa1233b012913cec217959289c20cd8ea701d475c244e0b1969"
+  },
+  "03_industrial_machine_reference/raw_table_html/article_table_sequence_04.html": {
+    "bytes": 2423,
+    "sha256": "8f5cc55786954899a40715f67a6a0b07f0c0f2437e8857c961f7404ee46dfbea"
+  },
+  "03_industrial_machine_reference/raw_table_html/article_table_sequence_05.html": {
+    "bytes": 2332,
+    "sha256": "bb3c614e09e082e51abb42f3d834cdc495bb4689f976bb72730217a68eb33937"
+  },
+  "03_industrial_machine_reference/source_article.html": {
+    "bytes": 468266,
+    "sha256": "e149650dca506c8b5a84e04770f529cc1a97f4967a15b6c39e58c67a9cfaeb11"
+  },
+  "03_industrial_machine_reference/table_profiles.json": {
+    "bytes": 878,
+    "sha256": "ffc157f6e5023ba3b9e7780a0bfa8ca06315fbe5ee5dc34f5dcf40bf19e4f56e"
+  },
+  "04_turkey_published_energy_tables/csv/article_table_sequence_01.csv": {
+    "bytes": 1597,
+    "sha256": "48af29f80c95fb5de9fa663e5628a957a7b39d52a301cfbc4745e37995f4fe9d"
+  },
+  "04_turkey_published_energy_tables/csv/article_table_sequence_02.csv": {
+    "bytes": 1686,
+    "sha256": "abdeb3727ca134d7a4ecc392136e6157c5d7e2f1a70d6a31945fe237eb5dce45"
+  },
+  "04_turkey_published_energy_tables/csv/article_table_sequence_03.csv": {
+    "bytes": 317,
+    "sha256": "cfd6716e7f58b8a52e980bfd78a870ffacf4aeffc2aeac0b880f31a80dde32a0"
+  },
+  "04_turkey_published_energy_tables/csv/article_table_sequence_04.csv": {
+    "bytes": 1057,
+    "sha256": "9cac3c842ceb48953e5326e3125553973b3ff79ba01f621e362b897d4c866901"
+  },
+  "04_turkey_published_energy_tables/csv/article_table_sequence_05.csv": {
+    "bytes": 348,
+    "sha256": "a9ff32c81152ea8ec4bbc4a734c2274a13d8b5631ed41047f31d0cc210ef2f11"
+  },
+  "04_turkey_published_energy_tables/csv/article_table_sequence_06.csv": {
+    "bytes": 92,
+    "sha256": "eb4fb872ff164fdc08e29a52ae2f3e0816dbcf6b3156cf4d24a5ba43d63a5eff"
+  },
+  "04_turkey_published_energy_tables/csv/article_table_sequence_07.csv": {
+    "bytes": 1063,
+    "sha256": "ee8bccb407634fcfa2bc73dbeb7dce9cf97fc7701c8405b6e9d26ba7aaa333df"
+  },
+  "04_turkey_published_energy_tables/csv/article_table_sequence_08.csv": {
+    "bytes": 1112,
+    "sha256": "eaea9f37a8c433e556ff636a553cf7c070730548e60922de0973944e5bf1090b"
+  },
+  "04_turkey_published_energy_tables/csv/article_table_sequence_09.csv": {
+    "bytes": 363,
+    "sha256": "2bf185ae34e2ea60ae6be1b4ea098d2d9a5cfa4af87aa106ee74699dcf675ff2"
+  },
+  "04_turkey_published_energy_tables/csv/article_table_sequence_10.csv": {
+    "bytes": 1049,
+    "sha256": "543eb5294d8ca236258372ef35a24b33ca3da70d70bfb903d03eb2a6cac138cb"
+  },
+  "04_turkey_published_energy_tables/raw_table_html/article_table_sequence_01.html": {
+    "bytes": 18832,
+    "sha256": "c385a489f0979946f332182185656016c00656016b483f812f65baea9f34afc8"
+  },
+  "04_turkey_published_energy_tables/raw_table_html/article_table_sequence_02.html": {
+    "bytes": 18883,
+    "sha256": "5ea4b7835415864b7329a3cc859e29dbcdaa9924e84205d8f79de1c448b0f6bc"
+  },
+  "04_turkey_published_energy_tables/raw_table_html/article_table_sequence_03.html": {
+    "bytes": 2786,
+    "sha256": "501f30a02ea4e4559169528bc50a560f8b2a5e072ae6aff292db74f8ea69957f"
+  },
+  "04_turkey_published_energy_tables/raw_table_html/article_table_sequence_04.html": {
+    "bytes": 3506,
+    "sha256": "0adf4ca3f2ab8728e81fe985e58d3dda26e9d43859825ed331308361644f7208"
+  },
+  "04_turkey_published_energy_tables/raw_table_html/article_table_sequence_05.html": {
+    "bytes": 3970,
+    "sha256": "fc00a4763ea24fa5031bdc00560dc796e69043ca167b2649058d3c09b755e46b"
+  },
+  "04_turkey_published_energy_tables/raw_table_html/article_table_sequence_06.html": {
+    "bytes": 1455,
+    "sha256": "db7b2bd53a927775594ed6d567e02b132b925d2bc568e4d4efcec7c51670bf8b"
+  },
+  "04_turkey_published_energy_tables/raw_table_html/article_table_sequence_07.html": {
+    "bytes": 10401,
+    "sha256": "a8e951ce4647ba2a9f22796d5ef26e0b51ea3bcf43d00051c0b861187300a14a"
+  },
+  "04_turkey_published_energy_tables/raw_table_html/article_table_sequence_08.html": {
+    "bytes": 13235,
+    "sha256": "5140964deeab6c25c6a957ab3d671707a05e6c8ade5167158fbc7fcbbe94c559"
+  },
+  "04_turkey_published_energy_tables/raw_table_html/article_table_sequence_09.html": {
+    "bytes": 4199,
+    "sha256": "e4b4f9029493f002b15ddc1090612fe05474c6d175b4893aa76c9efbfd62f4c5"
+  },
+  "04_turkey_published_energy_tables/raw_table_html/article_table_sequence_10.html": {
+    "bytes": 12082,
+    "sha256": "ce7b80cdf4adc21e1bf5569dca1c346d5edb7d2461caa2a116cc0727ea92baa8"
+  },
+  "04_turkey_published_energy_tables/source_article.html": {
+    "bytes": 776585,
+    "sha256": "3a36d81d595943d3619d1585bcae3405d18e80d65bba2de98fe421d58b4b132d"
+  },
+  "04_turkey_published_energy_tables/table_profiles.json": {
+    "bytes": 3557,
+    "sha256": "8e290095dc80357fe18d0e412a33113281d2cbd11c35296619824caeb1a84d6f"
+  },
+  "05_bangladesh_mill_benchmarks/csv/article_table_sequence_01.csv": {
+    "bytes": 717,
+    "sha256": "2dab00b49d346098d09b31f4a3a7e77662e9bf0d111b47f8585530c867d5157f"
+  },
+  "05_bangladesh_mill_benchmarks/csv/article_table_sequence_02.csv": {
+    "bytes": 279,
+    "sha256": "7e64aa4aaf2c03321cd8d99eb607336a4621600e454153507c0c0a20b55d25d8"
+  },
+  "05_bangladesh_mill_benchmarks/raw_table_html/article_table_sequence_01.html": {
+    "bytes": 6658,
+    "sha256": "3ee02b6ce69845d4d8dfb66744c6481e925ae5caa04400461328e6946c386e61"
+  },
+  "05_bangladesh_mill_benchmarks/raw_table_html/article_table_sequence_02.html": {
+    "bytes": 2898,
+    "sha256": "bedd6d74c61be3cd057c53591956cbe089131f4ebdd64bfd2ab9fa0bfca5e9e6"
+  },
+  "05_bangladesh_mill_benchmarks/source_article.html": {
+    "bytes": 449845,
+    "sha256": "9efdc9516f40438a7359fc4dcc128c1a7334ab24c36dff1b84fc77a849deadae"
+  },
+  "05_bangladesh_mill_benchmarks/table_profiles.json": {
+    "bytes": 462,
+    "sha256": "877a0904162d296e17cf19b3dd9e83fef6c5de2f12f677b0cdb448d3cef87b83"
+  },
+  "06_restricted_reuse_experiments/file_profiles.json": {
+    "bytes": 3826,
+    "sha256": "136018f3043c3b5c57de5f65fd8d9e02910ed4c9a2648ec16414bb8d837d7c84"
+  },
+  "06_restricted_reuse_experiments/original_archive.zip": {
+    "bytes": 3346783,
+    "sha256": "e204144449968881cfff6c60750c1d378bd1ab8c9ccaf7cc474aa2a6c631423d"
+  },
+  "06_restricted_reuse_experiments/raw/BLIND DYEING_COLOUR COORDINATES.xlsx": {
+    "bytes": 53080,
+    "sha256": "9953a0a85a15aea840c4fa2a967236b3801c59b7eee11b1c5fe0b871e0e55fec"
+  },
+  "06_restricted_reuse_experiments/raw/Dyeing_cotton and polyester.xlsx": {
+    "bytes": 124683,
+    "sha256": "f538f83dca2491854421fb3a7020cd4e994bbcc858bdf7ff7f7bf83fd81d1cf4"
+  },
+  "06_restricted_reuse_experiments/raw/FTIR_BLIND DYIEING.xlsx": {
+    "bytes": 3315584,
+    "sha256": "8019ae8d29838ce5614f4d347d17d5555df572291864647999e1a3597ba73d25"
+  },
+  "06_restricted_reuse_experiments/source_file_checksums.json": {
+    "bytes": 486,
+    "sha256": "4506f66ad5c45b1c0b23b5f21350cb97d42675318efc99a852efa701df0949b1"
+  },
+  "06_restricted_reuse_experiments/source_metadata.json": {
+    "bytes": 10662,
+    "sha256": "8e19c11d065a12865886a4e69860113b9e8db8efaea24d059a82680c6bd4385e"
+  },
+  "07_carbonfact_dyeing/CHANGELOG.md": {
+    "bytes": 3224,
+    "sha256": "58293dd925dbf21e7dbe4a8c69fbabc0b2acf4ef966d529a7988a08550d6b6fe"
+  },
+  "07_carbonfact_dyeing/CITATION.cff": {
+    "bytes": 797,
+    "sha256": "ddabbdc06c8cd4179d9622cbc7e8b3290e63c92548236278c19ba02daf202954"
+  },
+  "07_carbonfact_dyeing/LICENSE": {
+    "bytes": 20138,
+    "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+  },
+  "07_carbonfact_dyeing/README.md": {
+    "bytes": 18334,
+    "sha256": "469ec9aa71c6b0054ed0de10b705199ca7fa23cfd121d3842bae473fa141dc4e"
+  },
+  "07_carbonfact_dyeing/datasets/dyeing/README.md": {
+    "bytes": 4512,
+    "sha256": "9e3d373e6c85887f16c8489decc3e65f5ee5e9eaef66adece3951faf8a2a8df1"
+  },
+  "07_carbonfact_dyeing/datasets/dyeing/impact-scores.csv": {
+    "bytes": 18651,
+    "sha256": "cfd5dc093d39d3b4d7f45cec77be99e88774db2607d8cc1c5e94c8fc0e56501f"
+  },
+  "07_carbonfact_dyeing/datasets/dyeing/methodology/Dyeing_Chemicals_Methodology.pdf": {
+    "bytes": 845351,
+    "sha256": "16acfd3b2dc781003a48cb9b618986362eb6516d4c0e80dde407e7ff01dec08f"
+  },
+  "07_carbonfact_dyeing/datasets/dyeing/methodology/Dyeing_DB_Methodology.pdf": {
+    "bytes": 2830217,
+    "sha256": "74cf0be98f06afa9d17c896c4e1f6d35ef3f6db2164a2af48bdaa8b22327dbc1"
+  },
+  "07_carbonfact_dyeing/datasets/dyeing/methodology/README.md": {
+    "bytes": 894,
+    "sha256": "4cb71443d36938eb0727ac622143f3f47be15044fbc0c01700f86254dc7a739f"
+  },
+  "README.md": {
+    "bytes": 8839,
+    "sha256": "0b1243f104d0b5417f5da7a293295e85ff824ad0350208977b4fd854f6dd4fd0"
+  },
+  "dataset_inventory.json": {
+    "bytes": 14659,
+    "sha256": "6b0abab23e34398c090f9e8edfeb62dfca485afacb9d9a8263a955cf6af60216"
+  }
+}

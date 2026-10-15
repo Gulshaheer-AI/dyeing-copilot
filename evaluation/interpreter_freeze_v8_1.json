@@ -1,0 +1,14 @@
+{
+  "version": "8.1",
+  "files": {
+    "copilot/planning_interpreter.py": "25ae2bac4c8d888f93faa0c268c7538af9f1b675c83e2f25b5dd4019d7e2b58f",
+    "copilot/planning_schema.py": "52969cb20a06c5656f463912b25cdb71257026a6e4ecce739da610fe81340cb5",
+    "copilot/planning_guard.py": "7e4866379460d58b414d64c7fc496f75343dee8d3f680d5e2edf3249b7e9c60a",
+    "planner/change_requests.py": "4e65624fecca436e62ac5c937834fae93ce59682532eeec92d6d2f1acf7a7e36",
+    "evaluation/planning_requests_v8_1.json": "b7bfda02deaad3b9d40577c94df89df751e4fb86b72b45a5e58873a4dcf90f75",
+    "evaluation/protocol_v8_1.json": "ae16dacf0c5f3c4b149a1d5e643779acadc3346fdb4849e8c445d19efafd5c05",
+    "tools/evaluate_planning_requests_v8_1.py": "3fa8a5ce4054e8b981c45c3e5aab121813d55baa0e29d5aec1ca780e7e038fe7"
+  },
+  "timestamp_utc": "2026-10-14T23:17:08.088259+00:00",
+  "frozen_before_live_evaluation": true
+}

@@ -1,0 +1,68 @@
+{
+  "id": "wfwxybkpcm",
+  "version": 1,
+  "name": "Synthetic operational dataset and ML-MILP code for thread dyeing waste prediction and reverse logistics optimization",
+  "description": "This dataset contains a literature-calibrated synthetic operational dataset representing two years (2023\u20132024) of daily production and waste-generation data from a thread dyeing facility, along with the accompanying Python code for machine learning model training (Random Forest, XGBoost) and Mixed Integer Linear Programming (MILP)-based reverse logistics optimization. The dataset includes 39 operational variables (production volume, dye batch count, chemical and dye usage, water and energy consumption, machine utilization) and four waste-stream targets (solid waste, yarn waste, chemical waste, wastewater), with all parameter ranges derived from published textile processing literature. Provided to support reproducibility of the associated work on predictive waste classification and reverse logistics optimization in a circular textile supply chain.",
+  "doi": "10.17632/wfwxybkpcm.1",
+  "publish_date": "2026-10-09T12:29:49.189Z",
+  "last_modification_date": "2026-10-07T19:35:27.629Z",
+  "is_confidential": false,
+  "customer": {
+    "id": "7377952c-6404-4428-bbfc-77242cfc301e",
+    "name": "Mendeley Guests",
+    "chief_id": 810289,
+    "config": {
+      "repository_id": "MENDELEY_DATA",
+      "dataset_size_limit": 10737418240,
+      "doi_prefix": "10.17632"
+    },
+    "is_user_mendeley_admin": false,
+    "customer_roles": [],
+    "is_guest": true,
+    "is_user_customer_moderator": false
+  },
+  "owner": {
+    "id": "a030cfa0-cd4d-422d-b179-a735a752e8dd",
+    "first_name": "Ananya",
+    "last_name": "Halder",
+    "display_name": "Ananya Halder",
+    "$ref": "/profiles/a030cfa0-cd4d-422d-b179-a735a752e8dd",
+    "profile": {
+      "id": "a030cfa0-cd4d-422d-b179-a735a752e8dd",
+      "$ref": "/profiles/a030cfa0-cd4d-422d-b179-a735a752e8dd"
+    }
+  },
+  "categories": [
+    {
+      "id": "data.elsevier.com/vocabulary/OmniScience/Concept-392307376",
+      "label": "Textile Industry"
+    }
+  ],
+  "licence": {
+    "id": "01d9c749-3c4d-4431-9df3-620b2dcfe144",
+    "short_name": "CC BY 4.0",
+    "full_name": "Creative Commons Attribution 4.0 International",
+    "description": "You can share, copy and modify this dataset so long as you give appropriate credit, provide a link to the CC BY license, and indicate if changes were made, but you may not do so in a way that suggests the rights holder has endorsed you or your use of the dataset. Note that further permission may be required for any content within the dataset that is identified as belonging to a third party.",
+    "url": "http://creativecommons.org/licenses/by/4.0",
+    "category": "Creative",
+    "customer_id": null
+  },
+  "institutions": [],
+  "funders": [],
+  "organisational_unit_names": [],
+  "contributors": [
+    {
+      "id": "a030cfa0-cd4d-422d-b179-a735a752e8dd",
+      "first_name": "Ananya",
+      "last_name": "Halder",
+      "$ref": "/profiles/a030cfa0-cd4d-422d-b179-a735a752e8dd",
+      "profile": {
+        "id": "a030cfa0-cd4d-422d-b179-a735a752e8dd",
+        "$ref": "/profiles/a030cfa0-cd4d-422d-b179-a735a752e8dd"
+      }
+    }
+  ],
+  "related_links": [],
+  "custom_metadata": {},
+  "is_metadata_only": false
+}

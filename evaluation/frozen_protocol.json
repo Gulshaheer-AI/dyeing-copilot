@@ -1,0 +1,12 @@
+{
+  "request_corpus_sha256": "a19116d321b9133ca91d88fcc456073aa61ca30b0268e459135b39d0e6f6a3a2",
+  "total": 30,
+  "development": 20,
+  "held_out": 10,
+  "live_budget": {
+    "logical_calls": 10,
+    "maximum_http_attempts": 20,
+    "concurrency": 2
+  },
+  "no_held_out_tuning": true
+}

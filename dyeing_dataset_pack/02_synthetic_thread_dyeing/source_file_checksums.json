@@ -1,0 +1,27 @@
+[
+  {
+    "filename": "Final_ML_RandomForest_Improved.ipynb",
+    "sha256": "30e75d4372df4d30f1839b8ed800a012c37fec55f917fe00c2f4174cc36b3062",
+    "bytes": 4331859
+  },
+  {
+    "filename": "Final_ML_XGBoost_Model_Improved.ipynb",
+    "sha256": "c1a65438cc4e55ac82689d0b8592ab5ac66c7ac2ea9a83179a91fa84b344984e",
+    "bytes": 5629293
+  },
+  {
+    "filename": "Final_RL_Model__Jupyter_XGBoost.ipynb",
+    "sha256": "e334b28ad0ec9091aaa6a0910d81f62fed4a418d1ffed298bd783bac430f1829",
+    "bytes": 168524
+  },
+  {
+    "filename": "reverse_logistics_cplex.py",
+    "sha256": "082667a158039452e05ff6ce97a02bf7cd4772e3321f4d4fd35c43fa95bc0351",
+    "bytes": 32760
+  },
+  {
+    "filename": "Textile_Dyeing_Dataset_Causal.xlsx",
+    "sha256": "1095853b6228535fe29bb107ebe2337510cd1841413992d827bad3988c9e1d43",
+    "bytes": 166336
+  }
+]

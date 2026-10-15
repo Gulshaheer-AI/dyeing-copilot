@@ -1,0 +1,540 @@
+[
+  {
+    "dataset": "Sitara Faisalabad",
+    "kind": "real-origin orders with modelled water fields",
+    "unique_orders": 35,
+    "text_rows_before_deduplication": 70,
+    "workbook_variants": 10,
+    "text_water_total": 47950.0,
+    "source": "https://doi.org/10.7717/peerj-cs.932/supp-1",
+    "license": "CC BY, per article metadata",
+    "warning": "Do not combine workbook variants as independent observations. Water fields are not established independent meter readings."
+  },
+  {
+    "dataset": "thread_synthetic",
+    "kind": "synthetic daily production",
+    "source": "https://data.mendeley.com/datasets/wfwxybkpcm/1",
+    "license": "CC BY 4.0",
+    "profiles": [
+      {
+        "file": "Textile_Dyeing_Dataset_Causal.xlsx",
+        "sheet": "Sheet1",
+        "rows": 731,
+        "columns": 39,
+        "column_names": [
+          "Date",
+          "Month",
+          "Year",
+          "Day_Type",
+          "Monthly_Demand_Factor",
+          "Production_Volume_ton",
+          "Production_Volume_kg",
+          "Machine_Utilization_%",
+          "Number_of_Workers",
+          "Energy_Consumption_kWh_per_kg",
+          "Total_Energy_kWh",
+          "Water_Consumption_L_per_kg",
+          "Total_Water_Consumption_L",
+          "Dye_Fixation_Ratio_%",
+          "Liquor_Ratio_1:x",
+          "Temperature_C",
+          "Cycle_Time_hr",
+          "Dye_Batch_Count",
+          "Dye_Used_g_per_kg",
+          "Dye_Used_kg",
+          "Salt_g_per_kg",
+          "Salt_kg",
+          "Alkali_g_per_kg",
+          "Alkali_kg",
+          "Acid_g_per_kg",
+          "Acid_kg",
+          "Auxiliary_g_per_kg",
+          "Auxiliary_kg",
+          "Solid_Waste_kg",
+          "Solid_Waste_%_of_Production",
+          "Yarn_Waste_kg",
+          "Yarn_Waste_%_of_Production",
+          "Chemical_Waste_kg",
+          "Chemical_Waste_kg_per_1000kg",
+          "Wastewater_L",
+          "Wastewater_L_per_kg",
+          "BOD_mg_per_L",
+          "COD_mg_per_L",
+          "pH"
+        ],
+        "missing_cells": 0
+      }
+    ],
+    "sha256_verification": "all original files match source metadata",
+    "warning": "731 days are not individual dyeing batches"
+  },
+  {
+    "dataset": "water_reuse",
+    "kind": "real laboratory experiment",
+    "source": "https://data.mendeley.com/datasets/pjrcb6rrkn/1",
+    "license": "CC BY-NC-ND 4.0",
+    "profiles": [
+      {
+        "file": "FTIR_BLIND DYIEING.xlsx",
+        "sheet": "PES_MEASUREMENT",
+        "rows": 3528,
+        "columns": 10,
+        "column_names": [
+          "numeroOnda",
+          "intensidad",
+          "intensidad2",
+          "intensidad3",
+          "intensidad4",
+          "intensidad5",
+          "intensidad6",
+          "intensidad7",
+          "intensidad8",
+          "intensidad9"
+        ],
+        "missing_cells": 0
+      },
+      {
+        "file": "FTIR_BLIND DYIEING.xlsx",
+        "sheet": "PES_AVERAGE",
+        "rows": 3528,
+        "columns": 9,
+        "column_names": [
+          "Wavenumber",
+          "PES_100W",
+          "PES_75W_25MBR",
+          "PES_50W_50MBR",
+          "PES_25W_75MBR",
+          "PES_100MBR",
+          "Unnamed: 6",
+          "Unnamed: 7",
+          "Unnamed: 8"
+        ],
+        "missing_cells": 10580
+      },
+      {
+        "file": "FTIR_BLIND DYIEING.xlsx",
+        "sheet": "Co_MEASUREMENTS",
+        "rows": 3528,
+        "columns": 14,
+        "column_names": [
+          "numeroOnda",
+          "100_W-01",
+          "100_W-02",
+          "85W-15MBR_01",
+          "85W-15MBR_02",
+          "75W-25MBR_01",
+          "75W-25MBR_02",
+          "50W-50MBR_01",
+          "50W-50MBR_02",
+          "25W-75MBR_01",
+          "25W-75MBR_02",
+          "15W-85MBR_01",
+          "15W-85MBR_02",
+          "100_MBR"
+        ],
+        "missing_cells": 0
+      },
+      {
+        "file": "FTIR_BLIND DYIEING.xlsx",
+        "sheet": "Co_AVERAGE",
+        "rows": 3528,
+        "columns": 11,
+        "column_names": [
+          "Wavenumber",
+          "100 % W",
+          "85% W-15 %MBR",
+          "75% W-25% MBR",
+          "50% W-50% MBR",
+          "25% W-75% MBR",
+          "15% W-85 %MBR",
+          "100 % MBR",
+          "Unnamed: 8",
+          "Unnamed: 9",
+          "Unnamed: 10"
+        ],
+        "missing_cells": 10580
+      },
+      {
+        "file": "Dyeing_cotton and polyester.xlsx",
+        "sheet": "Measurements",
+        "rows": 170,
+        "columns": 26,
+        "column_names": [
+          "Colour",
+          "Fabric",
+          "Water",
+          "Sample",
+          "Replicate",
+          "L*",
+          "a*",
+          "b*",
+          "L*average",
+          "a*average",
+          "b*average",
+          "Unnamed: 11",
+          "Unnamed: 12",
+          "Unnamed: 13",
+          "Unnamed: 14",
+          "Unnamed: 15",
+          "Unnamed: 16",
+          "Unnamed: 17",
+          "Unnamed: 18",
+          "Unnamed: 19",
+          "Unnamed: 20",
+          "Unnamed: 21",
+          "Unnamed: 22",
+          "Unnamed: 23",
+          "Unnamed: 24",
+          "Unnamed: 25"
+        ],
+        "missing_cells": 2717
+      },
+      {
+        "file": "Dyeing_cotton and polyester.xlsx",
+        "sheet": "Average",
+        "rows": 12,
+        "columns": 26,
+        "column_names": [
+          "Unnamed: 0",
+          "Experiment",
+          "% of Process water",
+          "L*average",
+          "a*average",
+          "b*average",
+          "DL* 100%",
+          "Da*100% ",
+          "Db*100%",
+          "DE*",
+          "Unnamed: 10",
+          "Unnamed: 11",
+          "Unnamed: 12",
+          "Kind of Dye",
+          "Material",
+          "Colour",
+          "% Process water",
+          "Samples dyed",
+          "Assessment",
+          "Unnamed: 19",
+          "Unnamed: 20",
+          "Unnamed: 21",
+          "Unnamed: 22",
+          "L",
+          "a",
+          "b"
+        ],
+        "missing_cells": 124
+      },
+      {
+        "file": "BLIND DYEING_COLOUR COORDINATES.xlsx",
+        "sheet": "MEASUREMENT",
+        "rows": 187,
+        "columns": 35,
+        "column_names": [
+          "Unnamed: 0",
+          "BLIND DYEING",
+          "Unnamed: 2",
+          "Unnamed: 3",
+          "Unnamed: 4",
+          "Unnamed: 5",
+          "Unnamed: 6",
+          "Unnamed: 7",
+          "Unnamed: 8",
+          "Unnamed: 9",
+          "Unnamed: 10",
+          "Unnamed: 11",
+          "Unnamed: 12",
+          "Unnamed: 13",
+          "Unnamed: 14",
+          "Unnamed: 15",
+          "Unnamed: 16",
+          "Unnamed: 17",
+          "Unnamed: 18",
+          "Unnamed: 19",
+          "Unnamed: 20",
+          "Unnamed: 21",
+          "Unnamed: 22",
+          "Unnamed: 23",
+          "Unnamed: 24",
+          "Unnamed: 25",
+          "Unnamed: 26",
+          "Unnamed: 27",
+          "Unnamed: 28",
+          "Unnamed: 29",
+          "Unnamed: 30",
+          "Unnamed: 31",
+          "Unnamed: 32",
+          "Unnamed: 33",
+          "Unnamed: 34"
+        ],
+        "missing_cells": 4481
+      }
+    ],
+    "sha256_verification": "all original files match source metadata",
+    "warning": "Research-only original files; excluded from the recommended product training inputs"
+  },
+  {
+    "dataset": "mdpi_dyeing",
+    "source": "https://www.mdpi.com/2227-9717/13/11/3572",
+    "kind": "published reference tables, not a complete raw dataset",
+    "license": "CC BY 4.0, article licence; retain source attribution",
+    "profiles": [
+      {
+        "html_table_sequence": 1,
+        "rows": 33,
+        "columns": 2,
+        "column_names": [
+          "0",
+          "1"
+        ]
+      },
+      {
+        "html_table_sequence": 2,
+        "rows": 3,
+        "columns": 3,
+        "column_names": [
+          "Material Type",
+          "Minimum Daily Production (kg)",
+          "Maximum Daily Production (kg)"
+        ]
+      },
+      {
+        "html_table_sequence": 3,
+        "rows": 5,
+        "columns": 4,
+        "column_names": [
+          "Machine",
+          "Mass (kg) | Minimum",
+          "Mass (kg) | Maximum",
+          "Power (kW)"
+        ]
+      },
+      {
+        "html_table_sequence": 4,
+        "rows": 6,
+        "columns": 4,
+        "column_names": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "html_table_sequence": 5,
+        "rows": 4,
+        "columns": 5,
+        "column_names": [
+          "Tissue",
+          "Total Mass (kg)",
+          "% of the Production",
+          "Number of Lots",
+          "Total Time (h)"
+        ]
+      }
+    ],
+    "warning": "Preserve source display units and separators. The Turkey article supplies partial 12-row and 7-row consumption tables, not the full claimed 2011\u20132023 history."
+  },
+  {
+    "dataset": "mdpi_energy",
+    "source": "https://www.mdpi.com/2071-1050/16/18/8152",
+    "kind": "published reference tables, not a complete raw dataset",
+    "license": "CC BY 4.0, article licence; retain source attribution",
+    "profiles": [
+      {
+        "html_table_sequence": 1,
+        "rows": 12,
+        "columns": 13,
+        "column_names": [
+          "Year",
+          "Month",
+          "Bill Amount TL | DG-015",
+          "Bill Amount TL | S060",
+          "Bill Amount TL | E0060",
+          "Consumption | Gas (Sm3)",
+          "Consumption | W Water (m3)",
+          "Consumption | Electric (kW)",
+          "1. Dyeing Amount",
+          "Reprose Quantity",
+          "Reprose %",
+          "\u2211 Dyeing Amount",
+          "\u2211 Packing Quantity"
+        ]
+      },
+      {
+        "html_table_sequence": 2,
+        "rows": 12,
+        "columns": 13,
+        "column_names": [
+          "Monthly Steam Usage Days",
+          "Daily Dyeing Quantity",
+          "Islan Denim Production",
+          "Exchange Rate:  TRY/USD",
+          "Cost Per 100 kg of Yarn (USD /100 kg) | Energy",
+          "Cost Per 100 kg of Yarn (USD /100 kg) | With T Energy",
+          "Yarn Consumption per kg (\u2211Dyeing) | Gas (Sm3)",
+          "Yarn Consumption per kg (\u2211Dyeing) | Water (ton)",
+          "Yarn Consumption per kg (\u2211Dyeing) | Electric (kW)",
+          "Energy Unit Price | Gas TRY/Sm3",
+          "Energy Unit Price | Water TRY/m3",
+          "Energy Unit Price | Elk TRY/kW",
+          "Average Air Temperature"
+        ]
+      },
+      {
+        "html_table_sequence": 3,
+        "rows": 11,
+        "columns": 2,
+        "column_names": [
+          "No",
+          "Location Name"
+        ]
+      },
+      {
+        "html_table_sequence": 4,
+        "rows": 5,
+        "columns": 4,
+        "column_names": [
+          "Machine Code",
+          "No. on Diagram",
+          "Nomenclature",
+          "Explanation"
+        ]
+      },
+      {
+        "html_table_sequence": 5,
+        "rows": 3,
+        "columns": 8,
+        "column_names": [
+          "Energy Type",
+          "Consumption | Quantity",
+          "Consumption | Unit",
+          "Consumption | TOE (Tons of Oil Equivalent)",
+          "Consumption | % Total",
+          "Cost | TL",
+          "Cost | % Total",
+          "Unit Cost | TRY/TOE (Tons of Oil Equivalent)"
+        ]
+      },
+      {
+        "html_table_sequence": 6,
+        "rows": 2,
+        "columns": 4,
+        "column_names": [
+          "source_column",
+          "MAPE",
+          "RMSE",
+          "TIC"
+        ]
+      },
+      {
+        "html_table_sequence": 7,
+        "rows": 8,
+        "columns": 10,
+        "column_names": [
+          "Precautions",
+          "Precautions | Precautions.1",
+          "Energy Type",
+          "Savings Type | Amount",
+          "Savings Type | Unit",
+          "Savings Type | Tep/Year",
+          "Savings Type | TRY/Year",
+          "CO2 Reduction Quantity | Ton/Year",
+          "Investment Cost | Tl",
+          "R.O.I | Year"
+        ]
+      },
+      {
+        "html_table_sequence": 8,
+        "rows": 16,
+        "columns": 7,
+        "column_names": [
+          "Date",
+          "SPP Production (Fusion Solar) kW",
+          "SPP Production (Invoice) kW",
+          "Facility Consumption (Invoice) kW",
+          "Total Facility Consumption kW",
+          "Enerjisa Payment kW",
+          "SPP Production/Consumption"
+        ]
+      },
+      {
+        "html_table_sequence": 9,
+        "rows": 3,
+        "columns": 8,
+        "column_names": [
+          "Energy Sources",
+          "Consumption Amount | Amount",
+          "Consumption Amount | Units",
+          "Electricity Energy Equivalent | kWh",
+          "Coefficients | kgCO2/kWh",
+          "Total | CO2",
+          "Production | kg",
+          "CO2 Amount | kgCO2/kg"
+        ]
+      },
+      {
+        "html_table_sequence": 10,
+        "rows": 7,
+        "columns": 13,
+        "column_names": [
+          "Year",
+          "Month",
+          "Bill Amount TL | DG-015",
+          "Bill Amount TL | S060",
+          "Bill Amount TL | E0060",
+          "Consumption | GasSm3",
+          "Consumption | W Water m3",
+          "Consumption | Electric kW",
+          "1.Dyeing Amount",
+          "Reprose Quantity",
+          "ReProses %",
+          "\u2211 Dyeing Amount",
+          "\u2211 Packing Quantity"
+        ]
+      }
+    ],
+    "warning": "Preserve source display units and separators. The Turkey article supplies partial 12-row and 7-row consumption tables, not the full claimed 2011\u20132023 history."
+  },
+  {
+    "dataset": "mdpi_mills",
+    "source": "https://www.mdpi.com/2673-7248/2/4/29",
+    "kind": "published reference tables, not a complete raw dataset",
+    "license": "CC BY 4.0, article licence; retain source attribution",
+    "profiles": [
+      {
+        "html_table_sequence": 1,
+        "rows": 15,
+        "columns": 5,
+        "column_names": [
+          "Factory",
+          "Total Production (kg)",
+          "Total Electricity Use (kWh)",
+          "Extracted Groundwater (in Million Liters)",
+          "Discharged Wastewater (in Million Liters)"
+        ]
+      },
+      {
+        "html_table_sequence": 2,
+        "rows": 7,
+        "columns": 4,
+        "column_names": [
+          "Country",
+          "kgCO2/kWh",
+          "kgCH4/kWh",
+          "kgN2O/kWh"
+        ]
+      }
+    ],
+    "warning": "Preserve source display units and separators. The Turkey article supplies partial 12-row and 7-row consumption tables, not the full claimed 2011\u20132023 history."
+  },
+  {
+    "dataset": "Carbonfact dyeing",
+    "source": "https://github.com/carbonfact/lca-database-footwear-apparel",
+    "snapshot_commit_prefix": "170a89a",
+    "rows": 38,
+    "columns": 23,
+    "kind": "modelled LCA reference values",
+    "license": "CC BY-SA 4.0",
+    "warning": "Impact scores are not batch water/energy meter readings. Full inventories are not included."
+  }
+]

@@ -1,0 +1,36 @@
+source_column_01,source_column_02,source_column_03,source_column_04,source_column_05,source_column_06,source_column_07,source_column_08,source_column_09,source_column_10,source_column_11,source_column_12,source_column_13,source_column_14,source_column_15
+2019-11-10,2019-12-30, CGU     ,Cotton      ,76x68x30x30  ,2000, Gray     , Light    ,Open      ,10,2,0,1,,700
+2020-01-08,2020-01-30,LBC,PolyCotton,76x68x30x30,2500,Gray,Medium,Pressure,20,2,0,2,,1400
+2019-12-20,2019-12-30,Camric,Cotton,48x52x35x37,1700,Gray,Light, Open ,10,2,0,1,,700
+2020-01-20,2020-01-30,STM,Cotton,80x80x80x80,4200,Gray,Medium,Open      ,20,2,0,1,,1400
+2020-01-16,2020-01-30,STM,Cotton,80x80x80x80,3700,Gray,Medium,Open      ,20,2,0,1,,1750
+2019-11-10,2019-12-30,CGU, Cotton, 76x68x30x30,2000,Choclate,Medium, Open,10,4,0,1,,700
+2019-12-01,2019-12-20,GSItly,PolyCotton,100x80x40x40,1500,Choclate,Medium,Pressure,10,4,0,2,,1050
+2019-11-10,2019-12-30,CGU,Cotton,76x68x30x30 ,2000,NevyBlue ,Medium, Open ,10,5,0,1,,700
+2020-01-02,2020-01-30,Eadeco,Cotton,60x60x20x20,4000,NevyBlue,Medium,Open      ,20,5,0,1,,1400
+2020-01-16,2020-01-30,STM,Cotton,80x80x80x80,3700,NevyBlue,Medium,Open      ,20,5,0,1,,1750
+2019-11-10,2019-12-30,CGU, Cotton,76x68x30x30,2000,Burgundy, Dark, Jet ,10,14,0,1,,1050
+2019-12-20,2019-12-30,Camric,Cotton,48x52x35x35,1700,Brown,Mdedium,Open      ,10,3,0,1,,700
+2019-12-01,2019-12-20,GSItly,PolyCotton,100x80x40x40,1500,Brown,Light,Pressure,10,3,0,2,,700
+2020-01-16,2020-01-30,STM,Cotton,80x80x80x80,3700,Brown,Light,Open      ,20,3,0,1,,1750
+2019-12-20,2019-12-30,Camric,Cotton,48x52x35x36,1700,Turqius ,Mdedium, Open,10,13,0,1,,1050
+2019-12-20,2019-12-30,Camric,Cotton,48x52x35x38,1700,Black,Dark, Jet ,10,1,0,3,,1400
+2019-12-01,2019-12-20,GSItly,PolyCotton,100x80x40x40,1500,Beige,Light,Pressure,10,12,0,2,,700
+2020-01-20,2020-01-30,STM,Cotton,80x80x80x80,4200,Beige,Medium,Open      ,20,12,0,1,,1750
+2019-12-01,2019-12-20,GSItly,PolyCotton,100x80x40x40,1500,Green,Medium,Pressure,10,8,0,2,,700
+2020-01-02,2020-01-30,Eadeco,Cotton,60x60x20x20,4000,Green,Dark,Open      ,20,8,0,1,,1400
+2020-01-08,2020-01-30,LBC,PolyCotton,76x68x30x30,2500,Green,Medium,Pressure,20,8,0,2,,1400
+2020-01-02,2020-01-30,Eadeco,Cotton,60x60x20x20,2100,Green,Medium,Open      ,10,8,0,1,,700
+2020-01-20,2020-01-30,STM,Cotton,80x80x80x80,4200,Green,Medium,Open      ,20,8,0,1,,1750
+2019-12-01,2019-12-20,GSItly,PolyCotton,100x80x40x40,2000,Black,Dark,Jet,10,1,0,3,,1400
+2020-01-02,2020-01-30,Eadeco,Cotton,60x60x20x20,3000,Blue,Dark,Open      ,20,6,0,1,,1400
+2020-01-08,2020-01-30,LBC,PolyCotton,76x68x30x30,2000,Blue,Light,Pressure,10,6,0,2,,1050
+2020-01-02,2020-01-30,Eadeco,Cotton,60x60x20x20,2500,Red,Medium,Open      ,20,11,0,1,,1400
+2020-01-08,2020-01-30,LBC,PolyCotton,76x68x30x30,2000,Red,Light,Pressure,10,11,0,2,,700
+2020-01-02,2020-01-30,Eadeco,Cotton,60x60x20x20,2500,Red,Dark,Open      ,20,11,0,1,,1750
+2020-01-02,2020-01-30,Eadeco,Cotton,60x60x20x20,2000,Black,Dark,Jet,10,1,0,3,,1400
+2020-01-08,2020-01-30,LBC,PolyCotton,76x68x30x30,2000,Yellow,Light,Pressure,10,9,0,2,,1050
+2020-01-08,2020-01-30,LBC,PolyCotton,76x68x30x30,2500,Orange,Medium,Pressure,20,10,0,2,,1750
+2020-01-08,2020-01-30,LBC,PolyCotton,76x68x30x30,3000,Black,Dark,Jet,20,1,0,3,,2800
+2020-01-16,2020-01-30,STM,Cotton,80x80x80x80,3700,RoyalBlue,Medium,Open      ,20,7,0,1,,1750
+2020-01-20,2020-01-30,STM,Cotton,80x80x80x80,4200,Black,Dark,Jet,20,1,0,3,,2800
