@@ -15,8 +15,10 @@ def current_comparison(case,run):
     if (run.case_fingerprint!=case.fingerprint or
             run.effective_fingerprint!=digest({'orders':case.orders,'config':case.config})):
         raise ValueError('This result belongs to a previous plan. Generate a current schedule.')
-    if run.schedule is None or not verify_schedule(case.orders,case.config,run.schedule).valid:
+    from planner.recovery import verify_recovery
+    if run.schedule is None or not verify_recovery(case.orders,case.config,run.schedule,case.recovery).valid:
         raise ValueError('A current independently verified schedule is required.')
+    if case.recovery is not None:return None
     baseline=run.legacy.baseline if run.legacy is not None else None
     if baseline is None or not verify_schedule(case.orders,case.config,baseline).valid:return None
     return compare_schedules(case.orders,case.config,baseline,run.schedule)
@@ -56,6 +58,28 @@ def clip_timeline(frame,start,end,machines):
     visible['visible_start']=visible.start.clip(lower=start)
     visible['visible_end']=visible.end.clip(upper=end)
     return visible
+
+
+def recovery_timeline_rows(case,schedule,*,reference=False):
+    from planner.recovery import verify_recovery
+    from planner.change_requests import subtract_interval
+    if not verify_recovery(case.orders,case.config,schedule,case.recovery).valid:
+        raise ValueError('Recovery history verification failed; timeline is unavailable.')
+    r=case.recovery
+    if r is None:return timeline_rows(case.orders,case.config,schedule)
+    frame,lo,hi=timeline_rows(r.reference_orders,r.reference_config,r.reference) if reference else timeline_rows(case.orders,case.config,schedule)
+    lo=min(lo,r.cutoff);hi=max(hi,r.cutoff+timedelta(microseconds=1))
+    outages=[]
+    for old in r.reference_config.machines:
+        remaining=old.availability
+        new=next(m for m in case.config.machines if m.virtual_id==old.virtual_id)
+        for w in new.availability:remaining=subtract_interval(remaining,w.start,w.end)
+        for w in remaining:
+            if w.start<hi and w.end>lo:
+                outages.append({'machine_id':old.virtual_id,'machine':machine_name(old.virtual_id),'order_id':None,
+                    'activity':'Revised outage','start':w.start,'end':w.end,'label':''})
+    if outages:frame=pd.concat([frame,pd.DataFrame(outages)],ignore_index=True)
+    return frame,lo,hi
 
 
 def useful_window(frame,lo,hi,machines):

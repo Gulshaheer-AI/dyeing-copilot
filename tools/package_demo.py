@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_FOLDERS = ("01_sitara_faisalabad", "02_synthetic_thread_dyeing")
-OUTPUT = ROOT / "dist/dyeing-copilot-industrial-dashboard-2026-10-16.zip"
+OUTPUT = ROOT / "dist/dyeing-copilot-integrated-recovery-v1-2026-10-16.zip"
 
 
 def sha(data):
@@ -50,6 +50,19 @@ def selected_files(root=ROOT):
     if (root / 'reports/industrial_dashboard_changed_files.json').exists():
         paths.append(root / 'reports/industrial_dashboard_changed_files.json')
     paths.extend((root / 'reports/industrial_dashboard_screenshots').glob('*.png'))
+    paths.extend((root / 'reports').glob('integrated_recovery_*.md'))
+    paths.extend((root / 'reports').glob('integrated_recovery_*.json'))
+    paths.extend((root / 'reports').glob('integrated_recovery_*.txt'))
+    paths.extend((root / 'reports').glob('integrated_interpreter_*.json'))
+    paths.extend((root / 'reports').glob('permission_sensitivity_integrated_*.json'))
+    browser_report=root/'reports/integrated_recovery_browser.json'
+    if browser_report.exists():
+        for screen in json.loads(browser_report.read_text(encoding='utf-8')).get('screens',[]):
+            if not screen['name'].startswith('failed_'):
+                path=(root/screen['path']).resolve()
+                if not path.is_relative_to((root/'reports/integrated_recovery_screenshots').resolve()):
+                    raise ValueError('Invalid integrated screenshot path.')
+                paths.append(path)
     for name in ("amd_live_smoke.json", "daily_amd_live_smoke.json", "milestone_6_live_questions.json",
                  "milestone_6_mock_questions.json", "milestone_6_restricted_network_attempts.json", "milestone_6_integrity.json",
                  "milestone_6_packaged_regression.json", "milestone_7_scenario_checks.json",
@@ -93,7 +106,11 @@ def selected_files(root=ROOT):
     for folder in DATA_FOLDERS:
         paths.extend(p for p in (pack / folder).rglob("*") if p.is_file())
     paths.extend(pack / name for name in ("README.md", "dataset_inventory.json"))
-    return sorted(set(p for p in paths if "__pycache__" not in p.parts))
+    # Keep external build/scan/startup receipts outside their own hashed ZIP.
+    # The verification report, reproducible tools and regression logs remain inside.
+    external=lambda p: p.name.startswith('integrated_recovery_') and p.name.endswith((
+        '_packaged_checks.json','_credentials_check.json','_package_build.json','_delivery.json'))
+    return sorted(set(p for p in paths if "__pycache__" not in p.parts and not external(p)))
 
 
 def build(root=ROOT, output=OUTPUT):

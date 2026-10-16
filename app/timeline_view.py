@@ -3,20 +3,25 @@ from datetime import datetime,timedelta
 from html import escape
 import altair as alt
 import streamlit as st
-from app.planner_presentation import timeline_rows,clip_timeline,useful_window,machine_name,shift_day
+from app.planner_presentation import timeline_rows,recovery_timeline_rows,clip_timeline,useful_window,machine_name,shift_day
 from planner.change_requests import digest
 
 
 def render_timeline(case,run):
     with st.container(key='dashboard_timeline'):
         st.subheader('Machine activity',anchor=False)
-        frame,lo,hi=timeline_rows(case.orders,case.config,run.schedule)
+        if case.recovery:
+            view=st.radio('Timeline plan',['Revised verified plan','Reference — historical, before disruption'],horizontal=True,key='recovery_timeline_view')
+            frame,lo,hi=recovery_timeline_rows(case,run.schedule,reference=view.startswith('Reference'))
+            st.caption('Red line: simulated cutoff. Revised outages are grey. The historical reference is not verified against revised constraints.')
+        else:frame,lo,hi=timeline_rows(case.orders,case.config,run.schedule)
         ids=[m.virtual_id for m in case.config.machines]
         with st.container(horizontal=True,wrap=True,vertical_alignment='bottom'):
             machines=st.multiselect('Machines',ids,default=ids,format_func=machine_name,key='timeline_machines',width=680)
             full=st.checkbox('Show full schedule',key='timeline_full',width='content')
         if not machines:st.info('Select a machine to inspect its activity.');return
         default,_=useful_window(frame,lo,hi,machines)
+        if case.recovery:default=max(lo,min(case.recovery.cutoff,hi-timedelta(microseconds=1)))
         key=digest({'case':case.fingerprint,'schedule':run.schedule,'machines':machines})[:20]
         cursor_key,date_key='timeline_start_'+key,'timeline_date_'+key
         if cursor_key not in st.session_state:st.session_state[cursor_key]=default
@@ -39,7 +44,7 @@ def render_timeline(case,run):
         st.write(f'**{start:%d %b %Y, %H:%M:%S} → {end:%d %b %Y, %H:%M:%S}** · Scenario time, Asia/Karachi')
         data=clip_timeline(frame,start,end,machines)
         # Report actual production/cleaning absence, independently of grey unavailability.
-        active=set(data.loc[data.activity!='Unavailable','machine_id'])
+        active=set(data.loc[~data.activity.isin(['Unavailable','Revised outage']),'machine_id'])
         inactive=[machine_name(m) for m in machines if m not in active]
         if inactive:st.write('No production or cleaning in this window: '+', '.join(inactive)+'.')
         if data.empty:
@@ -59,12 +64,16 @@ def render_timeline(case,run):
             x2='visible_end:T',tooltip=[alt.Tooltip('order_id:N',title='Order'),alt.Tooltip('machine_id:N',title='Machine ID'),
                 alt.Tooltip('activity:N',title='Activity / cleaning status'),alt.Tooltip('exact_start:N',title='Start'),
                 alt.Tooltip('exact_end:N',title='End')])
-        palette={'Production':'#0F8A83','Cleaning':'#EDBA54','Terminal cleaning':'#B98128','Unavailable':'#D7DDE5'}
+        palette={'Production':'#0F8A83','Cleaning':'#EDBA54','Terminal cleaning':'#B98128','Unavailable':'#D7DDE5','Revised outage':'#A1AAB8'}
         bars=base.mark_bar(size=36,cornerRadius=3).encode(color=alt.Color('activity:N',title=None,
             scale=alt.Scale(domain=list(palette),range=list(palette.values())),legend=None))
         labels=base.transform_filter((alt.datum.activity=='Production')&alt.datum.show_label).mark_text(
             color='white',fontSize=14,fontWeight='bold',clip=True).encode(x='centre:T',text='label:N')
-        chart=(bars+labels).properties(height=max(240,76*len(machines)),background='white').configure_axis(
+        layers=bars+labels
+        if case.recovery and start<=case.recovery.cutoff<=end:
+            import pandas as pd
+            layers=layers+alt.Chart(pd.DataFrame([{'cutoff':case.recovery.cutoff}])).mark_rule(color='#BC3F48',strokeDash=[5,3]).encode(x='cutoff:T')
+        chart=layers.properties(height=max(240,76*len(machines)),background='white').configure_axis(
             labelColor='#394D65',titleColor='#526379',gridColor='#E8EDF3').configure_view(stroke=None).interactive()
         # A documented non-wrapping container scrolls on narrow screens instead
         # of shrinking long machine names and 24 hours into an unreadable sliver.

@@ -10,20 +10,26 @@ from planner.comparison import compare_schedules, deadline_performance, RULE_LAB
 from planner.evaluator import evaluate_resources
 from planner.scenario import to_json
 from planner.verifier import verify_schedule
+from planner.recovery import verify_recovery,recovery_summary
 
 
 def build_selected_evidence(case, run, question, *, source=None, context_marker=None):
+    if case.recovery is not None:
+        from copilot.recovery_questions import check_recovery_question
+        check_recovery_question(question,case.orders)
     if source is not None:
         effective_orders(source, case.config, case)
     if (run.case_fingerprint != case.fingerprint or run.effective_fingerprint != digest({'orders':case.orders,'config':case.config})
             or run.schedule is None):
         raise ValueError('A current selected-backend schedule is required; stale/failed results cannot be explained.')
-    check=verify_schedule(case.orders,case.config,run.schedule)
+    check=verify_recovery(case.orders,case.config,run.schedule,case.recovery)
     if not check.valid:
         raise ValueError('Independent verification rejected the selected schedule.')
     if run.origin=='cp_sat':
         if run.cp_sat is None or run.cp_sat.schedule!=run.schedule:
             raise ValueError('Selected CP-SAT origin does not match its solver artifact.')
+        if hasattr(run,'option') and (run.option!=run.cp_sat.objective_order or run.recovery!=case.recovery):
+            raise ValueError('Selected objective or execution reference does not match its solver artifact.')
     elif run.origin=='heuristic_fallback_not_cp_sat':
         if run.cp_sat is None or run.cp_sat.schedule is not None or run.legacy.proposal!=run.schedule:
             raise ValueError('Fallback origin does not match the failed solver and verified heuristic.')
@@ -36,10 +42,12 @@ def build_selected_evidence(case, run, question, *, source=None, context_marker=
     deadlines=deadline_performance(case.orders,run.schedule)
     slacks=[r['slack_hours'] for r in deadlines['orders']]
     stages={k:getattr(run.cp_sat,k) for k in ('version','solver_status','active_stage','stage_a','stage_b','scale','timing','cleaning_optimal','slack_optimal_at_fixed_count')} if run.cp_sat else None
+    if stages and hasattr(run.cp_sat,'objective_order'):
+        stages.update(objective_order=run.cp_sat.objective_order,primary_optimal=run.cp_sat.primary_optimal,secondary_optimal=run.cp_sat.secondary_optimal)
     comparison=None
     # No fabricated baseline, fallback substitution, or non-worse prerequisite.
     baseline=run.legacy.baseline if run.legacy is not None else None
-    if baseline is not None and verify_schedule(case.orders,case.config,baseline).valid:
+    if case.recovery is None and baseline is not None and verify_schedule(case.orders,case.config,baseline).valid:
         comparison={'baseline_method':'EDD heuristic comparator',
                     **compare_schedules(case.orders,case.config,baseline,run.schedule)}
     scenario={'source_sha256':case.source_sha256,'source_filename':case.source_filename,
@@ -49,7 +57,9 @@ def build_selected_evidence(case, run, question, *, source=None, context_marker=
         'cleaning_counts':self_comparison['cleaning_counts']['proposal'],
         'deadlines':deadlines,'minimum_slack_hours':min(slacks),'median_slack_hours':median(slacks),
         'resources_secondary':{**asdict(resources),'total':resources.total,'unit':case.config.resource_unit},
-        'solver_evidence':stages,'comparison':comparison,'request_history':case.history,'deadline_overrides':case.overrides}
+        'solver_evidence':stages,'comparison':comparison,'request_history':case.history,'deadline_overrides':case.overrides,
+        'objective_option':getattr(run,'option','fewer_cleanings'),
+        'execution_reference':case.recovery,'recovery_summary':recovery_summary(case,run.schedule) if case.recovery else None}
     # Canonical JSON snapshot makes SQLite/export round trips exact and read-only.
     scenario=json.loads(to_json(scenario))
     documents,document_hashes=retrieve_project_sections(question)
@@ -65,6 +75,7 @@ def build_selected_evidence(case, run, question, *, source=None, context_marker=
     fact('solver',scenario['solver_evidence'],'solver evidence; bounds in reported ticks')
     fact('history',scenario['request_history'],'request provenance')
     fact('comparison',comparison,'verified scenario comparison; modelled source units')
+    fact('recovery',scenario['recovery_summary'],'simulated reference, fixed operations and recovery changes')
     statements={}
     def add(key,text,refs):statements[key]={'text':text,'evidence_references':refs}
     counts=scenario['cleaning_counts']
@@ -72,6 +83,8 @@ def build_selected_evidence(case, run, question, *, source=None, context_marker=
     add('selected_assumptions','Virtual capacities, calendars, durations, initial/terminal states and exact directed recipe/quality permissions remain hypothetical. Factory specialists must validate them before use.',['fact:selected.assumptions',MODEL_EQUATIONS])
     if stages and run.origin=='heuristic_fallback_not_cp_sat':
         add('selected_solver',f"The CP-SAT attempt returned Stage A {stages['stage_a']['status']} and Stage B {stages['stage_b']['status']}; no CP-SAT schedule is displayed. Its solver bounds belong to that attempt, not to the independently verified heuristic fallback.",['fact:selected.solver','fact:selected.identity'])
+    elif stages and 'objective_order' in stages:
+        add('selected_solver',f"The selected priority is {stages['objective_order']}. Stage A: {stages['stage_a']['status']}; Stage B: {stages['stage_b']['status']}; retained stage: {stages['active_stage']}. Primary objective proven: {stages['primary_optimal']}; secondary objective proven: {stages['secondary_optimal']}. If Stage A is only FEASIBLE, Stage B is conditional on that incumbent and does not establish global primary optimality. Exact bounds and units are in the solver receipt.",['fact:selected.solver'])
     elif stages:
         retention=(' '+stages['stage_b']['rejection_reason']) if stages['stage_b'].get('rejection_reason') else ''
         add('selected_solver',f"Solver Stage A is {stages['stage_a']['status']} and Stage B is {stages['stage_b']['status']}; the displayed schedule is from stage {stages['active_stage']}. Cleaning optimality proven: {stages['cleaning_optimal']}; maximum minimum slack proven at the fixed cleaning count: {stages['slack_optimal_at_fixed_count']}. Bounds and exact time scaling are in the cited solver receipt."+retention,['fact:selected.solver'])
@@ -81,7 +94,13 @@ def build_selected_evidence(case, run, question, *, source=None, context_marker=
         add('selected_origin','The displayed schedule is an explicitly permitted heuristic fallback; the CP-SAT receipt does not establish CP-SAT success.',['fact:selected.identity','fact:selected.solver'])
     else:
         add('selected_origin','The cited backend identity is the origin of this freshly verified selected schedule; inference receipts are separate from solver evidence.',['fact:selected.identity'])
-    if comparison is None:
+    if case.recovery is not None:
+        recovery=scenario['recovery_summary']
+        add('selected_comparison',f"Against the explicitly selected simulated reference, {recovery['completed_batches_preserved']} completed batches are preserved and {recovery['running_batches_protected']} running batches are protected. {recovery['future_batches_changed']} future batches change machine or processing times. Cleaning events: reference {recovery['cleaning_before']}, revised {recovery['cleaning_after']}; orders on time: reference {recovery['on_time_before']}, revised {recovery['on_time_after']}. The reference predates the disruption and may violate the revised availability; this is not a same-constraint savings comparison.",['fact:selected.recovery'])
+        for row in recovery['changes']:
+            key='selected_recovery_order_'+row['order']
+            add(key,f"Order {row['order']} moves from {row['old_machine']} ({row['old_start']} to {row['old_end']}) to {row['new_machine']} ({row['new_start']} to {row['new_end']}). This describes a computed schedule change, not its industrial cause.",['fact:selected.recovery'])
+    elif comparison is None:
         add('selected_comparison','No current independently verified EDD baseline exists. This explains the selected schedule only; no baseline, reduction percentage or savings is inferred.',['fact:selected.comparison'])
     else:
         difference=comparison['difference'];events=comparison['reconciliation']['cleaning_events_difference']
@@ -98,6 +117,10 @@ def build_selected_evidence(case, run, question, *, source=None, context_marker=
     import re
     requested=set(re.findall(r'\border\s*#?\s*(\d+)\b',question,re.I))
     chosen=[k for k in examples if k.rsplit('_',1)[1] in requested] or examples[:2]
+    changed=[k for k in statements if k.startswith('selected_recovery_order_')]
+    matching=[k for k in changed if k.rsplit('_',1)[1] in requested]
+    if matching:chosen=matching[:2]
+    elif changed and not requested:chosen=changed[:2]
     add('selected_orders',' '.join(statements[k]['text'] for k in chosen[:2]),[r for k in chosen[:2] for r in statements[k]['evidence_references']])
     catalog={'statements':statements,'assumptions':{'source_units':'Source quantity/duration/water units remain unresolved.',
         'scenario_config':'Virtual machines, calendars, rates and cleaning permissions are scenario assumptions.'},

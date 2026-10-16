@@ -1,0 +1,221 @@
+{
+  "browser": "Microsoft Edge headless via CDP",
+  "live_amd_calls": 0,
+  "screens": [
+    {
+      "name": "desktop_setup",
+      "width": 1440,
+      "height": 1100,
+      "path": "reports/integrated_recovery_screenshots/desktop_setup.png"
+    },
+    {
+      "name": "narrow_setup",
+      "width": 680,
+      "height": 1100,
+      "path": "reports/integrated_recovery_screenshots/narrow_setup.png"
+    },
+    {
+      "name": "desktop_initial",
+      "width": 1440,
+      "height": 1400,
+      "path": "reports/integrated_recovery_screenshots/desktop_initial.png"
+    },
+    {
+      "name": "reference_selection",
+      "width": 1440,
+      "height": 1400,
+      "path": "reports/integrated_recovery_screenshots/reference_selection.png"
+    },
+    {
+      "name": "desktop_conflict",
+      "width": 1440,
+      "height": 1400,
+      "path": "reports/integrated_recovery_screenshots/desktop_conflict.png"
+    },
+    {
+      "name": "desktop_preview",
+      "width": 1440,
+      "height": 1400,
+      "path": "reports/integrated_recovery_screenshots/desktop_preview.png"
+    },
+    {
+      "name": "desktop_recovery",
+      "width": 1440,
+      "height": 1400,
+      "path": "reports/integrated_recovery_screenshots/desktop_recovery.png"
+    },
+    {
+      "name": "narrow_recovery",
+      "width": 680,
+      "height": 1400,
+      "path": "reports/integrated_recovery_screenshots/narrow_recovery.png"
+    },
+    {
+      "name": "desktop_timeline",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/integrated_recovery_screenshots/desktop_timeline.png"
+    },
+    {
+      "name": "narrow_timeline",
+      "width": 680,
+      "height": 1300,
+      "path": "reports/integrated_recovery_screenshots/narrow_timeline.png"
+    },
+    {
+      "name": "reference_timeline",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/integrated_recovery_screenshots/reference_timeline.png"
+    },
+    {
+      "name": "deadline_protection",
+      "width": 1440,
+      "height": 1300,
+      "path": "reports/integrated_recovery_screenshots/deadline_protection.png"
+    },
+    {
+      "name": "desktop_explanation",
+      "width": 1440,
+      "height": 1400,
+      "path": "reports/integrated_recovery_screenshots/desktop_explanation.png"
+    },
+    {
+      "name": "desktop_review",
+      "width": 1440,
+      "height": 1400,
+      "path": "reports/integrated_recovery_screenshots/desktop_review.png"
+    },
+    {
+      "name": "narrow_review",
+      "width": 680,
+      "height": 1400,
+      "path": "reports/integrated_recovery_screenshots/narrow_review.png"
+    },
+    {
+      "name": "narrow_review_decision",
+      "width": 680,
+      "height": 1300,
+      "path": "reports/integrated_recovery_screenshots/narrow_review_decision.png"
+    },
+    {
+      "name": "stale_review",
+      "width": 1440,
+      "height": 1400,
+      "path": "reports/integrated_recovery_screenshots/stale_review.png"
+    },
+    {
+      "name": "narrow_change",
+      "width": 680,
+      "height": 1400,
+      "path": "reports/integrated_recovery_screenshots/narrow_change.png"
+    },
+    {
+      "name": "legacy_recovery_blocked",
+      "width": 1440,
+      "height": 1300,
+      "path": "reports/integrated_recovery_screenshots/legacy_recovery_blocked.png"
+    }
+  ],
+  "permissions_explicitly_enabled": true,
+  "dropdown_diagnostics": [
+    {
+      "expanded": "true",
+      "options": [
+        {
+          "text": "Order completion deadline",
+          "label": null
+        },
+        {
+          "text": "Machine outage",
+          "label": null
+        }
+      ]
+    },
+    {
+      "expanded": "true",
+      "options": [
+        {
+          "text": "virtual-Jet-Cotton",
+          "label": null
+        },
+        {
+          "text": "virtual-Jet-PolyCotton",
+          "label": null
+        },
+        {
+          "text": "virtual-Open-Cotton",
+          "label": null
+        },
+        {
+          "text": "virtual-Pressure-PolyCotton",
+          "label": null
+        }
+      ]
+    },
+    {
+      "expanded": "true",
+      "options": [
+        {
+          "text": "CP-SAT (default)",
+          "label": null
+        },
+        {
+          "text": "Legacy heuristic (explicit fallback)",
+          "label": null
+        }
+      ]
+    },
+    {
+      "expanded": "true",
+      "options": [
+        {
+          "text": "CP-SAT (default)",
+          "label": null
+        },
+        {
+          "text": "Legacy heuristic (explicit fallback)",
+          "label": null
+        }
+      ]
+    }
+  ],
+  "select_control_checks": [
+    {
+      "label": "Constraint type",
+      "requested": "Machine outage",
+      "actual": "Machine outage"
+    },
+    {
+      "label": "Virtual machine ID",
+      "requested": "virtual-Pressure-PolyCotton",
+      "actual": "virtual-Pressure-PolyCotton"
+    },
+    {
+      "label": "Planning engine",
+      "requested": "Legacy heuristic (explicit fallback)",
+      "actual": "Legacy heuristic (explicit fallback)"
+    },
+    {
+      "label": "Planning engine",
+      "requested": "CP-SAT (default)",
+      "actual": "CP-SAT (default)"
+    }
+  ],
+  "downloaded_export": {
+    "sha256": "63122f1d9761ff81d45acec861c9237541bcae97426896b55fbf8afcc8b22724",
+    "verification": {
+      "valid": true,
+      "errors": []
+    },
+    "review_status": "accepted_for_further_review",
+    "objective_option": "deadline_protection",
+    "scenario_fingerprint": "2bf8621fc483a72ca0f286310ca350b39ad98d239983138ad12e4a17576db41f",
+    "selected_evidence_fingerprint": "8562f6b3dcb422ed90374f73ef03440f80557fa60f85bc9e8509d0676f250d67"
+  },
+  "legacy_recovery_engine_blocked": true,
+  "journey": "Actual browser: reference selection, fixed-work conflict, manual preview/apply, both verified priorities, reference/revised timelines, mock explanation, pending/accepted review, stale selection and reset.",
+  "amd_disabled_in_browser_server_environment": true,
+  "outcome": "screens_captured_for_visual_inspection",
+  "browser_version": "Edg/155.0.4283.45"
+}

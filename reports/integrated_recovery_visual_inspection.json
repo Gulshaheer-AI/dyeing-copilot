@@ -1,0 +1,25 @@
+{
+  "timestamp_utc": "2026-10-16T09:53:57.964116+00:00",
+  "actual_browser": "Edg/155.0.4283.45",
+  "desktop_width": 1440,
+  "narrow_width": 680,
+  "captures": 19,
+  "image_files_inspected": [
+    "narrow_setup.png",
+    "desktop_recovery.png",
+    "narrow_recovery.png",
+    "desktop_timeline.png",
+    "narrow_timeline.png",
+    "desktop_explanation.png",
+    "narrow_review.png",
+    "narrow_change.png",
+    "stale_review.png",
+    "narrow_review_decision.png"
+  ],
+  "findings": "Readable setup/results, exact machine labels, horizontal truthful-time timeline, readable narrow forms and accepted/stale review states. No blocking clipping observed. Native tables and timeline use horizontal scrolling where needed.",
+  "actual_download_verified": true,
+  "mock_origin": "mock",
+  "quantitative_claims": [],
+  "new_live_interpretation_evaluation": "not run; explicit opt-in required",
+  "legacy_recovery_engine_blocked": true
+}

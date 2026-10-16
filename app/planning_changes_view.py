@@ -156,8 +156,14 @@ def render_planning_changes(case):
                         st.info("These explicit changes have no effect on current constraints (for example, outage outside availability).")
                     if st.button("Apply changes and reschedule", disabled=busy):
                         with st.spinner("Applying atomically and independently verifying the rerun…"):
-                            updated, comparison = apply_and_reschedule(case, answer)
-                        st.session_state.planning_applied_message = "Changes applied. The updated plan has been rerun and independently checked."
+                            if case.recovery is not None or st.session_state.get('integrated_mode'):
+                                from planner.change_requests import apply_changes
+                                updated = apply_changes(case, answer)
+                                comparison = None
+                                st.session_state.integrated_solve_requested = True
+                            else:
+                                updated, comparison = apply_and_reschedule(case, answer)
+                        st.session_state.planning_applied_message = "Changes applied. Check the current solve and independent verification result below."
                         st.session_state.planning_case = updated
                         st.session_state.sim_comparison = (updated.fingerprint, comparison)
                         st.session_state.pop("planning_interpretation", None)
@@ -173,6 +179,9 @@ def render_planning_changes(case):
                 with st.spinner("Restoring original constraints and verifying…"):
                     comparison = plan(updated.orders, updated.config)
                 st.session_state.planning_case = updated
+                st.session_state.integrated_mode = False
+                st.session_state.pop('integrated_options', None)
+                st.session_state.pop('integrated_solve_requested', None)
                 st.session_state.sim_comparison = (updated.fingerprint, comparison)
                 st.session_state.pop("planning_interpretation", None)
                 st.session_state.pop("planning_manual_proposal", None)

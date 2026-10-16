@@ -286,6 +286,8 @@ def render_simulator(result):
             st.session_state.pop(key,None)
         st.session_state.sim_permission=False
         st.session_state.sim_saved_permission=False
+        st.session_state.integrated_mode=False
+        st.session_state.pop('integrated_options',None)
     if 'sim_config' not in st.session_state:st.session_state.sim_config=st.session_state.get('sim_saved_config','')
     if 'sim_permission' not in st.session_state:st.session_state.sim_permission=st.session_state.get('sim_saved_permission',False)
     if 'planning_backend' not in st.session_state:st.session_state.planning_backend=st.session_state.get('saved_backend_engine',CP_ENGINE)
@@ -300,6 +302,16 @@ def render_simulator(result):
     st.session_state.saved_cp_budget=budget
     st.session_state.saved_cp_fallback=fallback
     if engine==LEGACY_ENGINE:
+        current=st.session_state.get('planning_case')
+        if current is not None and current.source_sha256==result.sha256 and current.recovery is not None:
+            reason='Execution-aware recovery requires CP-SAT. The legacy engine does not preserve simulated execution history; switch back to CP-SAT or reset the original scenario.'
+            st.session_state.sim_context={'source_sha256':result.sha256,'config':current.config,'case':current,
+                'marker':digest({'case':current.fingerprint,'blocked_engine':engine}),
+                'comparison':None,'selected_run':None,'backend_block_reason':reason}
+            st.error(reason)
+            with st.expander('Reset or inspect constraint requests'):
+                render_planning_changes(current)
+            return
         render_legacy_simulator(result)
         return
     settings=digest({'engine':engine,'budget':budget,'fallback':fallback,'solver_version':CP_VERSION})
@@ -340,6 +352,8 @@ def render_simulator(result):
             with st.expander('Full assumptions, calendars and exact cleaning permissions'):st.json(to_json(case.config))
     marker=digest({'scenario':case.fingerprint,'settings':settings})
     st.session_state.sim_context={'source_sha256':result.sha256,'config':case.config,'case':case,'comparison':None,'marker':marker}
+    from app.recovery_view import render_options
+    if render_options(case,result,budget,settings,_show_schedule):return
     if setup.button('Generate schedule',type='primary',icon=':material/calendar_month:'):
         with st.spinner('Planning and independently verifying…',show_time=True):
             comparison=plan(case.orders,case.config)

@@ -8,14 +8,15 @@ from planner.comparison import compare_schedules,deadline_performance
 from planner.evaluator import evaluate_resources
 from planner.verifier import verify_schedule
 from planner.scenario import to_json
+from planner.recovery import verify_recovery,recovery_summary
 
 
 def export_backend(case,run,*,bundle=None,review=None):
     if run.case_fingerprint != case.fingerprint or run.effective_fingerprint != digest({'orders':case.orders,'config':case.config}):
         raise ValueError('Stale selected-backend result: source/scenario fingerprint changed.')
-    if run.schedule is None or not verify_schedule(case.orders,case.config,run.schedule).valid:
+    if run.schedule is None or not verify_recovery(case.orders,case.config,run.schedule,case.recovery).valid:
         raise ValueError('No independently verified selected-backend schedule for export.')
-    verified=verify_schedule(case.orders,case.config,run.schedule)
+    verified=verify_recovery(case.orders,case.config,run.schedule,case.recovery)
     use=evaluate_resources(case.orders,case.config,run.schedule)
     from app.planner_presentation import current_comparison
     comparison=current_comparison(case,run)
@@ -36,6 +37,9 @@ def export_backend(case,run,*,bundle=None,review=None):
         'orders':case.orders,'original_orders':case.original_orders,'assumptions':case.config,
         'deadline_overrides':case.overrides,'change_history_with_interpretation_receipts':case.history,
         'schedule':run.schedule,'cp_sat_result':run.cp_sat,
+        'objective_option':getattr(run,'option','fewer_cleanings'),
+        'execution_reference':case.recovery,
+        'recovery_summary':recovery_summary(case,run.schedule) if case.recovery else None,
         'generated_deadline_first_baseline':run.legacy.baseline if comparison else None,
         'verified_comparison':comparison,
         'verification':{'valid':True,'errors':verified.errors},
@@ -67,7 +71,7 @@ def render_cp_result(case,run,show_schedule,*,source=None,context_marker=None):
         return
     try:changes=current_comparison(case,run)
     except ValueError as exc:st.error(str(exc));return
-    verified=verify_schedule(case.orders,case.config,run.schedule)
+    verified=verify_recovery(case.orders,case.config,run.schedule,case.recovery)
     counts=compare_schedules(case.orders,case.config,run.schedule,run.schedule)['cleaning_counts']['proposal']
     deadlines=deadline_performance(case.orders,run.schedule)
     slack=min(r['slack_hours'] for r in deadlines['orders'])
@@ -80,6 +84,8 @@ def render_cp_result(case,run,show_schedule,*,source=None,context_marker=None):
             st.badge(f'Plan version {case.revision}',color='gray')
             if run.origin=='heuristic_fallback_not_cp_sat':st.badge('Heuristic fallback — not CP-SAT success',color='orange')
             elif run.origin=='legacy_heuristic':st.badge('Legacy heuristic',color='gray')
+            elif getattr(run.cp_sat,'objective_order',None)=='deadline_protection' and run.cp_sat.primary_optimal:
+                st.badge('Maximum minimum deadline buffer proven',color='primary')
             elif run.cp_sat.cleaning_optimal and run.cp_sat.stage_a['status']=='OPTIMAL':
                 st.badge('Minimum cleaning count proven',color='primary')
             else:st.badge('Best schedule found within the time limit',color='blue')
@@ -108,7 +114,7 @@ def render_cp_result(case,run,show_schedule,*,source=None,context_marker=None):
             chart=(bars+labels).properties(height=100,background='white').configure_axis(labelFontSize=14,titleFontSize=13,labelColor='#526379',titleColor='#526379',gridColor='#E8EDF3')
             st.altair_chart(chart,width='stretch',theme=None)
             st.write('Generated deadline-first baseline · same effective orders and constraints · both independently verified')
-        else:st.write('Comparison chart unavailable: no verified generated deadline-first baseline for this effective scenario.')
+        else:st.write('Recovery uses the explicitly selected historical reference, not EDD.' if case.recovery else 'Comparison chart unavailable: no verified generated deadline-first baseline for this effective scenario.')
     if message:=st.session_state.pop('planning_applied_message',None):st.success(message)
     tabs=st.tabs(['Machine schedule','Request a change','Review & export'])
     with tabs[0]:
@@ -146,3 +152,5 @@ def render_cp_result(case,run,show_schedule,*,source=None,context_marker=None):
         st.json(to_json({'unit':case.config.resource_unit,'resources':{**asdict(use),'total':use.total}}))
         if changes:st.json(changes)
     st.session_state.cp_last_success=(case.fingerprint,run)
+    from app.evaluation_evidence import render_evaluation_evidence
+    render_evaluation_evidence(case)

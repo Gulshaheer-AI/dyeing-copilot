@@ -6,7 +6,7 @@ CSS='''
 <style>
 .st-key-planner_dashboard {gap: 1rem;}
 .st-key-dashboard_summary,.st-key-dashboard_setup,.st-key-dashboard_timeline,
-.st-key-dashboard_change,.st-key-dashboard_review,.st-key-dashboard_counts,
+.st-key-dashboard_change,.st-key-dashboard_review,.st-key-dashboard_counts,.st-key-recovery_summary,
 .st-key-kpi_cleaning,.st-key-kpi_deadlines,.st-key-kpi_buffer {
   background:#fff; border:1px solid #DFE5ED; border-radius:14px;
   box-shadow:0 3px 14px rgba(20,36,59,.045); padding:1.15rem 1.3rem;
@@ -41,7 +41,7 @@ CSS='''
 }
 @media(max-width:700px) {
  .st-key-dashboard_summary,.st-key-dashboard_setup,.st-key-dashboard_timeline,
- .st-key-dashboard_change,.st-key-dashboard_review,.st-key-dashboard_counts,
+ .st-key-dashboard_change,.st-key-dashboard_review,.st-key-dashboard_counts,.st-key-recovery_summary,
  .st-key-kpi_cleaning,.st-key-kpi_deadlines,.st-key-kpi_buffer {padding:.85rem;}
  .dc-title {font-size:1.2rem;}
 }

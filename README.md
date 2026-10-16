@@ -5,6 +5,10 @@ Intelligent Industry track. Schedule published dyeing orders, compare cleaning
 requirements, respond to an outage or deadline change, and review a grounded
 AMD explanation before exporting a planner review package.
 
+**Live app:** [Open Dyeing Copilot](https://dyeing-copilot-jqoc5pzh9eq9gh5trxc58k.streamlit.app/).
+Hosting can lag the repository; check the recovery controls before assuming a new
+release is running. AMD availability also depends on the hosted configuration.
+
 ![Dyeing Copilot industrial dashboard](reports/industrial_dashboard_screenshots/desktop_enabled_result.png)
 
 *Existing illustrative demo: the generated deadline-first baseline uses 34 cleaning
@@ -22,6 +26,14 @@ a scenario result, not measured factory water, financial or realised savings.*
 - **Review & export:** explain the current verified plan with citations, save a
   supervisor review and export the exact matching evidence. Acceptance means
   **further review**, never production approval or machine control.
+- **Protected recovery:** explicitly select a verified reference and a historical
+  **Replan from** cutoff. Completed and running processing/cleaning retain their
+  exact machine, quantity and timestamps. A started cleaning commits its immediate
+  batch. Future work is replanned after cutoff; conflicting outages are rejected.
+- **Two priorities:** compare **Fewer cleanings** with **More deadline protection**
+  under identical constraints and protected history. Inspect recovery impact,
+  independently verified schedules and reference/revised timelines. Changing the
+  selected plan invalidates mismatched explanation and supervisor-review evidence.
 - **Secondary workspaces:** browse/import orders, examine recorded resource
   analysis, or replay the separate synthetic daily-resource monitoring dataset.
 
@@ -37,7 +49,7 @@ py -3.11 -m venv .venv
 .venv/Scripts/python.exe -m streamlit run streamlit_app.py
 ```
 
-Open **http://localhost:8501**. There is no hosted deployment claimed here.
+Open **http://localhost:8501**, or use the live app linked above.
 The trusted frozen model artifacts and permitted data are included; no training
 is needed for the demo. Never load arbitrary third-party joblib artifacts.
 
@@ -46,6 +58,17 @@ Cleaning permissions start **off**. To reproduce the pictured scenario, explicit
 select **Use illustrative cleaning permissions** and generate again. Counts and
 buffers are calculated from the current verified result, not the screenshot.
 Bounded solver runs can differ in timing and deadline-buffer quality.
+
+For recovery, open **Recovery and alternative objectives**, set **Replan from date**
+to `2019-12-01` and **Replan from time** to `05:00:00`, then select **Use current
+verified plan as reference**. Preview a manual outage for `virtual-Pressure-PolyCotton`
+from `2019-12-01 12:00:00` to `2019-12-02 12:00:00`, then separately confirm **Apply
+changes and reschedule**. Inspect preserved work, changed future batches, cleaning
+counts and deadline buffers before reviewing/exporting the selected option.
+Execution is simulated from the reference, not measured factory telemetry. The
+reference predates the disruption and may violate the new outage; recovery uses
+that reference, not EDD, for its before/after impact. Legacy fallback is blocked
+while recovery is active because it does not protect execution history.
 
 ## Configure AMD
 
@@ -90,6 +113,13 @@ holds that count fixed and improves the minimum deadline buffer while protecting
 the verified incumbent. Only solver-supported optimality is labelled proven.
 See [scenario equations](reports/scenario_model.md) and [CP-SAT model](reports/cp_sat_model.md).
 
+That is the **Fewer cleanings** priority. **More deadline protection** reverses the
+objective order: maximise the minimum deadline buffer, then minimise cleaning
+without worsening that achieved buffer. Both stages have bounded budgets and
+independent incumbent-quality checks. Merely feasible results are not labelled
+globally optimal. Recovery adds separate exact-history verification to the unchanged
+ordinary verifier. See [integrated recovery verification](reports/integrated_recovery_verification.md).
+
 Explanations select exact Python-generated statements and supported citations.
 Selected-schedule responses require `quantitative_claims: []`. Scenario/source,
 backend or schedule changes invalidate stale explanations and review actions.
@@ -129,6 +159,29 @@ See the [short demo walkthrough](demo_walkthrough.md) and
 [industrial dashboard verification](reports/industrial_dashboard_verification.md).
 The screenshot and the documented 34-to-28 comparison come from the existing demo;
 no new model evaluation or factory validation is claimed by publication.
+
+The integrated release passed **180 offline regression tests**, preserved original
+datasets/frozen models and was inspected in Edge at desktop and narrow widths,
+including a matching reviewed-package download. Its separately frozen permission
+experiment and [recovery verification](reports/integrated_recovery_verification.md)
+describe actual scenario results and limitations. Existing historical reports retain
+their original outcomes; their publication/deployment descriptions describe that
+earlier verification boundary.
+
+The fresh interpretation corpus has **34 authored requests**: 10 development and
+24 held-out. **Fresh live AMD evaluation is still unrun.** Offline local screening
+matched 15/15 decisions; 19 supported requests were deferred, not fabricated as AMD
+responses. Mock explanations and local validation are not live inference or held-out
+model accuracy. With locally configured credentials, live evaluation is explicitly
+opt-in and bounded (up to 24 semantic calls, two transport attempts each, no repairs):
+
+```powershell
+.venv/Scripts/python.exe tools/evaluate_interpreter_integrated.py --live --split held_out --max-calls 24 --output reports/integrated_interpreter_live_v1.json
+```
+
+Use a fresh output filename. Do not tune against held-out responses while retaining
+that label. Interpretation correctness, validation rejection, transport failure and
+downstream verified scheduling are reported separately.
 
 Versioned evidence and small source snapshots required by preservation regressions
 remain in `reports/`, `evaluation/` and `history/`. Redundant local logs, extra

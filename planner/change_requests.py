@@ -2,7 +2,7 @@
 
 import hashlib
 import json
-from dataclasses import dataclass, replace
+from dataclasses import dataclass, replace,asdict
 from datetime import datetime, timezone
 
 from copilot.planning_schema import Outage, explicit_datetime, validate_interpretation
@@ -33,6 +33,7 @@ class PlanningCase:
     overrides: tuple = ()
     history: tuple = ()
     revision: int = 0
+    recovery: object = None
 
     @property
     def orders(self):
@@ -41,7 +42,9 @@ class PlanningCase:
 
     @property
     def fingerprint(self):
-        return digest(self)
+        value=asdict(self)
+        if self.recovery is None:value.pop('recovery')
+        return digest(value)
 
 
 def initial_case(result, config):
@@ -73,6 +76,8 @@ def apply_changes(case, interpretation):
     response = validate_interpretation(interpretation.response, interpretation.request)
     if response.status != "ready":
         raise ValueError("Only a fully validated ready proposal can be applied.")
+    from planner.recovery import check_history
+    check_history(case,response.changes)
     machines = {m.virtual_id: m for m in case.config.machines}
     deadlines = {o.order_id: o.deadline for o in case.orders}
     overrides = list(case.overrides)
@@ -94,6 +99,7 @@ def apply_changes(case, interpretation):
     updated = replace(case, config=config, overrides=tuple(overrides), history=case.history + (history,), revision=case.revision + 1)
     # Exercise all effective Order constructors before committing anything.
     updated.orders
+    check_history(updated)
     return updated
 
 
@@ -118,7 +124,7 @@ def apply_and_reschedule(case, interpretation):
 
 
 def reset_case(case):
-    return replace(case, config=case.original_config, overrides=(), revision=case.revision + 1,
+    return replace(case, config=case.original_config, overrides=(), recovery=None,revision=case.revision + 1,
         history=case.history + ({"action": "reset_to_original", "before_fingerprint": case.fingerprint,
                                 "applied_at_utc": datetime.now(timezone.utc).isoformat()},))
 

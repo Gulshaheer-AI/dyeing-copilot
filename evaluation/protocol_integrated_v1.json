@@ -1,0 +1,23 @@
+{
+  "version": "integrated-v1",
+  "development_cases": 10,
+  "held_out_cases": 24,
+  "live_run_performed": false,
+  "scope": "AMD8.2 interpreter unchanged; all earlier exposed corpora are development regressions. New cases frozen before live execution.",
+  "primary_measure": "First-pass exact normalised operations and status, separately from Python application and schedule verification. A validation rejection is not proof of understanding.",
+  "local_measure": "Known-reference/date/unsupported/negation guard decisions reported separately, no AMD inference.",
+  "downstream_measure": "History-conflict rejection, unchanged preview, atomic confirmation, verified feasibility or honest construction failure.",
+  "held_out_policy": "No tuning on held-out responses; exposure after execution requires a new version for future tuning.",
+  "bounds": {
+    "maximum_semantic_requests": 24,
+    "transport_attempts_per_request": 2,
+    "repairs": 0,
+    "transport_timeouts_seconds": [
+      5,
+      45
+    ],
+    "solver_seconds_per_confirmed_request": 2
+  },
+  "run_command": ".venv/Scripts/python.exe tools/evaluate_interpreter_integrated.py --live --split held_out --max-calls 24 --output reports/integrated_interpreter_live_v1.json",
+  "no_automatic_paid_calls": true
+}

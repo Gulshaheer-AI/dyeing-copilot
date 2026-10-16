@@ -1,0 +1,48 @@
+{
+  "historical_evaluations_and_reports_unchanged": true,
+  "protected_changed_files": [
+    "planner/change_requests.py",
+    "planner/cp_sat.py",
+    "copilot/selected_evidence.py"
+  ],
+  "original_versions_archived": {
+    "planner/change_requests.py": true,
+    "planner/cp_sat.py": true,
+    "copilot/selected_evidence.py": true
+  },
+  "changes_since_checkpoint": [
+    "README.md",
+    "demo_walkthrough.md",
+    "app/cp_sat_view.py",
+    "app/dashboard_style.py",
+    "app/planner_presentation.py",
+    "app/planning_changes_view.py",
+    "app/simulator_view.py",
+    "app/timeline_view.py",
+    "planner/change_requests.py",
+    "planner/cp_sat.py",
+    "copilot/selected_evidence.py",
+    "tools/package_demo.py",
+    "tests/preservation.py",
+    "tests/test_milestone_10_1.py"
+  ],
+  "frozen_models_unchanged": true,
+  "publication_checkout_git_status": "## main...origin/main",
+  "pip_check_exit_code": 0,
+  "pip_check_output": "No broken requirements found.",
+  "new_runtime_files": [
+    "app/evaluation_evidence.py",
+    "app/recovery_view.py",
+    "copilot/recovery_questions.py",
+    "planner/recovery.py",
+    "planner/recovery_solver.py",
+    "tools/check_integrated_package.py",
+    "tools/evaluate_interpreter_integrated.py",
+    "tools/evaluate_permissions_integrated.py",
+    "tools/inspect_integrated_browser.py",
+    "tools/integrated_recovery_demo.py",
+    "tests/test_integrated_evaluation.py",
+    "tests/test_integrated_recovery.py",
+    "tests/test_integrated_recovery_interface.py"
+  ]
+}

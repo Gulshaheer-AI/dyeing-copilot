@@ -1,0 +1,708 @@
+{
+  "tested_zip_sha256": "b0588f072cf425b549b3b8a13b90779848e498a85af2720a7eaf952eeed18cf1",
+  "full_suite": [
+    "----------------------------------------------------------------------",
+    "Ran 180 tests in 239.513s",
+    "",
+    "OK"
+  ],
+  "files": {
+    ".streamlit/config.toml": {
+      "sha256": "c8521ff06e1875a9922a496ca2814e89719e6e48d3df06611035923e9d592bb5",
+      "bytes": 516
+    },
+    "app/__init__.py": {
+      "sha256": "7aabeac0cfaf40302d966027d52f53ba08f8936f1cc182aecdd161e407b80d2b",
+      "bytes": 57
+    },
+    "app/copilot_view.py": {
+      "sha256": "a817a46c318818d07cdb31696eef0105ab266f78f46f4a13f63b67b730ab3dca",
+      "bytes": 11830
+    },
+    "app/cp_sat_view.py": {
+      "sha256": "7f3586bfd538cb455c53765ae2345e972177fc3a7a1095966131511e04ffec73",
+      "bytes": 11951
+    },
+    "app/daily_view.py": {
+      "sha256": "a48ec223b1a56cea0ce1ede3a6f136cdac84efa2e01e40e02ae2bb5e600f2f33",
+      "bytes": 7228
+    },
+    "app/dashboard_style.py": {
+      "sha256": "487b97854fcff10f65f79ced925b90b74dd2e0ae80797993cb71cdcf6a90103a",
+      "bytes": 3219
+    },
+    "app/evaluation_evidence.py": {
+      "sha256": "1b0a8af5d0b8a577e5bab2e6482fa01b181302618138522125a45b24ee0782be",
+      "bytes": 2281
+    },
+    "app/importer.py": {
+      "sha256": "6e37944e78cc3467eef520aaa09d485b868e900d9b8085c2c5b2f6c325314af8",
+      "bytes": 7411
+    },
+    "app/planner_presentation.py": {
+      "sha256": "17418d560f07781a4377886f3856f1c75fd47ecac21cfaff7b322d98c388cc9d",
+      "bytes": 5369
+    },
+    "app/planning_changes_view.py": {
+      "sha256": "87091f692cf19a8b13b5cda3543c4218adb9989342e10824016e7bd643a981c5",
+      "bytes": 13752
+    },
+    "app/recovery_view.py": {
+      "sha256": "9e8048f11fde6813e42529ccdd99c47577d1240a3e16c69733f470372c96ffec",
+      "bytes": 7093
+    },
+    "app/resource_analysis.py": {
+      "sha256": "3cb3819aa70bd87375c97791addb9174f733fe9d15ea4617e4b12a7ed7f70768",
+      "bytes": 3113
+    },
+    "app/resource_view.py": {
+      "sha256": "e80d80471f15f1f7475d9fa9915202de4f88210209298229fc8093de704824d5",
+      "bytes": 3438
+    },
+    "app/scheduling_comparison_view.py": {
+      "sha256": "5ceeb8868c99b191e64c37a319be9a3ace573ee8a71dc05cfbe09a1ad31b4e0a",
+      "bytes": 5498
+    },
+    "app/selected_copilot_view.py": {
+      "sha256": "eb66ce2a31f9baa2f6ca5a0beedec7cac5fb6e15c9d2eb2374e9c08782fcd63e",
+      "bytes": 7883
+    },
+    "app/simulator_view.py": {
+      "sha256": "700b1ca08293ef77739bf3a1084f44689841cb9454d7ee5c405007232798968c",
+      "bytes": 27797
+    },
+    "app/timeline_view.py": {
+      "sha256": "db2dbae52362886aa785bd673c608fd5e1bb01f3343dda4981101998cc78f6a1",
+      "bytes": 6817
+    },
+    "artifacts/daily_resource/historical_predictions.csv": {
+      "sha256": "235db99dd395e1b3b3a8c8bac527d9bc984c6b2a93a9e1022199fbb9d88d705c",
+      "bytes": 220586
+    },
+    "artifacts/daily_resource/metadata.json": {
+      "sha256": "a9ceca69c82ee1b7b52b3f5516f77262b7ed16ad7e57e7ad4f8d874cfac0a035",
+      "bytes": 17216
+    },
+    "artifacts/daily_resource/models.joblib": {
+      "sha256": "a17ee22808e7b1f9135636e44d6d1fcce24055099321942ecfe85a60df8766a1",
+      "bytes": 45830
+    },
+    "copilot/__init__.py": {
+      "sha256": "92cf8d238d17b4ddf842c6a157e12e17bdc38762f28caec0a6a38f7f1ad1d0c9",
+      "bytes": 79
+    },
+    "copilot/amd.py": {
+      "sha256": "148536812384ecdfb7b4b4b90a65beff6662018c41cf19caa19ecfd6f34f8e35",
+      "bytes": 5525
+    },
+    "copilot/daily_evidence.py": {
+      "sha256": "236b8e817887c7a4713676001ad74386839fb4877a0324ecaa649d4085358c26",
+      "bytes": 7947
+    },
+    "copilot/documents.py": {
+      "sha256": "4c9bd92a062e69acfdca866a2884704da1cf9d5e87c55a7ac12a0eb68f7f1a01",
+      "bytes": 1732
+    },
+    "copilot/evidence.py": {
+      "sha256": "b789af741c93f9bfbe871a8df40881f57bb2497b0ce35580ef978bd5851f073b",
+      "bytes": 13523
+    },
+    "copilot/planning_contract.py": {
+      "sha256": "0462a7929ebe7dfe80af88b5b028adb35f9b6b4ba3bafc104fa31e5ea6c4fcf7",
+      "bytes": 3082
+    },
+    "copilot/planning_diagnostics.py": {
+      "sha256": "888aeb702387ca52582968f42ba9d90d8b29ca46fdd61e9041acb2c27c2673a4",
+      "bytes": 1845
+    },
+    "copilot/planning_guard.py": {
+      "sha256": "7e4866379460d58b414d64c7fc496f75343dee8d3f680d5e2edf3249b7e9c60a",
+      "bytes": 8834
+    },
+    "copilot/planning_interpreter.py": {
+      "sha256": "2215597193b457a673a011827f410c0d4fd667d99b8e2ec8bc8caddad9575c6c",
+      "bytes": 5761
+    },
+    "copilot/planning_manual.py": {
+      "sha256": "b8bfca10acace9115d5accced29db4d78f950f0a544995a431e6faeb6ad59564",
+      "bytes": 1716
+    },
+    "copilot/planning_schema.py": {
+      "sha256": "3048023c34d37c896b4fa42d1b6c0370a7019c516d58e02d874222bea2225e78",
+      "bytes": 8829
+    },
+    "copilot/recovery_questions.py": {
+      "sha256": "ce1c46dccecb8277a7100d4a4ffc34f94653ccf0e1e9e11007209c63234b0794",
+      "bytes": 1154
+    },
+    "copilot/reviews.py": {
+      "sha256": "98cda9beff9da70218de330a5048d470e9c2da5868f0a5a63ea15113c1aa3956",
+      "bytes": 4537
+    },
+    "copilot/selected_evidence.py": {
+      "sha256": "99ca775b33499e5239db9d2868ad9544f65e451ac39a00af7a241a30c4d46b9d",
+      "bytes": 14289
+    },
+    "copilot/selected_reviews.py": {
+      "sha256": "29f39a8a9437509e93380b5ef7ecfefa0d249a793cfcfca3db8d6c00a670396f",
+      "bytes": 894
+    },
+    "copilot/selected_workflow.py": {
+      "sha256": "428a18f83d211111f2a2b31aa845ccfb784eb1f9a60596017967759d9de874bc",
+      "bytes": 4619
+    },
+    "copilot/session.py": {
+      "sha256": "79a75699aa7e6e68db94bd0b15e60aabb01d925d44415d8525c7183c3016f8ae",
+      "bytes": 632
+    },
+    "copilot/workflow.py": {
+      "sha256": "9a85e26632793c7fdfdd01ad524d1f46fb35d889c3b32fec750e36602947b73f",
+      "bytes": 12561
+    },
+    "daily/__init__.py": {
+      "sha256": "da75c98d94d827c137b39997d740212be5f9b1bea783e9ef5e238fd6f369ac7b",
+      "bytes": 80
+    },
+    "daily/importer.py": {
+      "sha256": "20a56cc1f6640af5665b6cbb225463e3514435551f575cfa018a922afcefcabc",
+      "bytes": 6472
+    },
+    "daily/models.py": {
+      "sha256": "5759e9afccad55b6348dd0765333ddcef517d8dfd6f9e715febe4cf2dbaed055",
+      "bytes": 8338
+    },
+    "daily/profile.py": {
+      "sha256": "4f04f695bb8e8d7535be3c71d32ece54567ef20a67a912d42fd9a8faddbb82be",
+      "bytes": 2944
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/article/PMC9044317.1.json": {
+      "sha256": "93627a7f09788983dbc6ade38f6b2eab8c12b8cd6f12c419bdbf37260640b728",
+      "bytes": 5108
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/article/PMC9044317.1.txt": {
+      "sha256": "3273f2d8138e6e9d284af0487253de7a5b5d650d6ab7f8e7db025883c067af4f",
+      "bytes": 52512
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/article/PMC9044317.1.xml": {
+      "sha256": "989e466600151923e90a6766d85c0d69c13870953f338b5dcd3ee6fb94bbac19",
+      "bytes": 152559
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Data_Set_Sheet1.csv": {
+      "sha256": "5105ae8c034547e7c9654ca687752519c695c3d2e7fbafa2c67950694ad47abc",
+      "bytes": 2007
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/Data_Set_Sheet1.csv": {
+      "sha256": "5105ae8c034547e7c9654ca687752519c695c3d2e7fbafa2c67950694ad47abc",
+      "bytes": 2007
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_1_Sheet1.csv": {
+      "sha256": "cdfc2cdf06098fb5722191ad3356b18a2b5479df54557c021aa7f8d12602c910",
+      "bytes": 2155
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_2_Sheet1.csv": {
+      "sha256": "0f0d4f9a16f46e29b806a9e48a021b43aa1936e76b2af436793d2d7144365d93",
+      "bytes": 3180
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_Sheet1.csv": {
+      "sha256": "0f0d4f9a16f46e29b806a9e48a021b43aa1936e76b2af436793d2d7144365d93",
+      "bytes": 3180
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_set11_Sheet1.csv": {
+      "sha256": "8c9bb79c904c2d9d830d7a54603eba494cf6d2549c5c6ff25d0e3d1de8b6a8bf",
+      "bytes": 3414
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_set1_Sheet1.csv": {
+      "sha256": "8c9bb79c904c2d9d830d7a54603eba494cf6d2549c5c6ff25d0e3d1de8b6a8bf",
+      "bytes": 3414
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Project/New folder/Data_set22_Sheet1.csv": {
+      "sha256": "8c9bb79c904c2d9d830d7a54603eba494cf6d2549c5c6ff25d0e3d1de8b6a8bf",
+      "bytes": 3414
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Textile/Data_Set_Sheet1.csv": {
+      "sha256": "0f0d4f9a16f46e29b806a9e48a021b43aa1936e76b2af436793d2d7144365d93",
+      "bytes": 3180
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/csv/Code-and-Dataset/Textile_Work/Textile/Data_set2_Sheet1.csv": {
+      "sha256": "18560664465f47795059198c6a9dc01241a3f503726544cb5817590fd60571b1",
+      "bytes": 4600
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/csv/text_records_exact_deduplicated_35.csv": {
+      "sha256": "1cdb06f3c23620ec84a5c950cb0a809fa31a7da4b4c4e618b0722808176c82b2",
+      "bytes": 3677
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/original_supplement.zip": {
+      "sha256": "cb8567590622628f8e79bbe4eb1416161eccc5927e5b9ca8a5496b44ac74d948",
+      "bytes": 23864935
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Data_Set.xlsx": {
+      "sha256": "a6efc7a1904355e9ca8125a4ac14b3ef705d956cd8f8ac1e47560d1afae046ad",
+      "bytes": 9646
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/Data_Set.xlsx": {
+      "sha256": "a6efc7a1904355e9ca8125a4ac14b3ef705d956cd8f8ac1e47560d1afae046ad",
+      "bytes": 9646
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set.xlsx": {
+      "sha256": "68652b0c26f602249210ee5120f53f54e27133d45d88d2f65142a292db3d617a",
+      "bytes": 10563
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_1.xlsx": {
+      "sha256": "17466631f5c95bb579502b0946aa301ed67273362a26b486adda9ce9e857974e",
+      "bytes": 9812
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_Set_2.xlsx": {
+      "sha256": "68652b0c26f602249210ee5120f53f54e27133d45d88d2f65142a292db3d617a",
+      "bytes": 10563
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_set1.xls": {
+      "sha256": "989059bbbdcc3f4950797c33008842efac9ac0e93f1b4eebfa6d5ad4f4f6b09c",
+      "bytes": 32768
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_set11.xls": {
+      "sha256": "d831a56fd5281df926ced794689f48ac11d09aa1be4da558b9be5f63721232d7",
+      "bytes": 32768
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Project/New folder/Data_set22.xls": {
+      "sha256": "7c37a3fd8682880fdeda4708d3d29b197f0f57b1beac49312218a393db44f932",
+      "bytes": 32768
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Textile/Data_Set.xlsx": {
+      "sha256": "5f69fd16242dcfef1566f9e4d2269becf69019ceb47b88d7659bb7d6d0081b78",
+      "bytes": 10554
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/raw/Code-and-Dataset/Textile_Work/Textile/Data_set2.xls": {
+      "sha256": "9d570d465617f07f9a9260ddf4831acbbbfc8f2a172128c71bdcb839c7139d91",
+      "bytes": 33792
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/raw/Data_Set.txt": {
+      "sha256": "f56a41e568b4287794724b282d0cc03ee2609285267231f3b119d56e4bd872f8",
+      "bytes": 8536
+    },
+    "dyeing_dataset_pack/01_sitara_faisalabad/workbook_profiles.json": {
+      "sha256": "a5faadec9533c2c9a5736d7e78c0b5e042d919fdf6b070b2c31c8a174cff72d4",
+      "bytes": 2715
+    },
+    "dyeing_dataset_pack/02_synthetic_thread_dyeing/csv/Textile_Dyeing_Dataset_Causal_Sheet1.csv": {
+      "sha256": "1e30fdb86b267751b615f6f1c9eb3090c84def01692eef7704da5262bdd82dff",
+      "bytes": 173958
+    },
+    "dyeing_dataset_pack/02_synthetic_thread_dyeing/file_profiles.json": {
+      "sha256": "21ad5af645185ad06d3bbaf0cb98e065c097b3beddd05ee4c0b7ed2bb721d135",
+      "bytes": 1159
+    },
+    "dyeing_dataset_pack/02_synthetic_thread_dyeing/original_archive.zip": {
+      "sha256": "83649c15f540d8b80b536507a1c044eca3c091b6abdfc313204089baf02ce93d",
+      "bytes": 7224918
+    },
+    "dyeing_dataset_pack/02_synthetic_thread_dyeing/raw/Textile_Dyeing_Dataset_Causal.xlsx": {
+      "sha256": "1095853b6228535fe29bb107ebe2337510cd1841413992d827bad3988c9e1d43",
+      "bytes": 166336
+    },
+    "dyeing_dataset_pack/02_synthetic_thread_dyeing/source_file_checksums.json": {
+      "sha256": "b4ffe3560d459dc303efd6f0a24df05da5744c1fdbf7efd74b50a221004e95ed",
+      "bytes": 828
+    },
+    "dyeing_dataset_pack/02_synthetic_thread_dyeing/source_metadata.json": {
+      "sha256": "5699a8950ef62fa7194f0688e7b9406afc694aa2e87d5a239e3db107910d0e9e",
+      "bytes": 3309
+    },
+    "dyeing_dataset_pack/ACQUISITION_SHA256SUMS.json": {
+      "sha256": "7b3ae677a206230446c9149bfbbb7285713edb52ccd56f086159e797cf1c29c7",
+      "bytes": 16314
+    },
+    "dyeing_dataset_pack/README.md": {
+      "sha256": "0b1243f104d0b5417f5da7a293295e85ff824ad0350208977b4fd854f6dd4fd0",
+      "bytes": 8839
+    },
+    "dyeing_dataset_pack/SHA256SUMS.json": {
+      "sha256": "7ddf3edc19458b35e72b5579eace7e6881ce7f7efdd420fc03e983d694a8b91e",
+      "bytes": 6114
+    },
+    "dyeing_dataset_pack/dataset_inventory.json": {
+      "sha256": "6b0abab23e34398c090f9e8edfeb62dfca485afacb9d9a8263a955cf6af60216",
+      "bytes": 14659
+    },
+    "evaluation/cp_sat_freeze_v10.json": {
+      "sha256": "9fc98baff257846cd5fb99bf333186fc7c3be1410c97fb8c5e3abc86384b9056",
+      "bytes": 1088
+    },
+    "evaluation/cp_sat_freeze_v10_1.json": {
+      "sha256": "9d89d4782baba11fe3c0997731351bd0407a3e4d5e20bbc94a2836439f40a64a",
+      "bytes": 1106
+    },
+    "evaluation/frozen_protocol.json": {
+      "sha256": "9e3a68c570480c9793454502c209c090f4986fcb9ce17645a940a730fd9c9e41",
+      "bytes": 295
+    },
+    "evaluation/interpreter_freeze.json": {
+      "sha256": "8221292ee899d6f6073fece121246ef143f69a8d4230edc3e30b6da214400e2c",
+      "bytes": 544
+    },
+    "evaluation/interpreter_freeze_integrated_v1.json": {
+      "sha256": "34f774460553e3c346c13cf3869f0f68ae6493612260ea3d50bdf7e475c9f492",
+      "bytes": 1354
+    },
+    "evaluation/interpreter_freeze_v8_1.json": {
+      "sha256": "25f5c89c24f327521dc79199bd11447b419284643f68b5be88c53c5f0c89d550",
+      "bytes": 895
+    },
+    "evaluation/interpreter_freeze_v8_2.json": {
+      "sha256": "d612cdcca9578212febeafa1a978eb34a445a05c661fa5e6664781170c2aaf9b",
+      "bytes": 1211
+    },
+    "evaluation/permission_sensitivity_integrated_v1.json": {
+      "sha256": "812d8ea5fb284306e80e1e17308731a8a1a8cad001d5be022d7a3cb718327bd1",
+      "bytes": 33940
+    },
+    "evaluation/planning_requests.json": {
+      "sha256": "a19116d321b9133ca91d88fcc456073aa61ca30b0268e459135b39d0e6f6a3a2",
+      "bytes": 6028
+    },
+    "evaluation/planning_requests_integrated_v1.json": {
+      "sha256": "468a5e8d7c114e2e4901d0b51fb9c5e4a3fb812f645bb50c8d8ff25b902075f6",
+      "bytes": 13738
+    },
+    "evaluation/planning_requests_v8_1.json": {
+      "sha256": "b7bfda02deaad3b9d40577c94df89df751e4fb86b72b45a5e58873a4dcf90f75",
+      "bytes": 8000
+    },
+    "evaluation/planning_requests_v8_2.json": {
+      "sha256": "168124f02faaaa695f9739cebc4323218fbc1c0cfbfc39505d5a8fe30bac274f",
+      "bytes": 10181
+    },
+    "evaluation/protocol_integrated_v1.json": {
+      "sha256": "5d5d857da3a8963c56b103bb988b182024305bf3c06ea9716d24974cf546fb74",
+      "bytes": 1294
+    },
+    "evaluation/protocol_v8_1.json": {
+      "sha256": "ae16dacf0c5f3c4b149a1d5e643779acadc3346fdb4849e8c445d19efafd5c05",
+      "bytes": 604
+    },
+    "evaluation/protocol_v8_2.json": {
+      "sha256": "af24faecb2a3135b41db35b0a53538166d465eae22e008232f923fba467d5348",
+      "bytes": 736
+    },
+    "evaluation/requirements_m9.txt": {
+      "sha256": "4e4af683c59160243d7b82f93d80fc51a50604106e37fdd533fa8011e33a9227",
+      "bytes": 886
+    },
+    "evaluation/scheduling_freeze_v9.json": {
+      "sha256": "07833df6ac674e6e9dd97aa4719e38e71f071fe55d84578715991352cb97d79c",
+      "bytes": 945
+    },
+    "evaluation/scheduling_scenarios_v9.json": {
+      "sha256": "2f6a9cf3ca96af8bbf611d8813b79c65cb7ac7a1545489dd53bdd1637f188063",
+      "bytes": 20587
+    },
+    "planner/__init__.py": {
+      "sha256": "8ae1be4dd6cbef2e4c3432cf36c5a1b2b7960cb206158aa9cae7a531d001fd39",
+      "bytes": 84
+    },
+    "planner/backend.py": {
+      "sha256": "a97c8183638e7ff6b4d9fde0049ae2539d3be7d9d832513ce8c40a8450821de9",
+      "bytes": 1687
+    },
+    "planner/change_export.py": {
+      "sha256": "978516049622a26ad5b8af515ce4c38fee27bc9e9b42e374ba2bf6d168723173",
+      "bytes": 2200
+    },
+    "planner/change_requests.py": {
+      "sha256": "d4be08afa3e75b10fae0ec443dc017eddf1ceb6432ebe60e5458e8c4cf345ca0",
+      "bytes": 6178
+    },
+    "planner/comparators.py": {
+      "sha256": "8a8b444bb64b68697df2a0b193782e4fe29281baa0a870f9e1365fa094698e52",
+      "bytes": 5921
+    },
+    "planner/comparison.py": {
+      "sha256": "7ad7a6658c1d0570b9f95647ffd2069c4494ee8c679867043dd7e84efc9b3829",
+      "bytes": 8788
+    },
+    "planner/contracts.py": {
+      "sha256": "c66b969fdf4d7eedd5946c93af8fd430958e638ef01a48ac061e020b99c35ed5",
+      "bytes": 758
+    },
+    "planner/cp_sat.py": {
+      "sha256": "d5712a8f64ab69d8ad163e70f3ef8800e822e466e9786ef4aa02042d4f7868d8",
+      "bytes": 13895
+    },
+    "planner/cp_sat_v1.py": {
+      "sha256": "77f468eb78ee9209c68bc350039cd3db71ce091960c4c91fc72a1730e512e528",
+      "bytes": 12768
+    },
+    "planner/evaluator.py": {
+      "sha256": "b4a6709652a89cd52568e7443aba12600d35b20a801c75fa8a4986393a5a4a68",
+      "bytes": 1135
+    },
+    "planner/export.py": {
+      "sha256": "f055f37c532aad20ed06564a953a503c96dbc4526b2daf09d4c516cd0a838967",
+      "bytes": 2758
+    },
+    "planner/recovery.py": {
+      "sha256": "1a0fe22ed1f9d9bf1bca0630d8a26fdde6e300e4e98d0082370634f425b7d390",
+      "bytes": 9517
+    },
+    "planner/recovery_solver.py": {
+      "sha256": "6d3e9fac0d0c340e892bd07faccc11dbfaa84e146f0ff496e1edc730499aa3c4",
+      "bytes": 8164
+    },
+    "planner/review_package.py": {
+      "sha256": "5e0f6a592a7d39846d81788d35df04b74827fe0ed2aca21b68398c9ebbe0d32a",
+      "bytes": 859
+    },
+    "planner/scenario.py": {
+      "sha256": "db69a3aa9de808bb86d4c9ac46d93b0a1dc1a3d704cbdf80e87230db88eda593",
+      "bytes": 9832
+    },
+    "planner/search.py": {
+      "sha256": "a53641cd5bb27dd207cd15acae46c7e09d224ce98287998f17a10561ba5a779b",
+      "bytes": 6005
+    },
+    "planner/verifier.py": {
+      "sha256": "a9a7227f453734e3d7da95e983243229442fd21bc30609d46549b09ac9662703",
+      "bytes": 4510
+    },
+    "requirements.txt": {
+      "sha256": "9801b4c3868d5f9d66eb5da8a9c9b344d9a39160bc4d83ad5f719e1915480faa",
+      "bytes": 944
+    },
+    "streamlit_app.py": {
+      "sha256": "9e385dfd6a54e3dd8ffc6cd4457037e48b897a1dd463676a35a372662a2407fe",
+      "bytes": 6248
+    },
+    "tests/legacy_ui.py": {
+      "sha256": "bd43ddbe0ca6b3c7279f257f518c5920891a4f5a73bb41e404027492dc0d0b07",
+      "bytes": 261
+    },
+    "tests/preservation.py": {
+      "sha256": "9c7915e49351a1b9e1b1b23c23cb274db82255e9d896d9d3b45ac45a0d782f44",
+      "bytes": 1216
+    },
+    "tests/test_copilot.py": {
+      "sha256": "e217dae65df2d5d47e6e963d68baa6695981a29e16f0c30859c8351be444793a",
+      "bytes": 15244
+    },
+    "tests/test_copilot_interface.py": {
+      "sha256": "85a9286206506ca9426846436602fd107477477ab4b3d44a39e346ea0764468b",
+      "bytes": 5476
+    },
+    "tests/test_cp_sat.py": {
+      "sha256": "615225c36877fd4ae906bf266c91583df090888c5b9ca0425fb37ad37470d376",
+      "bytes": 8061
+    },
+    "tests/test_cp_sat_integration.py": {
+      "sha256": "b1697e82eef24cbfeffff41fa7c87f66a42a996c789eabea0d7fea675f08ccdb",
+      "bytes": 4496
+    },
+    "tests/test_daily_interface.py": {
+      "sha256": "de97f4f86f59c7a01e59286ccbe8b8204222b1928cdc2c4786db34be0c1306ba",
+      "bytes": 5590
+    },
+    "tests/test_daily_resources.py": {
+      "sha256": "813bd32cbdb1e045cbd7170bc19b8ea6dc9809d9efd61301e542aa11ad343c14",
+      "bytes": 13337
+    },
+    "tests/test_demo_packaging.py": {
+      "sha256": "a5ce8ed323b7995589ddcd6af0913d0752a962b3670ec4a3215aaf819ab0e840",
+      "bytes": 2366
+    },
+    "tests/test_demo_usability.py": {
+      "sha256": "bb666ca12bbe7b34bda1d8316f37b05266b4f829c03b4fb1dc5d4866aef110f7",
+      "bytes": 4617
+    },
+    "tests/test_importer.py": {
+      "sha256": "f04f62947d1325cb7f0c4d99e2a84da29e5210c24918422c89e253127bae804c",
+      "bytes": 5628
+    },
+    "tests/test_industrial_dashboard.py": {
+      "sha256": "0986c962f6083db4c892ee65e7b4fa8c6c6cf2feedbd46c6130568ea63cfb6c7",
+      "bytes": 1765
+    },
+    "tests/test_integrated_evaluation.py": {
+      "sha256": "0b030a89c95718967e04a185ed549915984c002873868f5717ae39cebc763c2e",
+      "bytes": 5157
+    },
+    "tests/test_integrated_recovery.py": {
+      "sha256": "6124f7d20d530ff8ef9db145b68f20f5521764cca1a0bd18608905a3dbcb00f9",
+      "bytes": 11548
+    },
+    "tests/test_integrated_recovery_interface.py": {
+      "sha256": "c684858d2bb8a2109b1c139a132662596688944c7db988362fb9c1a64bc5a08f",
+      "bytes": 4641
+    },
+    "tests/test_interface.py": {
+      "sha256": "d41f99e813d9042bff7faeef92109f2f4e6272bd7ef807e31579307058167d08",
+      "bytes": 2252
+    },
+    "tests/test_milestone_10_1.py": {
+      "sha256": "6e68312eee2a2612166104953227545376a4a08d6bd90ed177c49e23d0b4fdae",
+      "bytes": 8466
+    },
+    "tests/test_planner_comparison.py": {
+      "sha256": "5b3fee5b0983940df0d8868ed5dc19ada41974f228dc97192757c89d259abf0c",
+      "bytes": 8530
+    },
+    "tests/test_planner_presentation.py": {
+      "sha256": "a276ae9c4e26cfb906bf8a46a27a45f3e8696387378a448489e16b173c86dae1",
+      "bytes": 7630
+    },
+    "tests/test_planner_workflow_interface.py": {
+      "sha256": "f2c35bca27a9712b2177f1b837f48054e23291f6957388bb5fd552e4fbab1fe8",
+      "bytes": 3573
+    },
+    "tests/test_planning_reliability.py": {
+      "sha256": "9686f18944f9deba84a9f04b9728c13830fb2bfd040cf8ef218e10f8a6b335f3",
+      "bytes": 11093
+    },
+    "tests/test_planning_request_interface.py": {
+      "sha256": "ac4d5d6679562be94e24e16d861566247badef7eb346b6cfcdf9d1061eb8528a",
+      "bytes": 5246
+    },
+    "tests/test_planning_requests.py": {
+      "sha256": "028ee8edee8c9e2aa1281984309da3ec0e72e39ee26651e7d87e402cf7eddd8a",
+      "bytes": 11625
+    },
+    "tests/test_planning_v8_2.py": {
+      "sha256": "7acbf136613963873706c7549061f2a4fb1acdc083b6185e230dfc35a6578813",
+      "bytes": 7917
+    },
+    "tests/test_resource_analysis.py": {
+      "sha256": "eb768d251093a93c58610663422beaf575f3e0730a0d89a0e3032c34187ce069",
+      "bytes": 5405
+    },
+    "tests/test_resource_interface.py": {
+      "sha256": "8fece2bd5808e87ed04c1b407c0ff316664b3264add9fcbba309a78baaf8fbad",
+      "bytes": 3997
+    },
+    "tests/test_scheduler.py": {
+      "sha256": "ef56becea59be611fe0223400dcf4fb238facb0b219dcdce87d66e50cf114312",
+      "bytes": 13387
+    },
+    "tests/test_scheduling_comparator_interface.py": {
+      "sha256": "962c54b7f2afaa9ee12f6ef4a319e230b9f03434ac052c831ee9cc5b6bd9861f",
+      "bytes": 2727
+    },
+    "tests/test_scheduling_comparators.py": {
+      "sha256": "13490adf2fc34b7d34094f8b8671512e4532e9410d70079453b0991aa523705b",
+      "bytes": 6158
+    },
+    "tests/test_selected_copilot_interface.py": {
+      "sha256": "8e8760d711c6b2df56cf32afb44799ad268af649f1242c39b78cd7511f1533df",
+      "bytes": 5134
+    },
+    "tests/test_selected_numeric_contract.py": {
+      "sha256": "6faa14b5ffd8536bb6f985c07363f302f6a4b568d3bef8bb572ce96802a067f2",
+      "bytes": 4206
+    },
+    "tests/test_simulator_interface.py": {
+      "sha256": "078b1e346eb7079e8b96a070a78dc8bf0b75c43d0e04df92fbd8732482ae0241",
+      "bytes": 5867
+    },
+    "tests/test_source_audit.py": {
+      "sha256": "5f0abf8c75c7f9e712b8017245f909f026ac9e2834a0c976a69a95d39671cec7",
+      "bytes": 1770
+    },
+    "tests/ui_helpers.py": {
+      "sha256": "ea111ab89a5bd305f4e109d0c8cf518bd7465781eb0f7dbbd8aaf1ee5a559c06",
+      "bytes": 573
+    },
+    "tools/audit_source.py": {
+      "sha256": "d49c2143e778e3b9c6d2e26f2684de49e9bcf3089fc409e2e8b94a30e6360d74",
+      "bytes": 6354
+    },
+    "tools/benchmark_cp_sat.py": {
+      "sha256": "923bb6e5a52854274bc969dee77f09cec78a79a2981f5f85abd3433df4571d3b",
+      "bytes": 6083
+    },
+    "tools/benchmark_cp_sat_v10_1.py": {
+      "sha256": "701cc27264b821e9ce905b851cbf5236ea037c12393b0abbfca18770d47fc562",
+      "bytes": 6188
+    },
+    "tools/benchmark_scheduling.py": {
+      "sha256": "8601de8aa677ebd98557299b53027c069f241e6848ad6ea30e2c2db7a92e48aa",
+      "bytes": 6276
+    },
+    "tools/check_demo_questions.py": {
+      "sha256": "33ef36b635495b4c4c0a2a74113d4556b594881bfd02ff7059adfb69e25cc43b",
+      "bytes": 2861
+    },
+    "tools/check_integrated_package.py": {
+      "sha256": "093664910e3d3dd9ac4d2fd63c8cb39b61d9a727d2b5f4f7e66256d46cbb8d0d",
+      "bytes": 3590
+    },
+    "tools/check_selected_copilot_v10_1.py": {
+      "sha256": "aa65336967ae6f7870d3ccb71d303300e42249391aae42aa1747dfb479024306",
+      "bytes": 5393
+    },
+    "tools/check_selected_numeric_contract.py": {
+      "sha256": "6777e6278fd159387380984b6e776af0288932d578d3a623d2c1736533677a9a",
+      "bytes": 2637
+    },
+    "tools/evaluate_interpreter_integrated.py": {
+      "sha256": "48f2cfd5173a96a8479f784c67c087dd81c6c9e97cd7071e8a4c1d2187bb982c",
+      "bytes": 9766
+    },
+    "tools/evaluate_permissions_integrated.py": {
+      "sha256": "e5e77dbdced63f9ff69ad85b5c8a19c44c51f74f9897619f1d117c67a02c622f",
+      "bytes": 4859
+    },
+    "tools/evaluate_planning_requests.py": {
+      "sha256": "a26df53b3397103636fc7f000f6569bd824e21e449a3d4646aa2fc1eb8bed82a",
+      "bytes": 6544
+    },
+    "tools/evaluate_planning_requests_v8_1.py": {
+      "sha256": "3fa8a5ce4054e8b981c45c3e5aab121813d55baa0e29d5aec1ca780e7e038fe7",
+      "bytes": 8336
+    },
+    "tools/evaluate_planning_requests_v8_2.py": {
+      "sha256": "f83773277297dfe22a7829cba2ed00306ff20a771e4de8b58d72f8de9db0c262",
+      "bytes": 10262
+    },
+    "tools/inspect_dashboard_browser.py": {
+      "sha256": "f3a06980dd99d8b5240143d5bc41a7209a17ff08498c2ca0c1e3df5070c932b9",
+      "bytes": 7942
+    },
+    "tools/inspect_integrated_browser.py": {
+      "sha256": "cbc0e9851b1c4dfc90412fa1c53434b1a5a6144dc2671086568c1a5b30b56cc1",
+      "bytes": 17886
+    },
+    "tools/integrated_recovery_demo.py": {
+      "sha256": "765ba6c1398216156d1b7a28ad7570983419ab22823536b44850a6646ce04d14",
+      "bytes": 4286
+    },
+    "tools/package_demo.py": {
+      "sha256": "523f73c287acc3bce72d9e4ffa793c2c4c36bfd06ecc8bc71c8e2ce4c05e1d6c",
+      "bytes": 10742
+    },
+    "tools/scan_public_repository.py": {
+      "sha256": "0d0e4b013f7bec3192ab8ab6e10fd2564c3e8ac1567f5e28af4ad14b894f95eb",
+      "bytes": 4860
+    },
+    "tools/smoke_amd.py": {
+      "sha256": "82999d505be0513bda2aea16abe2837663250608feafe7b1c971b34c04057442",
+      "bytes": 2032
+    },
+    "tools/smoke_daily_amd.py": {
+      "sha256": "7eca3c9482a5aac7daaf882b617919184efbb0e2da9c402d2595ebaffa265d7b",
+      "bytes": 2271
+    },
+    "tools/smoke_packaged.py": {
+      "sha256": "e66c101b69de65a6e9ec681a28cca4e78af3a24af45ab49baf36830e57b0c652",
+      "bytes": 4427
+    },
+    "tools/train_daily_resources.py": {
+      "sha256": "d2e1a06226328e5f7e72de330371933a1b825038d95e954f4d5aa6dff45fa81f",
+      "bytes": 1073
+    },
+    "tools/verify_demo.py": {
+      "sha256": "a86947e9450a702a5468610ce943591816a354666f34b4693fe172367f3a8865",
+      "bytes": 2698
+    },
+    "tools/verify_planner_workflow.py": {
+      "sha256": "65840bdbd51a53c88687feb709304aa1f6ff7290e84b3aea30bdc279f2285ab2",
+      "bytes": 2377
+    }
+  },
+  "boundary": "Final repack adds/updates verification documentation and real-browser evidence only; these application/test/evaluation/data/model/tool bytes must stay identical."
+}

@@ -5,6 +5,8 @@ import hashlib
 def preserved_sha(root, name):
     if name=='app/planning_changes_view.py':
         return hashlib.sha256((root/'history/demo_before_polish/app/planning_changes_view.py').read_bytes()).hexdigest()
+    previous=root/'history/integrated_before'/name
+    if previous.exists():return hashlib.sha256(previous.read_bytes()).hexdigest()
     if name != 'requirements.txt':
         return hashlib.sha256((root/name).read_bytes()).hexdigest()
     original=(root/'evaluation/requirements_m9.txt').read_text(encoding='utf-8').splitlines()

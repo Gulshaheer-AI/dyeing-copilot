@@ -53,11 +53,12 @@ class CPSatResult:
     version: str = VERSION
 
 
-def _build(orders, config):
+def _build(orders, config, *, extra_dates=()):
     validate_case(orders, config)
     if len(orders) > 200 or len(config.machines) > 32 or sum(len(m.availability) for m in config.machines) > 2000:
         raise ValueError("CP-SAT v1 supports at most 200 orders, 32 machines and 2000 availability windows.")
     dates = [d for o in orders for d in (o.release, o.deadline)] + [d for m in config.machines for w in m.availability for d in (w.start,w.end)]
+    dates.extend(extra_dates)
     epoch = min(dates)
     offsets = [micros(d-epoch) for d in dates]
     durations = [micros(hours(o.duration_source*config.hours_per_duration_unit)) for o in orders]
