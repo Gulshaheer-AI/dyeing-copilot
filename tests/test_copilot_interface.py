@@ -1,3 +1,4 @@
+from ui_helpers import navigate
 from ui_helpers import click as ui_click
 from legacy_ui import select_legacy
 import json
@@ -33,7 +34,7 @@ class CopilotInterfaceTests(unittest.TestCase):
 
     def open_copilot(self):
         app = AppTest.from_file(APP).run(timeout=30)
-        next(r for r in app.radio if r.label=='Workspace').set_value('Copilot').run()
+        navigate(app,'Copilot')
         self.assertFalse(app.exception)
         return app
 
@@ -70,7 +71,7 @@ class CopilotInterfaceTests(unittest.TestCase):
 
     def test_scenario_questions_require_current_verified_comparison(self):
         app = self.use_mock(self.open_copilot())
-        app.selectbox[0].set_value("Explain this schedule comparison").run()
+        next(s for s in app.selectbox if s.label=='Question topic').set_value("Explain this schedule comparison").run()
         click(app, "Generate grounded explanation")
         self.assertFalse(app.exception)
         self.assertTrue(any("verified comparison is required" in item.value for item in app.error))
@@ -83,9 +84,9 @@ class CopilotInterfaceTests(unittest.TestCase):
         click(app, "Load demo setup")
         click(app, "Run scenario comparison")
         original_text = app.text_area[0].value
-        next(r for r in app.radio if r.label=='Workspace').set_value('Copilot').run()
+        navigate(app,'Copilot')
         self.use_mock(app)
-        app.selectbox[0].set_value("Explain this schedule comparison").run()
+        next(s for s in app.selectbox if s.label=='Question topic').set_value("Explain this schedule comparison").run()
         click(app, "Generate grounded explanation")
         self.assertFalse(app.exception)
         self.assertTrue(any(metric.value == "27300.00" for metric in app.metric))
@@ -96,7 +97,7 @@ class CopilotInterfaceTests(unittest.TestCase):
         raw = json.loads(original_text)
         raw["cleaning_water"] = "351"
         app.text_area[0].set_value(json.dumps(raw)).run()
-        next(r for r in app.radio if r.label=='Workspace').set_value('Copilot').run()
+        navigate(app,'Copilot')
         self.assertFalse(app.exception)
         self.assertTrue(any("invalidated" in item.value for item in app.info))
         self.assertTrue(any("STALE evidence" in item.value for item in app.markdown))

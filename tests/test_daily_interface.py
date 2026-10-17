@@ -45,7 +45,7 @@ class DailyInterfaceTests(unittest.TestCase):
             self.assertTrue(any("Synthetic daily thread-dyeing data" in w.value for w in app.warning))
             self.assertFalse(any("Accepted orders" == m.label for m in app.metric))
             self.assertTrue(any("L/kg" in c.value for c in app.caption))
-            app.selectbox[0].set_value("electricity").run()
+            next(s for s in app.selectbox if s.label=='Daily resource').set_value("electricity").run()
             self.assertFalse(app.exception)
             self.assertEqual(app.metric[1].value, "3")
             self.assertTrue(any("kWh/kg" in c.value for c in app.caption))
@@ -54,11 +54,11 @@ class DailyInterfaceTests(unittest.TestCase):
         app = self.open_daily()
         app.checkbox[0].check().run()
         self.assertFalse(app.exception)
-        self.assertEqual(len(app.selectbox[1].options), 1)
+        self.assertEqual(len(next(s for s in app.selectbox if s.label=='Selected synthetic day').options), 1)
         self.assertTrue(any("no live sensor" in info.value for info in app.info))
         app.slider[0].set_value(2).run()
-        self.assertEqual(len(app.selectbox[1].options), 3)
-        self.assertEqual(app.selectbox[1].options[-1], "2024-08-09")
+        self.assertEqual(len(next(s for s in app.selectbox if s.label=='Selected synthetic day').options), 3)
+        self.assertEqual(next(s for s in app.selectbox if s.label=='Selected synthetic day').options[-1], "2024-08-09")
         click(app, "Return to Sitara views")
         self.assertFalse(app.exception)
         self.assertEqual(app.metric[0].label, "Accepted orders")
@@ -66,7 +66,7 @@ class DailyInterfaceTests(unittest.TestCase):
 
     def test_daily_copilot_review_and_day_change_invalidation(self):
         app = self.open_daily()
-        app.selectbox[1].set_value("2024-08-09").run()
+        next(s for s in app.selectbox if s.label=='Selected synthetic day').set_value("2024-08-09").run()
         app.checkbox[1].check().run()
         self.assertFalse(app.exception)
         next(r for r in app.radio if r.label=='Explanation source').set_value('Mock demonstration (no API call)').run()
@@ -78,7 +78,7 @@ class DailyInterfaceTests(unittest.TestCase):
         store = ReviewStore(self.review_path)
         row = store.list_reviews()[0]
         self.assertTrue(row["model_fingerprint"] and row["day_fingerprint"])
-        app.selectbox[1].set_value("2024-08-10").run()
+        next(s for s in app.selectbox if s.label=='Selected synthetic day').set_value("2024-08-10").run()
         self.assertFalse(app.exception)
         self.assertTrue(any("invalidated" in info.value for info in app.info))
         self.assertTrue(next(b for b in app.button if b.label == "Record review decision").disabled)
@@ -94,7 +94,7 @@ class DailyInterfaceTests(unittest.TestCase):
         self.assertFalse(app.exception)
         self.assertTrue(any("Daily import rejected" in error.value for error in app.error))
         self.assertFalse(any("Flags" in metric.label for metric in app.metric))
-        self.assertEqual(len(app.selectbox), 0)
+        self.assertEqual([s.label for s in app.selectbox], ['More tools'])
 
     def test_daily_available_even_if_sitara_import_invalid_and_missing_artifacts_do_not_train(self):
         from app.importer import import_orders

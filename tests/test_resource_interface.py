@@ -1,3 +1,4 @@
+from ui_helpers import navigate
 import io
 import unittest
 from unittest.mock import patch
@@ -18,7 +19,7 @@ def metrics(app):
 class ResourceInterfaceTests(unittest.TestCase):
     def open_analysis(self):
         app = AppTest.from_file(APP).run(timeout=30)
-        next(r for r in app.radio if r.label=='Workspace').set_value('Resource analysis').run()
+        navigate(app,'Resource analysis')
         self.assertFalse(app.exception)
         return app
 

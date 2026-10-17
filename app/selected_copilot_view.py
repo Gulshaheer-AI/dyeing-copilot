@@ -16,7 +16,9 @@ STATUS_LABELS={"pending_review":"Pending review","accepted_for_further_review":"
 def render_selected_copilot(case,run,source=None,context_marker=None):
     st.subheader('Explain and review this plan')
     st.caption('Explain the verified plan, changed orders and what a supervisor should review.')
-    question=st.text_input('Ask about this plan',value='Explain this selected schedule and what the planner should review.',max_chars=2000,key='selected_question')
+    if 'selected_question' not in st.session_state:
+        st.session_state.selected_question='Explain this selected schedule and what the planner should review.'
+    question=st.text_input('Ask about this plan',max_chars=2000,key='selected_question')
     try:bundle=build_selected_evidence(case,run,question,source=source,context_marker=context_marker)
     except ValueError as exc:st.error(str(exc));return None,None
     mode_label=st.radio('Selected schedule explanation source',['Live AMD','Mock demonstration (no API call)'],horizontal=True,key='selected_explanation_mode')
@@ -75,7 +77,7 @@ def render_selected_copilot(case,run,source=None,context_marker=None):
     try:
         store=ReviewStore()
         if stored:
-            notes=st.text_area('Selected schedule pending-review notes',max_chars=5000)
+            notes=st.text_area('Selected schedule pending-review notes',max_chars=5000,key='selected_pending_notes')
             if st.button('Save for supervisor review',icon=':material/rate_review:'):
                 st.session_state.selected_review_id=store.save_pending(stored[1],bundle,notes)
                 current_review=applicable_review(store,bundle,st.session_state.selected_review_id)
@@ -95,8 +97,8 @@ def render_selected_copilot(case,run,source=None,context_marker=None):
             st.badge(STATUS_LABELS[row['status']]+(' / STALE evidence' if stale else ' / current plan'),
                 icon=':material/rate_review:',color='orange' if stale else 'primary' if row['status']=='accepted_for_further_review' else 'red' if row['status']=='rejected' else 'blue')
             st.write('Review status: '+STATUS_LABELS[row['status']]+(' / STALE evidence' if stale else ' / current evidence'))
-            decision=st.selectbox('Review decision',['accepted_for_further_review','rejected'],format_func=lambda v: STATUS_LABELS[v])
-            notes=st.text_area('Selected schedule decision notes',max_chars=5000)
+            decision=st.selectbox('Review decision',['accepted_for_further_review','rejected'],format_func=lambda v: STATUS_LABELS[v],key='selected_decision')
+            notes=st.text_area('Selected schedule decision notes',max_chars=5000,key='selected_decision_notes')
             if st.button('Record review decision',disabled=stale or row['status']!='pending_review'):
                 store.decide(review_id,decision,bundle['fingerprint'],notes);st.rerun()
             if not stale:selected_review=applicable_review(store,bundle,review_id)

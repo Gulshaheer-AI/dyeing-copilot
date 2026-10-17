@@ -1,0 +1,270 @@
+test_auth_quota_server_and_redirect_errors_are_secret_free (test_copilot.AMDClientTests.test_auth_quota_server_and_redirect_errors_are_secret_free) ... ok
+test_documented_request_format_and_actual_model_receipt (test_copilot.AMDClientTests.test_documented_request_format_and_actual_model_receipt) ... ok
+test_malformed_truncated_and_key_echo_responses_rejected (test_copilot.AMDClientTests.test_malformed_truncated_and_key_echo_responses_rejected) ... ok
+test_missing_configuration_and_no_provider_fallback (test_copilot.AMDClientTests.test_missing_configuration_and_no_provider_fallback) ... ok
+test_mocked_http_end_to_end_is_not_a_live_smoke (test_copilot.AMDClientTests.test_mocked_http_end_to_end_is_not_a_live_smoke) ... ok
+test_timeout_is_bounded_and_transient_retry_can_succeed (test_copilot.AMDClientTests.test_timeout_is_bounded_and_transient_retry_can_succeed) ... ok
+test_comparison_is_recomputed_and_zero_improvement_is_explained (test_copilot.EvidenceTests.test_comparison_is_recomputed_and_zero_improvement_is_explained) ... ok
+test_fingerprint_changes_with_config_source_marker_and_documents (test_copilot.EvidenceTests.test_fingerprint_changes_with_config_source_marker_and_documents) ... ok
+test_invalid_schedule_never_enters_scenario_evidence (test_copilot.EvidenceTests.test_invalid_schedule_never_enters_scenario_evidence) ... ok
+test_missing_comparison_blocks_scenario_scope_even_when_called_recorded (test_copilot.EvidenceTests.test_missing_comparison_blocks_scenario_scope_even_when_called_recorded) ... ok
+test_positive_difference_percentage_and_cleaning_counts (test_copilot.EvidenceTests.test_positive_difference_percentage_and_cleaning_counts) ... ok
+test_recorded_only_evidence_and_supporting_sections (test_copilot.EvidenceTests.test_recorded_only_evidence_and_supporting_sections) ... ok
+test_zero_baseline_percentage_is_undefined (test_copilot.EvidenceTests.test_zero_baseline_percentage_is_undefined) ... ok
+test_claim_reference_mismatch_missing_limitations_and_extra_actions_rejected (test_copilot.OutputValidationTests.test_claim_reference_mismatch_missing_limitations_and_extra_actions_rejected) ... ok
+test_imported_instructions_cannot_become_output_instructions (test_copilot.OutputValidationTests.test_imported_instructions_cannot_become_output_instructions) ... ok
+test_inconsistent_numbers_and_converted_units_rejected (test_copilot.OutputValidationTests.test_inconsistent_numbers_and_converted_units_rejected) ... ok
+test_supported_references_and_exact_numeric_claim_pass (test_copilot.OutputValidationTests.test_supported_references_and_exact_numeric_claim_pass) ... ok
+test_unapproved_safety_savings_and_spelled_out_number_claims_rejected (test_copilot.OutputValidationTests.test_unapproved_safety_savings_and_spelled_out_number_claims_rejected) ... ok
+test_unsupported_fact_and_document_ids_rejected (test_copilot.OutputValidationTests.test_unsupported_fact_and_document_ids_rejected) ... ok
+test_snapshot_persistence_idempotency_and_read_only_decision (test_copilot.ReviewTests.test_snapshot_persistence_idempotency_and_read_only_decision) ... ok
+test_stale_save_and_decision_are_rejected (test_copilot.ReviewTests.test_stale_save_and_decision_are_rejected) ... ok
+test_missing_configuration_is_clear_and_mock_mode_is_explicit (test_copilot_interface.CopilotInterfaceTests.test_missing_configuration_is_clear_and_mock_mode_is_explicit) ... 2026-10-18 02:17:29.177 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_recorded_explanation_and_supervisor_review_persist_without_scenario_changes (test_copilot_interface.CopilotInterfaceTests.test_recorded_explanation_and_supervisor_review_persist_without_scenario_changes) ... 2026-10-18 02:17:30.188 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_scenario_questions_require_current_verified_comparison (test_copilot_interface.CopilotInterfaceTests.test_scenario_questions_require_current_verified_comparison) ... 2026-10-18 02:17:30.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_scenario_survives_view_switch_and_config_changes_invalidate_explanation (test_copilot_interface.CopilotInterfaceTests.test_scenario_survives_view_switch_and_config_changes_invalidate_explanation) ... 2026-10-18 02:17:31.066 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-18 02:17:31.237 The widget with key "planning_budget" was created with a default value but also had its value set via the Session State API.
+Stack (most recent call last):
+  File "C:\Program Files\Python311\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Program Files\Python311\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "C:\Program Files\Python311\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\Projects\dyeing-copilot\.venv\Lib\site-packages\streamlit\testing\v1\local_script_runner.py", line 144, in _run_script_thread
+    super()._run_script_thread()
+  File "D:\Projects\dyeing-copilot\.venv\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 436, in _run_script_thread
+    self._run_script(request.rerun_data)
+  File "D:\Projects\dyeing-copilot\.venv\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 949, in _run_script
+    ) = exec_func_with_error_handling(code_to_exec, ctx)
+  File "D:\Projects\dyeing-copilot\.venv\Lib\site-packages\streamlit\runtime\scriptrunner\exec_code.py", line 136, in exec_func_with_error_handling
+    result = func()
+  File "D:\Projects\dyeing-copilot\.venv\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 924, in code_to_exec
+    exec(code, module.__dict__)  # noqa: S102
+  File "D:\Projects\dyeing-copilot\streamlit_app.py", line 82, in <module>
+    with st.container(key='planner_dashboard'):render_simulator(result)
+  File "D:\Projects\dyeing-copilot\app\simulator_view.py", line 302, in render_simulator
+    budget=st.number_input('Total CP-SAT budget (seconds)',min_value=0.01,max_value=60.0,
+  File "D:\Projects\dyeing-copilot\.venv\Lib\site-packages\streamlit\runtime\metrics_util.py", line 725, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+  File "D:\Projects\dyeing-copilot\.venv\Lib\site-packages\streamlit\elements\widgets\number_input.py", line 635, in number_input
+    return self._number_input(
+  File "D:\Projects\dyeing-copilot\.venv\Lib\site-packages\streamlit\elements\widgets\number_input.py", line 689, in _number_input
+    check_widget_policies(
+  File "D:\Projects\dyeing-copilot\.venv\Lib\site-packages\streamlit\elements\lib\policies.py", line 146, in check_widget_policies
+    check_session_state_rules(
+  File "D:\Projects\dyeing-copilot\.venv\Lib\site-packages\streamlit\elements\lib\policies.py", line 90, in check_session_state_rules
+    _LOGGER.warning(
+ok
+test_closed_unused_compatible_capacity_and_joint_assignments (test_cp_sat.CPSatTests.test_closed_unused_compatible_capacity_and_joint_assignments) ... ok
+test_directed_permission_only_immediate_adjacency (test_cp_sat.CPSatTests.test_directed_permission_only_immediate_adjacency) ... ok
+test_edd_failure_but_joint_schedule_feasible (test_cp_sat.CPSatTests.test_edd_failure_but_joint_schedule_feasible) ... ok
+test_exhaustive_cleaning_feasibility_and_boundaries (test_cp_sat.CPSatTests.test_exhaustive_cleaning_feasibility_and_boundaries) ... ok
+test_invalid_translation_rejected_and_invalid_hint_ignored (test_cp_sat.CPSatTests.test_invalid_translation_rejected_and_invalid_hint_ignored) ... ok
+test_outage_cleaning_and_terminal_must_fit_windows (test_cp_sat.CPSatTests.test_outage_cleaning_and_terminal_must_fit_windows) ... ok
+test_seconds_microseconds_and_overflow_no_rounding (test_cp_sat.CPSatTests.test_seconds_microseconds_and_overflow_no_rounding) ... ok
+test_unknown_and_stage_b_fallback_not_infeasibility (test_cp_sat.CPSatTests.test_unknown_and_stage_b_fallback_not_infeasibility) ... ok
+test_default_ui_manual_override_current_solver_export_reset_and_gate (test_cp_sat_integration.CPIntegrationTests.test_default_ui_manual_override_current_solver_export_reset_and_gate) ... 2026-10-18 02:17:32.895 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-18 02:17:35.397 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_feasible_stage_a_is_conditional_not_global_optimality (test_cp_sat_integration.CPIntegrationTests.test_feasible_stage_a_is_conditional_not_global_optimality) ... ok
+test_unknown_fallback_origin_and_no_silent_substitution (test_cp_sat_integration.CPIntegrationTests.test_unknown_fallback_origin_and_no_silent_substitution) ... ok
+test_daily_available_even_if_sitara_import_invalid_and_missing_artifacts_do_not_train (test_daily_interface.DailyInterfaceTests.test_daily_available_even_if_sitara_import_invalid_and_missing_artifacts_do_not_train) ... 2026-10-18 02:17:37.495 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_daily_copilot_review_and_day_change_invalidation (test_daily_interface.DailyInterfaceTests.test_daily_copilot_review_and_day_change_invalidation) ... 2026-10-18 02:17:37.835 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_invalid_daily_upload_clears_predictions_and_stale_context (test_daily_interface.DailyInterfaceTests.test_invalid_daily_upload_clears_predictions_and_stale_context) ... 2026-10-18 02:17:42.217 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_replay_is_historical_prefix_not_live_and_changes_selected_dates (test_daily_interface.DailyInterfaceTests.test_replay_is_historical_prefix_not_live_and_changes_selected_dates) ... 2026-10-18 02:17:43.287 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_synthetic_view_labels_counts_units_and_no_retraining (test_daily_interface.DailyInterfaceTests.test_synthetic_view_labels_counts_units_and_no_retraining) ... 2026-10-18 02:17:45.505 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_daily_units_numeric_claims_allowed_and_conversions_still_rejected (test_daily_resources.DailyCopilotTests.test_daily_units_numeric_claims_allowed_and_conversions_still_rejected) ... ok
+test_dataset_model_day_fingerprints_persist_and_stale_decision_is_rejected (test_daily_resources.DailyCopilotTests.test_dataset_model_day_fingerprints_persist_and_stale_decision_is_rejected) ... ok
+test_synthetic_provenance_and_flag_explanation_without_root_cause (test_daily_resources.DailyCopilotTests.test_synthetic_provenance_and_flag_explanation_without_root_cause) ... ok
+test_date_calendar_and_missing_field_validation (test_daily_resources.DailyImportTests.test_date_calendar_and_missing_field_validation) ... ok
+test_duplicate_dates_rejected_without_silent_deduplication (test_daily_resources.DailyImportTests.test_duplicate_dates_rejected_without_silent_deduplication) ... ok
+test_invalid_required_units_values_and_zero_production (test_daily_resources.DailyImportTests.test_invalid_required_units_values_and_zero_production) ... ok
+test_original_contract_dates_hash_and_separation (test_daily_resources.DailyImportTests.test_original_contract_dates_hash_and_separation) ... ok
+test_profile_records_arithmetic_counterparts_and_synthetic_label_exclusion (test_daily_resources.DailyImportTests.test_profile_records_arithmetic_counterparts_and_synthetic_label_exclusion) ... ok
+test_sorting_and_calendar_gaps_are_explicit (test_daily_resources.DailyImportTests.test_sorting_and_calendar_gaps_are_explicit) ... ok
+test_baseline_fallback_and_threshold_rank (test_daily_resources.DailyModelTests.test_baseline_fallback_and_threshold_rank) ... ok
+test_chronological_split_no_overlap_and_no_target_feature_leakage (test_daily_resources.DailyModelTests.test_chronological_split_no_overlap_and_no_target_feature_leakage) ... ok
+test_loaded_values_drive_predictions_and_observations_without_retraining (test_daily_resources.DailyModelTests.test_loaded_values_drive_predictions_and_observations_without_retraining) ... ok
+test_persistence_and_constant_target_actual_fallback (test_daily_resources.DailyModelTests.test_persistence_and_constant_target_actual_fallback) ... ok
+test_test_flags_units_and_no_in_sample_alerts (test_daily_resources.DailyModelTests.test_test_flags_units_and_no_in_sample_alerts) ... ok
+test_test_target_perturbation_does_not_change_selection_or_calibration (test_daily_resources.DailyModelTests.test_test_target_perturbation_does_not_change_selection_or_calibration) ... ok
+test_allowlist_excludes_credentials_reviews_restricted_data_and_caches (test_demo_packaging.DemoPackagingTests.test_allowlist_excludes_credentials_reviews_restricted_data_and_caches) ... ok
+test_archive_manifests_hashes_and_frozen_model_payloads (test_demo_packaging.DemoPackagingTests.test_archive_manifests_hashes_and_frozen_model_payloads) ... ok
+test_daily_entry_defaults_to_flag_and_review_entry_keeps_selected_day (test_demo_usability.DemoNavigationTests.test_daily_entry_defaults_to_flag_and_review_entry_keeps_selected_day) ... 2026-10-18 02:17:56.600 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_scheduling_entry_and_explanation_handoff_preserve_verified_comparison (test_demo_usability.DemoNavigationTests.test_scheduling_entry_and_explanation_handoff_preserve_verified_comparison) ... 2026-10-18 02:17:58.796 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_duplicate_signature_reuses_exact_answer_and_changed_signature_calls_again (test_demo_usability.RequestSessionTests.test_duplicate_signature_reuses_exact_answer_and_changed_signature_calls_again) ... ok
+test_inflight_block_and_timeout_never_cache_success (test_demo_usability.RequestSessionTests.test_inflight_block_and_timeout_never_cache_success) ... ok
+test_modules_preserve_plan_forms_and_never_call_solver_or_amd (test_erp_interface.ERPNavigationTests.test_modules_preserve_plan_forms_and_never_call_solver_or_amd) ... 2026-10-18 02:18:00.292 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_protected_outline_uses_existing_fixed_work_and_preserves_times (test_erp_interface.ERPReportTests.test_protected_outline_uses_existing_fixed_work_and_preserves_times) ... ok
+test_report_is_canonical_and_rejects_missing_stale_or_changed_source (test_erp_interface.ERPReportTests.test_report_is_canonical_and_rejects_missing_stale_or_changed_source) ... ok
+test_bad_header_encoding_and_row_width (test_importer.ImporterTests.test_bad_header_encoding_and_row_width) ... ok
+test_bom_reordered_columns_and_blank_lines (test_importer.ImporterTests.test_bom_reordered_columns_and_blank_lines) ... ok
+test_bundled_case_and_source_preservation (test_importer.ImporterTests.test_bundled_case_and_source_preservation) ... ok
+test_bundled_checksum_mismatch_blocks_import (test_importer.ImporterTests.test_bundled_checksum_mismatch_blocks_import) ... ok
+test_conflicting_id_and_duplicate_payload (test_importer.ImporterTests.test_conflicting_id_and_duplicate_payload) ... ok
+test_csv_matches_all_distinct_original_text_records (test_importer.ImporterTests.test_csv_matches_all_distinct_original_text_records) ... ok
+test_invalid_dates_and_delivery_order (test_importer.ImporterTests.test_invalid_dates_and_delivery_order) ... ok
+test_missing_value_invalid_id_and_missing_order (test_importer.ImporterTests.test_missing_value_invalid_id_and_missing_order) ... ok
+test_numeric_validation (test_importer.ImporterTests.test_numeric_validation) ... ok
+test_repeated_block_is_counted_once_and_repeat_calls_do_not_accumulate (test_importer.ImporterTests.test_repeated_block_is_counted_once_and_repeat_calls_do_not_accumulate) ... ok
+test_water_sum_mismatch (test_importer.ImporterTests.test_water_sum_mismatch) ... ok
+test_custom_html_escapes_dynamic_text (test_industrial_dashboard.DashboardPresentationTests.test_custom_html_escapes_dynamic_text) ... ok
+test_initial_cleaning_starts_daily_window_and_navigation_is_clamped (test_industrial_dashboard.DashboardPresentationTests.test_initial_cleaning_starts_daily_window_and_navigation_is_clamped) ... ok
+test_summary_handles_positive_zero_negative_missing_comparisons (test_industrial_dashboard.DashboardPresentationTests.test_summary_handles_positive_zero_negative_missing_comparisons) ... ok
+test_diagnostics_suppress_whole_secret_payload (test_integrated_evaluation.IntegratedEvaluationTests.test_diagnostics_suppress_whole_secret_payload) ... ok
+test_fresh_corpus_frozen_local_and_deferred_amd_separately (test_integrated_evaluation.IntegratedEvaluationTests.test_fresh_corpus_frozen_local_and_deferred_amd_separately) ... ok
+test_mocked_amd_recovery_proposal_still_needs_confirmation_and_history_checks (test_integrated_evaluation.IntegratedEvaluationTests.test_mocked_amd_recovery_proposal_still_needs_confirmation_and_history_checks) ... ok
+test_permission_subset_reconciliation_no_hidden_baseline_fallback (test_integrated_evaluation.IntegratedEvaluationTests.test_permission_subset_reconciliation_no_hidden_baseline_fallback) ... ok
+test_cleaning_commitment_outage_and_history_deadline_conflicts (test_integrated_recovery.RecoveryTests.test_cleaning_commitment_outage_and_history_deadline_conflicts) ... ok
+test_exact_microsecond_cutoff_is_not_rounded (test_integrated_recovery.RecoveryTests.test_exact_microsecond_cutoff_is_not_rounded) ... ok
+test_future_outage_atomic_preview_and_reference_impact (test_integrated_recovery.RecoveryTests.test_future_outage_atomic_preview_and_reference_impact) ... ok
+test_independent_history_check_rejects_ordinary_valid_shift_and_source_changes (test_integrated_recovery.RecoveryTests.test_independent_history_check_rejects_ordinary_valid_shift_and_source_changes) ... ok
+test_recovery_grounding_review_export_and_stale_identity (test_integrated_recovery.RecoveryTests.test_recovery_grounding_review_export_and_stale_identity) ... ok
+test_recovery_question_boundary_and_order_specific_facts (test_integrated_recovery.RecoveryTests.test_recovery_question_boundary_and_order_specific_facts) ... ok
+test_running_completed_exact_boundaries_and_corruption (test_integrated_recovery.RecoveryTests.test_running_completed_exact_boundaries_and_corruption) ... ok
+test_two_options_quality_guards_and_infeasible_status (test_integrated_recovery.RecoveryTests.test_two_options_quality_guards_and_infeasible_status) ... ok
+test_unknown_is_not_infeasible_and_stage_b_worse_is_retained (test_integrated_recovery.RecoveryTests.test_unknown_is_not_infeasible_and_stage_b_worse_is_retained) ... ok
+test_explicit_reference_manual_preview_apply_options_review_reset_and_passive_navigation (test_integrated_recovery_interface.RecoveryInterfaceTests.test_explicit_reference_manual_preview_apply_options_review_reset_and_passive_navigation) ... 2026-10-18 02:18:19.352 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_default_display_filters_and_detail (test_interface.InterfaceTests.test_default_display_filters_and_detail) ... 2026-10-18 02:18:59.655 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_invalid_import_displays_errors_without_orders (test_interface.InterfaceTests.test_invalid_import_displays_errors_without_orders) ... 2026-10-18 02:18:59.994 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_upload_mode_waits_for_file_without_stale_records (test_interface.InterfaceTests.test_upload_mode_waits_for_file_without_stale_records) ... 2026-10-18 02:19:00.135 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_edd_failure_selected_explanation_review_export_without_baseline (test_milestone_10_1.SelectedScheduleTests.test_edd_failure_selected_explanation_review_export_without_baseline) ... ok
+test_fallback_evidence_keeps_failed_solver_and_heuristic_origins_distinct (test_milestone_10_1.SelectedScheduleTests.test_fallback_evidence_keeps_failed_solver_and_heuristic_origins_distinct) ... ok
+test_fingerprints_and_stale_or_failed_current_results (test_milestone_10_1.SelectedScheduleTests.test_fingerprints_and_stale_or_failed_current_results) ... ok
+test_grounding_numeric_units_and_origin (test_milestone_10_1.SelectedScheduleTests.test_grounding_numeric_units_and_origin) ... ok
+test_historical_milestone_10_code_results_and_protected_files (test_milestone_10_1.SelectedScheduleTests.test_historical_milestone_10_code_results_and_protected_files) ... ok
+test_valid_but_worse_stage_b_candidate_retains_stage_a (test_milestone_10_1.SelectedScheduleTests.test_valid_but_worse_stage_b_candidate_retains_stage_a) ... ok
+test_history_is_read_only_active_session_and_storage_failure (test_plan_history.HistoryInterfaceTests.test_history_is_read_only_active_session_and_storage_failure) ... 2026-10-18 02:19:00.549 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_navigation_resumes_controls_not_archived_plan (test_plan_history.HistoryInterfaceTests.test_navigation_resumes_controls_not_archived_plan) ... ok
+test_active_edits_do_not_change_snapshot (test_plan_history.PlanHistoryTests.test_active_edits_do_not_change_snapshot) ... ok
+test_credentials_private_fields_and_title_exclusion (test_plan_history.PlanHistoryTests.test_credentials_private_fields_and_title_exclusion) ... ok
+test_empty_and_newest_first (test_plan_history.PlanHistoryTests.test_empty_and_newest_first) ... ok
+test_idempotency_title_and_scope (test_plan_history.PlanHistoryTests.test_idempotency_title_and_scope) ... ok
+test_malformed_unsupported_and_corrupt_storage (test_plan_history.PlanHistoryTests.test_malformed_unsupported_and_corrupt_storage) ... ok
+test_recovery_snapshot_and_exact_reference (test_plan_history.PlanHistoryTests.test_recovery_snapshot_and_exact_reference) ... ok
+test_round_trip_metrics_and_no_explanation (test_plan_history.PlanHistoryTests.test_round_trip_metrics_and_no_explanation) ... ok
+test_session_isolation_including_download_and_sql_injection (test_plan_history.PlanHistoryTests.test_session_isolation_including_download_and_sql_injection) ... ok
+test_storage_errors_and_configurable_path (test_plan_history.PlanHistoryTests.test_storage_errors_and_configurable_path) ... ok
+test_valid_explanation_optional_and_stale_rejected (test_plan_history.PlanHistoryTests.test_valid_explanation_optional_and_stale_rejected) ... ok
+test_bundled_scenarios_and_review_export (test_planner_comparison.PlannerComparisonTests.test_bundled_scenarios_and_review_export) ... ok
+test_deadline_boundary_late_missing_and_invalid_comparison_rejection (test_planner_comparison.PlannerComparisonTests.test_deadline_boundary_late_missing_and_invalid_comparison_rejection) ... ok
+test_disabled_cleaning_no_change_and_explicit_boundaries (test_planner_comparison.PlannerComparisonTests.test_disabled_cleaning_no_change_and_explicit_boundaries) ... ok
+test_reassignment_and_unused_machine_terminal_accounting (test_planner_comparison.PlannerComparisonTests.test_reassignment_and_unused_machine_terminal_accounting) ... ok
+test_tiny_transition_differences_reconcile_with_initial_and_terminal_cleaning (test_planner_comparison.PlannerComparisonTests.test_tiny_transition_differences_reconcile_with_initial_and_terminal_cleaning) ... ok
+test_requested_order_retrieval_and_missing_transition_explanation_rejection (test_planner_comparison.PlannerGroundingTests.test_requested_order_retrieval_and_missing_transition_explanation_rejection) ... ok
+test_transition_statements_match_computed_rows_and_reject_invented_reason (test_planner_comparison.PlannerGroundingTests.test_transition_statements_match_computed_rows_and_reject_invented_reason) ... ok
+test_default_and_reruns_never_submit_or_resolve (test_planner_presentation.ProductionPlannerInterfaceTests.test_default_and_reruns_never_submit_or_resolve) ... 2026-10-18 02:19:19.257 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_clipping_changes_display_edges_only (test_planner_presentation.TimelineTests.test_clipping_changes_display_edges_only) ... ok
+test_comparison_rejects_changed_scenario_identity (test_planner_presentation.TimelineTests.test_comparison_rejects_changed_scenario_identity) ... ok
+test_no_valid_edd_does_not_invent_comparison (test_planner_presentation.TimelineTests.test_no_valid_edd_does_not_invent_comparison) ... ok
+test_timeline_matches_export_exactly_including_terminal_and_outages (test_planner_presentation.TimelineTests.test_timeline_matches_export_exactly_including_terminal_and_outages) ... ok
+test_failure_retry_keeps_schedule_and_changed_evidence_clears_error (test_planner_workflow_interface.PlannerWorkflowInterfaceTests.test_failure_retry_keeps_schedule_and_changed_evidence_clears_error) ... 2026-10-18 02:19:34.547 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_every_known_machine_allowed_but_actual_pressure_instruction_blocked (test_planning_reliability.PlanningReliabilityTests.test_every_known_machine_allowed_but_actual_pressure_instruction_blocked) ... ok
+test_local_ui_without_configuration_never_reports_live_success (test_planning_reliability.PlanningReliabilityTests.test_local_ui_without_configuration_never_reports_live_success) ... 2026-10-18 02:19:36.371 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_multiple_machines_distinct_intervals_cannot_swap (test_planning_reliability.PlanningReliabilityTests.test_multiple_machines_distinct_intervals_cannot_swap) ... ok
+test_negation_conflicts_and_unclear_associations_cannot_be_applied (test_planning_reliability.PlanningReliabilityTests.test_negation_conflicts_and_unclear_associations_cannot_be_applied) ... ok
+test_old_exposed_failures_are_development_regressions_only (test_planning_reliability.PlanningReliabilityTests.test_old_exposed_failures_are_development_regressions_only) ... ok
+test_preserved_milestone_8_files_and_new_development_contract (test_planning_reliability.PlanningReliabilityTests.test_preserved_milestone_8_files_and_new_development_contract) ... ok
+test_pressure_ui_preview_confirm_verified_schedule_and_reset (test_planning_reliability.PlanningReliabilityTests.test_pressure_ui_preview_confirm_verified_schedule_and_reset) ... 2026-10-18 02:19:37.019 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_swapped_deadlines_rejected_even_with_exact_entire_request_excerpt (test_planning_reliability.PlanningReliabilityTests.test_swapped_deadlines_rejected_even_with_exact_entire_request_excerpt) ... ok
+test_unknown_extended_identifier_and_relative_date_are_local_not_amd (test_planning_reliability.PlanningReliabilityTests.test_unknown_extended_identifier_and_relative_date_are_local_not_amd) ... ok
+test_failure_retry_clarification_and_stale_request (test_planning_request_interface.PlanningChangeInterfaceTests.test_failure_retry_clarification_and_stale_request) ... 2026-10-18 02:19:40.407 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_interpret_preview_confirm_reset_and_failed_previous_schedule (test_planning_request_interface.PlanningChangeInterfaceTests.test_interpret_preview_confirm_reset_and_failed_previous_schedule) ... 2026-10-18 02:19:41.789 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_effective_deadline_verifier_and_terminal_availability (test_planning_requests.PlanningRequestTests.test_effective_deadline_verifier_and_terminal_availability) ... ok
+test_frozen_corpus_and_development_contract_only (test_planning_requests.PlanningRequestTests.test_frozen_corpus_and_development_contract_only) ... ok
+test_interval_subtraction_overlap_boundaries_and_empty_machine (test_planning_requests.PlanningRequestTests.test_interval_subtraction_overlap_boundaries_and_empty_machine) ... ok
+test_preview_no_mutation_atomic_apply_and_separate_provenance (test_planning_requests.PlanningRequestTests.test_preview_no_mutation_atomic_apply_and_separate_provenance) ... ok
+test_schema_origin_injection_and_duplicate_interpretation_guard (test_planning_requests.PlanningRequestTests.test_schema_origin_injection_and_duplicate_interpretation_guard) ... ok
+test_stale_reset_and_source_rejection (test_planning_requests.PlanningRequestTests.test_stale_reset_and_source_rejection) ... ok
+test_unknown_unsupported_conflicting_and_ungrounded_changes_rejected_atomically (test_planning_requests.PlanningRequestTests.test_unknown_unsupported_conflicting_and_ungrounded_changes_rejected_atomically) ... ok
+test_clause_reconstruction_and_minute_second_precision (test_planning_v8_2.PlanningV82Tests.test_clause_reconstruction_and_minute_second_precision) ... ok
+test_diagnostics_are_bounded_corpus_only_and_credential_screened (test_planning_v8_2.PlanningV82Tests.test_diagnostics_are_bounded_corpus_only_and_credential_screened) ... ok
+test_history_and_protected_files_unchanged (test_planning_v8_2.PlanningV82Tests.test_history_and_protected_files_unchanged) ... ok
+test_manual_shared_preview_apply_verify_stale_reset_and_errors (test_planning_v8_2.PlanningV82Tests.test_manual_shared_preview_apply_verify_stale_reset_and_errors) ... ok
+test_manual_ui_without_amd_preview_confirmation_reset (test_planning_v8_2.PlanningV82Tests.test_manual_ui_without_amd_preview_confirmation_reset) ... 2026-10-18 02:19:47.515 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_swapped_values_rejected_even_with_correct_clause_ids (test_planning_v8_2.PlanningV82Tests.test_swapped_values_rejected_even_with_correct_clause_ids) ... ok
+test_component_totals_reconcile_without_mutating_records (test_resource_analysis.ResourceTests.test_component_totals_reconcile_without_mutating_records) ... ok
+test_contributions_ranking_ties_and_source_traceability (test_resource_analysis.ResourceTests.test_contributions_ranking_ties_and_source_traceability) ... ok
+test_empty_filter_result_and_zero_water_case (test_resource_analysis.ResourceTests.test_empty_filter_result_and_zero_water_case) ... ok
+test_failed_empty_and_raw_inputs_rejected (test_resource_analysis.ResourceTests.test_failed_empty_and_raw_inputs_rejected) ... ok
+test_filters_intersect_and_keep_overall_denominator (test_resource_analysis.ResourceTests.test_filters_intersect_and_keep_overall_denominator) ... ok
+test_grouped_counts_and_every_component_reconcile (test_resource_analysis.ResourceTests.test_grouped_counts_and_every_component_reconcile) ... ok
+test_upload_totals_and_decimal_values_are_calculated (test_resource_analysis.ResourceTests.test_upload_totals_and_decimal_values_are_calculated) ... ok
+test_totals_filters_breakdowns_and_ranking (test_resource_interface.ResourceInterfaceTests.test_totals_filters_breakdowns_and_ranking) ... 2026-10-18 02:19:51.119 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_uploaded_case_drives_screen_and_invalid_upload_clears_analysis (test_resource_interface.ResourceInterfaceTests.test_uploaded_case_drives_screen_and_invalid_upload_clears_analysis) ... 2026-10-18 02:19:51.571 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_zero_total_displays_undefined_contributions (test_resource_interface.ResourceInterfaceTests.test_zero_total_displays_undefined_contributions) ... 2026-10-18 02:19:51.869 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_availability_windows_and_release_are_enforced (test_scheduler.SchedulerTests.test_availability_windows_and_release_are_enforced) ... ok
+test_configuration_validation_and_roundtrip (test_scheduler.SchedulerTests.test_configuration_validation_and_roundtrip) ... ok
+test_final_non_black_and_terminal_boundary (test_scheduler.SchedulerTests.test_final_non_black_and_terminal_boundary) ... ok
+test_full_case_determinism_same_evaluator_and_export_reverification (test_scheduler.SchedulerTests.test_full_case_determinism_same_evaluator_and_export_reverification) ... ok
+test_full_case_explicit_permissions_lower_cleaning_only (test_scheduler.SchedulerTests.test_full_case_explicit_permissions_lower_cleaning_only) ... ok
+test_independent_verifier_rejects_changed_quantity_duplicate_and_missing (test_scheduler.SchedulerTests.test_independent_verifier_rejects_changed_quantity_duplicate_and_missing) ... ok
+test_independent_verifier_rejects_incompatible_and_unknown_assignment (test_scheduler.SchedulerTests.test_independent_verifier_rejects_incompatible_and_unknown_assignment) ... ok
+test_independent_verifier_rejects_overlap_release_duration_and_deadline (test_scheduler.SchedulerTests.test_independent_verifier_rejects_overlap_release_duration_and_deadline) ... ok
+test_infeasible_deadline_has_no_resource_comparison (test_scheduler.SchedulerTests.test_infeasible_deadline_has_no_resource_comparison) ... ok
+test_initial_clean_state_and_duration_interpretation_are_explicit (test_scheduler.SchedulerTests.test_initial_clean_state_and_duration_interpretation_are_explicit) ... ok
+test_known_improvement_and_exhaustive_single_machine_optimum (test_scheduler.SchedulerTests.test_known_improvement_and_exhaustive_single_machine_optimum) ... ok
+test_no_improvement_without_explicit_permission (test_scheduler.SchedulerTests.test_no_improvement_without_explicit_permission) ... ok
+test_over_capacity_is_infeasible_without_splitting (test_scheduler.SchedulerTests.test_over_capacity_is_infeasible_without_splitting) ... ok
+test_validated_complete_import_only_and_no_recorded_water_in_scenario_orders (test_scheduler.SchedulerTests.test_validated_complete_import_only_and_no_recorded_water_in_scenario_orders) ... ok
+test_verifier_rejects_unauthorised_cleaning_exemption (test_scheduler.SchedulerTests.test_verifier_rejects_unauthorised_cleaning_exemption) ... ok
+test_headline_partial_grouping_compact_sequence_and_effective_override (test_scheduling_comparator_interface.SchedulingComparatorInterfaceTests.test_headline_partial_grouping_compact_sequence_and_effective_override) ... 2026-10-18 02:19:54.665 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-18 02:19:56.372 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_accounting_reconciles_all_boundaries_and_slack (test_scheduling_comparators.SchedulingComparatorTests.test_accounting_reconciles_all_boundaries_and_slack) ... ok
+test_effective_overrides_and_source_ids (test_scheduling_comparators.SchedulingComparatorTests.test_effective_overrides_and_source_ids) ... ok
+test_failed_grouping_is_not_replaced_with_valid_edd (test_scheduling_comparators.SchedulingComparatorTests.test_failed_grouping_is_not_replaced_with_valid_edd) ... ok
+test_grouping_deterministic_no_colour_depth_or_extra_permissions (test_scheduling_comparators.SchedulingComparatorTests.test_grouping_deterministic_no_colour_depth_or_extra_permissions) ... ok
+test_negative_difference_preserved_not_clipped (test_scheduling_comparators.SchedulingComparatorTests.test_negative_difference_preserved_not_clipped) ... ok
+test_preservation (test_scheduling_comparators.SchedulingComparatorTests.test_preservation) ... ok
+test_manual_and_mocked_amd_preview_apply_solve_explain_review_export_reset (test_selected_copilot_interface.SelectedCopilotInterfaceTests.test_manual_and_mocked_amd_preview_apply_solve_explain_review_export_reset) ... 2026-10-18 02:19:57.649 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-18 02:19:59.226 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_empty_numeric_list_does_not_bypass_other_grounding (test_selected_numeric_contract.SelectedNumericContractTests.test_empty_numeric_list_does_not_bypass_other_grounding) ... ok
+test_even_supported_numeric_copy_is_rejected_only_in_selected_workflow (test_selected_numeric_contract.SelectedNumericContractTests.test_even_supported_numeric_copy_is_rejected_only_in_selected_workflow) ... ok
+test_model_facing_schema_requires_exact_empty_list (test_selected_numeric_contract.SelectedNumericContractTests.test_model_facing_schema_requires_exact_empty_list) ... ok
+test_original_numeric_conversion_failure_is_rejected_not_discarded (test_selected_numeric_contract.SelectedNumericContractTests.test_original_numeric_conversion_failure_is_rejected_not_discarded) ... ok
+test_assumptions_are_required_and_planning_uses_complete_case (test_simulator_interface.SimulatorInterfaceTests.test_assumptions_are_required_and_planning_uses_complete_case) ... 2026-10-18 02:20:12.792 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_invalid_import_blocks_simulator (test_simulator_interface.SimulatorInterfaceTests.test_invalid_import_blocks_simulator) ... 2026-10-18 02:20:13.730 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_over_capacity_displays_failed_verification_without_comparison (test_simulator_interface.SimulatorInterfaceTests.test_over_capacity_displays_failed_verification_without_comparison) ... 2026-10-18 02:20:13.863 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_permission_activation_and_config_changes_clear_previous_results (test_simulator_interface.SimulatorInterfaceTests.test_permission_activation_and_config_changes_clear_previous_results) ... 2026-10-18 02:20:14.381 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_uploaded_case_resets_config_and_drives_scenario_quantities (test_simulator_interface.SimulatorInterfaceTests.test_uploaded_case_resets_config_and_drives_scenario_quantities) ... 2026-10-18 02:20:16.342 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_archive_text_versions_and_original_workbook_inspection (test_source_audit.SourceAuditTests.test_archive_text_versions_and_original_workbook_inspection) ... ok
+test_primary_formula_diagnostic_reconciles_scalar_not_recorded_rows (test_source_audit.SourceAuditTests.test_primary_formula_diagnostic_reconciles_scalar_not_recorded_rows) ... ok
+
+----------------------------------------------------------------------
+Ran 195 tests in 170.460s
+
+OK

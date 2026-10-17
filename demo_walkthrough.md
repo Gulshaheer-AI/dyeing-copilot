@@ -1,17 +1,54 @@
+# Local ERP-style demonstration
+
+This interface is local only. The published/hosted release is unchanged.
+
+1. Start `.venv/Scripts/python.exe -m streamlit run streamlit_app.py` and open
+   http://localhost:8501. Production planner opens first. Dataset / upload is in
+   the module menu; the bundled case contains 35 dynamically counted published orders.
+2. In **Planning setup**, select **Load demo setup**. Inspect machines/capacities
+   and cleaning rules. Permissions start off; explicitly enable **Use illustrative
+   cleaning permissions** for the cleaning-comparison demonstration. Select
+   **Generate schedule**. Inspect the computed results and verification badge.
+3. In **Machine schedule**, select machines and a date or previous/next day.
+   Teal is production, amber is cleaning, darker amber is terminal cleaning and
+   grey is unavailable time. Keep full-horizon view optional; timestamps are continuous.
+4. In **Changes and recovery**, use **Enter a change manually** or the existing AMD
+   workflow. Preview first; separately select **Apply changes and reschedule**.
+   Optional recovery: expand Recovery and alternative objectives, select the
+   verified reference with cutoff `2019-12-01 05:00:00`, then preview an outage of
+   `virtual-Pressure-PolyCotton` from `2019-12-01 12:00:00` to
+   `2019-12-02 12:00:00`. Apply and inspect verified recovery impact, protected
+   work (purple outlines), and reference/revised timeline selection. These are
+   simulated execution states, not telemetry. No inference or solve runs on navigation.
+5. In **Review and reports**, download the matching review package, optionally
+   request an explanation and save a supervisor review. Mock demonstrations are
+   explicitly labelled; live AMD needs local configuration. Acceptance is further
+   review only. Save to history without requiring either an explanation or review.
+6. Open **Plan history**, inspect the archived selected/reference timelines and
+   verification, and download its saved JSON. Return to **Production planner**:
+   the active plan, constraints and form values remain unchanged. History is session
+   scoped and read-only; hosted storage may reset. Download to keep a copy.
+7. Open **Orders** for filters and exact source details. **Reports** offers current
+   schedule-only exports and a history shortcut; unavailable exports explain why.
+   **More tools** retains the separate recorded-resource and synthetic monitoring
+   workflows. Use Reset in Changes and recovery to explicitly reset the scenario.
+
+No measured savings, inventory, actual production status or factory approval is implied.
+The scheduling assumptions, independent verifier and AMD numeric contract are unchanged.
+
+---
+
+## Earlier demonstration notes (labels updated)
+
 # Integrated Dyeing Copilot walkthrough
 
-Live app: https://dyeing-copilot-jqoc5pzh9eq9gh5trxc58k.streamlit.app/
-Confirm that the optional recovery controls are present; hosting can lag the
-repository. Local startup below remains available independently of hosted status.
-
 Launch `.venv/Scripts/python.exe -m streamlit run streamlit_app.py`, then open http://localhost:8501.
-
 
 ## Save and inspect a planned result
 
 1. In **Production planner**, select **Load demo setup**, review rules and explicitly
    **Generate schedule**. Permissions remain opt-in. No AMD call is needed.
-2. Open **Review & export**, optionally enter a **History title**, then **Save to history**.
+2. Open **Review and reports**, optionally enter a **History title**, then **Save to history**.
    A second click keeps the same entry. No explanation or review decision is required.
 3. Open **Plan history** in the sidebar. Inspect the saved cleaning/on-time metrics,
    switch between **Selected planned result** and the saved baseline/reference, and
@@ -31,10 +68,10 @@ history. No cross-session access or restore-into-planner action is provided.
 1. **Initial plan.** Production planner is the landing page. Select **Load demo setup**. Review machines and cleaning rules; permissions start off. Explicitly select **Use illustrative cleaning permissions** for this demonstration, then **Generate schedule**. The generated deadline-first baseline is a scenario comparator, not factory performance. Inspect cleaning counts, on-time orders and the smallest deadline buffer. The published-order reference run recorded 34 baseline versus 28 CP-SAT cleaning events; screen values always come from current verified results.
 2. **Alternative priorities.** Open **Recovery and alternative objectives** and select **Compare both plan options** to compare Fewer cleanings with More deadline protection under identical constraints. Each option has independent verification and a share of the displayed solve budget. Select the plan to inspect. Identical plans are reported honestly; optimality badges depend on actual solver receipts.
 3. **Simulate production having started.** From the verified current plan, enter **Replan from date** `2019-12-01` and **Replan from time** `05:00:00`, then select **Use current verified plan as reference**. Selection does not solve or call AMD. The reference is simulated execution, not telemetry. Completed/running processing and cleaning stay exact; a started cleaning commits the immediately following batch. Future work cannot start before the cutoff.
-4. **Preview a disruption.** Under **Request a change**, select **Enter a change manually**, **Machine outage**, and `virtual-Pressure-PolyCotton`. Enter start `2019-12-01 12:00:00`, end `2019-12-02 12:00:00`, then **Preview manual change**. Nothing is applied yet. Alternatively choose **Describe a change with AMD** and enter: `virtual-Pressure-PolyCotton unavailable from 2019-12-01 12:00 to 2019-12-02 12:00.` AMD must return a schema-valid grounded proposal; a failure never silently switches to mock mode.
+4. **Preview a disruption.** Under **Changes and recovery**, select **Enter a change manually**, **Machine outage**, and `virtual-Pressure-PolyCotton`. Enter start `2019-12-01 12:00:00`, end `2019-12-02 12:00:00`, then **Preview manual change**. Nothing is applied yet. Alternatively choose **Describe a change with AMD** and enter: `virtual-Pressure-PolyCotton unavailable from 2019-12-01 12:00 to 2019-12-02 12:00.` AMD must return a schema-valid grounded proposal; a failure never silently switches to mock mode.
 5. **Confirm and inspect.** Select **Apply changes and reschedule**. Both priorities are solved on the same revised constraints and fixed history. Inspect Recovery impact and before/after order details. In the recorded offline example, 3 completed batches and 2 running batches were preserved; all 35 remained on time. Fewer cleanings retained 28 events; More deadline protection had 30. These are bounded illustrative results, not a guaranteed trade-off or savings claim. Other times may change because the remaining horizon is reoptimised, not solely because of the outage.
 6. **Timeline.** In Machine schedule, switch between **Revised verified plan** and **Reference — historical, before disruption**. The red cutoff line and grey revised outage use exact historical timestamps. The reference predates disruption and may violate new availability. Use machine filters and date/day controls; gaps remain idle elapsed time.
-7. **Explain, review and export.** In Review & export, explicitly generate a live AMD explanation if configured, or select **Mock demonstration (no API call)**. The latter is always labelled mock. Explanations select exact Python-grounded statements; unsupported questions cannot obtain invented root causes or settings. Save for supervisor review, then record acceptance for further review or rejection. Download the matching planner review package. It includes reference identity, cutoff, operations, selected objective, request/receipt, constraints, solver stages/bounds, verification, recovery changes and applicable review. Pending is not acceptance; acceptance never means production approval.
+7. **Explain, review and export.** In Review and reports, explicitly generate a live AMD explanation if configured, or select **Mock demonstration (no API call)**. The latter is always labelled mock. Explanations select exact Python-grounded statements; unsupported questions cannot obtain invented root causes or settings. Save for supervisor review, then record acceptance for further review or rejection. Download the matching planner review package. It includes reference identity, cutoff, operations, selected objective, request/receipt, constraints, solver stages/bounds, verification, recovery changes and applicable review. Pending is not acceptance; acceptance never means production approval.
 8. **Stale protection and reset.** Switch plan priority: the previous explanation/review is stale and cannot be accepted/exported as matching the new selection. **Reset to original scenario and reschedule** removes outages, deadline overrides and execution recovery while retaining audit history.
 9. **Conflict example.** After selecting the same December cutoff, preview a Pressure-machine outage `2019-12-01 04:00:00` to `2019-12-01 06:00:00`. It overlaps protected work and must report: "This outage overlaps work preserved from the reference plan. Interrupted-batch recovery is not supported." Nothing is applied. A deadline earlier than fixed completion is also blocked. Encoded infeasibility and a time limit without a candidate have different messages; neither permits a current invalid export.
 

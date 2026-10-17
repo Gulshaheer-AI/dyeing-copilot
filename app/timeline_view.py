@@ -7,17 +7,28 @@ from app.planner_presentation import timeline_rows,recovery_timeline_rows,clip_t
 from planner.change_requests import digest
 
 
+def protected_work(frame,recovery):
+    """Display-only labels from the existing immutable recovery protection rules."""
+    if recovery is None:return [False]*len(frame)
+    from planner.recovery import fixed_placements
+    fixed={(p.virtual_id,p.order_id) for p in fixed_placements(recovery)}
+    terminals={t.virtual_id for t in recovery.reference.terminal_cleanups if t.start<recovery.cutoff}
+    return [(r.activity in ('Production','Cleaning') and (r.machine_id,r.order_id) in fixed)
+        or (r.activity=='Terminal cleaning' and r.machine_id in terminals) for r in frame.itertuples()]
+
+
 def render_timeline(case,run):
     with st.container(key='dashboard_timeline'):
-        st.subheader('Machine activity',anchor=False)
+        st.subheader('Machine schedule',anchor=False)
         if case.recovery:
             view=st.radio('Timeline plan',['Revised verified plan','Reference — historical, before disruption'],horizontal=True,key='recovery_timeline_view')
             frame,lo,hi=recovery_timeline_rows(case,run.schedule,reference=view.startswith('Reference'))
             st.caption('Red line: simulated cutoff. Revised outages are grey. The historical reference is not verified against revised constraints.')
         else:frame,lo,hi=timeline_rows(case.orders,case.config,run.schedule)
         ids=[m.virtual_id for m in case.config.machines]
+        if 'timeline_machines' not in st.session_state:st.session_state.timeline_machines=ids
         with st.container(horizontal=True,wrap=True,vertical_alignment='bottom'):
-            machines=st.multiselect('Machines',ids,default=None if 'timeline_machines' in st.session_state else ids,
+            machines=st.multiselect('Machines',ids,
                 format_func=machine_name,key='timeline_machines',width=680)
             full=st.checkbox('Show full schedule',key='timeline_full',width='content')
         if not machines:st.info('Select a machine to inspect its activity.');return
@@ -51,6 +62,8 @@ def render_timeline(case,run):
         if data.empty:
             st.info('No activity in this window. Select another day or show the full schedule.')
             return
+        data['protected']=protected_work(data,case.recovery)
+        data['protected_status']=data.protected.map({True:'Protected reference work',False:'Not protected reference work'})
         data['exact_start']=data.start.map(lambda t:t.isoformat())
         data['exact_end']=data.end.map(lambda t:t.isoformat())
         # Short blocks retain hover details; full-horizon labels cannot fit truthfully.
@@ -63,11 +76,12 @@ def render_timeline(case,run):
                 axis=alt.Axis(format='%d %b %H:%M' if full else '%H:%M',labelFontSize=13,titleFontSize=13,
                     tickCount=alt.ExprRef(expr='max(2, floor(width / 110))'))),
             x2='visible_end:T',tooltip=[alt.Tooltip('order_id:N',title='Order'),alt.Tooltip('machine_id:N',title='Machine ID'),
-                alt.Tooltip('activity:N',title='Activity / cleaning status'),alt.Tooltip('exact_start:N',title='Start'),
+                alt.Tooltip('activity:N',title='Activity / cleaning status'),alt.Tooltip('protected_status:N',title='Reference protection'),alt.Tooltip('exact_start:N',title='Start'),
                 alt.Tooltip('exact_end:N',title='End')])
-        palette={'Production':'#0F8A83','Cleaning':'#EDBA54','Terminal cleaning':'#B98128','Unavailable':'#D7DDE5','Revised outage':'#A1AAB8'}
+        palette={'Production':'#0D7D77','Cleaning':'#EDBA54','Terminal cleaning':'#B98128','Unavailable':'#D7DDE5','Revised outage':'#A1AAB8'}
         bars=base.mark_bar(size=36,cornerRadius=3).encode(color=alt.Color('activity:N',title=None,
-            scale=alt.Scale(domain=list(palette),range=list(palette.values())),legend=None))
+            scale=alt.Scale(domain=list(palette),range=list(palette.values())),legend=None),
+            stroke=alt.condition(alt.datum.protected,alt.value('#7258A6'),alt.value('transparent')),strokeWidth=alt.value(3))
         labels=base.transform_filter((alt.datum.activity=='Production')&alt.datum.show_label).mark_text(
             color='white',fontSize=14,fontWeight='bold',clip=True).encode(x='centre:T',text='label:N')
         layers=bars+labels
@@ -80,6 +94,9 @@ def render_timeline(case,run):
         # of shrinking long machine names and 24 hours into an unreadable sliver.
         with st.container(horizontal=True,wrap=False):
             st.altair_chart(chart,width=860,theme=None)
+        if case.recovery:
+            palette['Protected reference work (purple outline)']='#7258A6'
+            st.caption('Purple outlines preserve completed/running reference work and any batch committed by a started cleaning at the simulated cutoff. These are planned states, not telemetry.')
         st.html('<div class="dc-legend">'+''.join(
             f'<span class="dc-legend-item"><i class="dc-swatch" style="background:{escape(color,quote=True)}"></i>{escape(label)}</span>'
             for label,color in palette.items())+'</div>')

@@ -1,0 +1,242 @@
+{
+  "browser": "Microsoft Edge headless via CDP",
+  "live_amd_calls": 0,
+  "screens": [
+    {
+      "name": "desktop_first_load",
+      "width": 1440,
+      "height": 1100,
+      "path": "reports/erp_interface_screenshots/desktop_first_load.png"
+    },
+    {
+      "name": "narrow_first_load",
+      "width": 680,
+      "height": 1100,
+      "path": "reports/erp_interface_screenshots/narrow_first_load.png"
+    },
+    {
+      "name": "empty_reports",
+      "width": 1440,
+      "height": 1100,
+      "path": "reports/erp_interface_screenshots/empty_reports.png"
+    },
+    {
+      "name": "empty_history",
+      "width": 1440,
+      "height": 1100,
+      "path": "reports/erp_interface_screenshots/empty_history.png"
+    },
+    {
+      "name": "desktop_results",
+      "width": 1440,
+      "height": 1300,
+      "path": "reports/erp_interface_screenshots/desktop_results.png"
+    },
+    {
+      "name": "desktop_timeline",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/erp_interface_screenshots/desktop_timeline.png"
+    },
+    {
+      "name": "narrow_timeline",
+      "width": 680,
+      "height": 1200,
+      "path": "reports/erp_interface_screenshots/narrow_timeline.png"
+    },
+    {
+      "name": "desktop_change",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/erp_interface_screenshots/desktop_change.png"
+    },
+    {
+      "name": "desktop_preview",
+      "width": 1440,
+      "height": 1300,
+      "path": "reports/erp_interface_screenshots/desktop_preview.png"
+    },
+    {
+      "name": "recovery_timeline",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/erp_interface_screenshots/recovery_timeline.png"
+    },
+    {
+      "name": "narrow_recovery_timeline",
+      "width": 680,
+      "height": 1300,
+      "path": "reports/erp_interface_screenshots/narrow_recovery_timeline.png"
+    },
+    {
+      "name": "reference_timeline",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/erp_interface_screenshots/reference_timeline.png"
+    },
+    {
+      "name": "desktop_review",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/erp_interface_screenshots/desktop_review.png"
+    },
+    {
+      "name": "narrow_review",
+      "width": 680,
+      "height": 1200,
+      "path": "reports/erp_interface_screenshots/narrow_review.png"
+    },
+    {
+      "name": "saved_without_explanation",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/erp_interface_screenshots/saved_without_explanation.png"
+    },
+    {
+      "name": "archived_selected",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/erp_interface_screenshots/archived_selected.png"
+    },
+    {
+      "name": "archived_selected_narrow",
+      "width": 680,
+      "height": 1200,
+      "path": "reports/erp_interface_screenshots/archived_selected_narrow.png"
+    },
+    {
+      "name": "archived_baseline",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/erp_interface_screenshots/archived_baseline.png"
+    },
+    {
+      "name": "archived_verification",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/erp_interface_screenshots/archived_verification.png"
+    },
+    {
+      "name": "reports_after_plan",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/erp_interface_screenshots/reports_after_plan.png"
+    },
+    {
+      "name": "mock_review_accepted",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/erp_interface_screenshots/mock_review_accepted.png"
+    },
+    {
+      "name": "narrow_review_accepted",
+      "width": 680,
+      "height": 1200,
+      "path": "reports/erp_interface_screenshots/narrow_review_accepted.png"
+    },
+    {
+      "name": "orders_table",
+      "width": 1440,
+      "height": 1100,
+      "path": "reports/erp_interface_screenshots/orders_table.png"
+    },
+    {
+      "name": "narrow_orders_table",
+      "width": 680,
+      "height": 1100,
+      "path": "reports/erp_interface_screenshots/narrow_orders_table.png"
+    },
+    {
+      "name": "more_tools",
+      "width": 1440,
+      "height": 1100,
+      "path": "reports/erp_interface_screenshots/more_tools.png"
+    },
+    {
+      "name": "returned_active_planner",
+      "width": 1440,
+      "height": 1100,
+      "path": "reports/erp_interface_screenshots/returned_active_planner.png"
+    }
+  ],
+  "reports_before_plan_disabled": true,
+  "permissions_enabled": true,
+  "dropdown_diagnostics": [
+    {
+      "expanded": "true",
+      "options": [
+        {
+          "text": "Order completion deadline",
+          "label": null
+        },
+        {
+          "text": "Machine outage",
+          "label": null
+        }
+      ]
+    },
+    {
+      "expanded": "true",
+      "options": [
+        {
+          "text": "virtual-Jet-Cotton",
+          "label": null
+        },
+        {
+          "text": "virtual-Jet-PolyCotton",
+          "label": null
+        },
+        {
+          "text": "virtual-Open-Cotton",
+          "label": null
+        },
+        {
+          "text": "virtual-Pressure-PolyCotton",
+          "label": null
+        }
+      ]
+    }
+  ],
+  "select_control_checks": [
+    {
+      "label": "Constraint type",
+      "requested": "Machine outage",
+      "actual": "Machine outage"
+    },
+    {
+      "label": "Virtual machine ID",
+      "requested": "virtual-Pressure-PolyCotton",
+      "actual": "virtual-Pressure-PolyCotton"
+    }
+  ],
+  "manual_preview_apply_verified_recovery": true,
+  "recovery_chart_rendered": true,
+  "timeline_diagnostic": {
+    "text": "Machine schedule\n\nTimeline plan\n\nRevised verified plan\n\nReference \u2014 historical, before disruption\n\nRed line: simulated cutoff. Revised outages are grey. The historical reference is not verified against revised constraints.\n\nMachines\n\nJet \u2014 Cotton\nJet \u2014 PolyCotton\nOpen \u2014 Cotton\nPressure \u2014 PolyCotton\n\nShow full schedule\n\nchevron_left\n\nPrevious day\n\nTimeline start date\n\n2019\n/\n12\n/\n01\nchevron_right\n\nNext day\n\n01 Dec 2019, 05:00:00 \u2192 02 Dec 2019, 05:00:00 \u00b7 Scenario time, Asia/Karachi\n\nNo production or cleaning in this window: Jet \u2014 Cotton, Open \u2014 Cotton.\n\n06:00\n09:00\n12:00\n15:00\n18:00\n21:00\n00:00\n03:00\nTime\nJet \u2014 Cotton\nJet \u2014 PolyCotton\nOpen \u2014 Cotton\nPressure \u2014 PolyCotton\n#13\n#10\n\nPurple outlines preserve completed/running reference work and any batch committed by a started cleaning at the simulated cutoff. These are planned states, not telemetry.\n\nProduction\nCleaning\nTerminal cleaning\nUnavailable\nRevised outage\nProtected reference work (purple outline)\n\nContinuous time: gaps are idle time. Grey blocks are unavailable. Hover shows exact timestamps and short-block order IDs. Scroll horizontally on narrow screens; drag or scroll within the chart to zoom.",
+    "charts": [
+      "stVegaLiteChart"
+    ],
+    "canvas": 0
+  },
+  "idempotent_click_confirmed": true,
+  "archived_download": {
+    "run_id": "bda69245-a2ef-4ef4-8b2d-e35c7acfaa9c",
+    "verified": true,
+    "same_schedule_and_scenario": true,
+    "no_explanation_required": true,
+    "session_identifier_exported": false,
+    "cleaning_count": 28,
+    "on_time": 35
+  },
+  "returned_active_plan_unchanged": true,
+  "solver_receipt_unchanged": true,
+  "title_round_trip": true,
+  "duplicate_after_return_prevented": true,
+  "mock_supervisor_review_export_confirmed": true,
+  "reports_actual_download_confirmed": true,
+  "explicit_reset_verified": true,
+  "streamlit_exceptions": 0,
+  "outcome": "passed_real_browser_inspected_screens",
+  "horizontal_page_overflow": false,
+  "browser_version": "Edg/155.0.4283.62"
+}

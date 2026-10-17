@@ -103,7 +103,7 @@ class ProductionPlannerInterfaceTests(unittest.TestCase):
             click(app,'Generate schedule')
             self.assertFalse(app.exception)
             first=app.session_state['sim_cp_result']
-            self.assertEqual([t.label for t in app.tabs],['Machine schedule','Request a change','Review & export'])
+            self.assertEqual([t.label for t in app.tabs],['Machine schedule','Changes and recovery','Review and reports'])
             self.assertEqual(solver.call_count,1)
             click(app,'Next day')
             click(app,'Previous day')

@@ -1,0 +1,13 @@
+{
+  "exit_code": 0,
+  "seconds": 176.69,
+  "summary": [
+    "test_primary_formula_diagnostic_reconciles_scalar_not_recorded_rows (test_source_audit.SourceAuditTests.test_primary_formula_diagnostic_reconciles_scalar_not_recorded_rows) ... ok",
+    "",
+    "----------------------------------------------------------------------",
+    "Ran 195 tests in 170.460s",
+    "",
+    "OK"
+  ],
+  "live_amd_calls": 0
+}

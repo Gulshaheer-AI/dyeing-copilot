@@ -18,9 +18,9 @@ def retain_planner_widgets(state):
     # Self-assignment detaches these existing values from that cleanup; no value,
     # case, constraint, selected priority or schedule is changed/restored/replanned.
     prefixes = ('sim_', 'planning_', 'integrated_', 'option_selection_', 'timeline_',
-                'recovery_timeline_', 'selected_', 'manual_', 'planner_result_tabs')
+                'recovery_timeline_', 'selected_', 'manual_', 'planner_result_tabs', 'orders_')
     for key in list(state):
-        if key.startswith(prefixes) and key not in ('integrated_generate',):
+        if key.startswith(prefixes) and key not in ('integrated_generate','planning_waiting'):
             state[key] = state[key]
 
 
@@ -28,7 +28,8 @@ def pause_planner_controls(state):
     """Remember control values, not a plan, while the separate page is open."""
     prefixes = ('sim_config', 'sim_permission', 'planning_backend', 'option_selection_', 'timeline_',
                 'recovery_timeline_', 'manual_', 'planning_entry_', 'planning_request_', 'selected_question',
-                'selected_explanation_mode', 'planner_result_tabs', 'history_save_title')
+                'selected_explanation_mode', 'selected_pending_notes', 'selected_decision', 'integrated_cutoff_',
+                'planning_budget', 'planning_fallback', 'planner_result_tabs', 'history_save_title')
     controls = {k: state[k] for k in list(state) if k.startswith(prefixes)}
     # Non-widget copies are authoritative if a frontend sends cleared widgets on navigation.
     if 'sim_saved_config' in state: controls['sim_config'] = state['sim_saved_config']
@@ -120,7 +121,7 @@ def render_archived_timeline(row):
         x=alt.X('visible_start:T', title='Saved planned time', scale=alt.Scale(domain=[start.isoformat(), end.isoformat()]),
                 axis=alt.Axis(format='%d %b %H:%M' if full else '%H:%M', labelFontSize=13)), x2='visible_end:T',
         tooltip=['order_id:N', 'machine_id:N', 'activity:N', 'exact_start:N', 'exact_end:N'])
-    palette = {'Production': '#0F8A83', 'Cleaning': '#EDBA54', 'Terminal cleaning': '#B98128',
+    palette = {'Production': '#0D7D77', 'Cleaning': '#EDBA54', 'Terminal cleaning': '#B98128',
                'Unavailable': '#D7DDE5', 'Revised outage': '#A1AAB8'}
     bars = base.mark_bar(size=30, cornerRadius=3).encode(
         color=alt.Color('activity:N', scale=alt.Scale(domain=list(palette), range=list(palette.values())), title=None))

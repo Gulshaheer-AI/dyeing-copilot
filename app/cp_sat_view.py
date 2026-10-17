@@ -76,6 +76,7 @@ def render_cp_result(case,run,show_schedule,*,source=None,context_marker=None):
     deadlines=deadline_performance(case.orders,run.schedule)
     slack=min(r['slack_hours'] for r in deadlines['orders'])
     before=changes['cleaning_counts']['baseline']['total'] if changes else None
+    st.subheader('Planning results',anchor=False)
     with st.container(key='dashboard_summary'):
         panel_heading(result_summary(before,counts['total'],deadlines['on_time'],len(case.orders)),
             eyebrow='Illustrative scheduling result')
@@ -116,7 +117,7 @@ def render_cp_result(case,run,show_schedule,*,source=None,context_marker=None):
             st.write('Generated deadline-first baseline · same effective orders and constraints · both independently verified')
         else:st.write('Recovery uses the explicitly selected historical reference, not EDD.' if case.recovery else 'Comparison chart unavailable: no verified generated deadline-first baseline for this effective scenario.')
     if message:=st.session_state.pop('planning_applied_message',None):st.success(message)
-    tabs=st.tabs(['Machine schedule','Request a change','Review & export'],key='planner_result_tabs',on_change='rerun')
+    tabs=st.tabs(['Machine schedule','Changes and recovery','Review and reports'],key='planner_result_tabs',on_change='rerun')
     with tabs[0]:
         render_timeline(case,run)
         with st.expander('Detailed schedule and cleaning events'):
@@ -134,10 +135,13 @@ def render_cp_result(case,run,show_schedule,*,source=None,context_marker=None):
                 st.caption('Only configured directed permissions can remove cleaning; grouping or colour alone grants no exemption.')
     with tabs[1]:
         with st.container(key='dashboard_change'):
-            st.subheader('Update the plan',anchor=False)
+            st.subheader('Changes and recovery',anchor=False)
+            from app.recovery_view import render_recovery_controls
+            render_recovery_controls(case,run)
             render_planning_changes(case)
     with tabs[2]:
         with st.container(key='dashboard_review'):
+            st.subheader('Review and reports',anchor=False)
             st.caption('Acceptance means further review, not production approval.')
             download=st.container()
             bundle,review=render_selected_copilot(case,run,source=source,context_marker=context_marker)

@@ -16,31 +16,8 @@ def render_options(case, source, budget, settings, show_schedule):
     old = st.session_state.get('sim_cp_result')
     if current is None and old and old[1].case_fingerprint == case.fingerprint:
         current = old[1]
-    with st.expander('Recovery and alternative objectives', expanded=case.recovery is not None):
-        st.write('Optional: compare two planning priorities, or protect work already started in a simulated reference plan.')
-        st.caption('Optional comparisons use CP-SAT only. Legacy fallback remains available in the standard full-horizon workflow; it does not implement these objective and history checks.')
-        if st.button('Compare both plan options', type='primary', key='compare_integrated'):
-            st.session_state.integrated_mode = True
-            st.session_state.integrated_solve_requested = True
-        if current and current.schedule is not None:
-            default = min(p.process_start for p in current.schedule.placements) + timedelta(hours=1)
-            st.caption('Select this current verified schedule as the reference. This is simulated execution, not factory telemetry.')
-            with st.form('select_recovery_reference'):
-                day = st.date_input('Replan from date', value=default.date())
-                clock = st.time_input('Replan from time', value=default.time(), step=timedelta(seconds=1))
-                confirm = st.form_submit_button('Use current verified plan as reference')
-            if confirm:
-                try:
-                    st.session_state.planning_case = select_reference(case, current, datetime.combine(day, clock))
-                    st.session_state.integrated_mode = True
-                    st.session_state.pop('integrated_options', None)
-                    st.session_state.pop('selected_answer', None)
-                    st.rerun()
-                except ValueError as exc:
-                    st.error(str(exc))
-        if case.recovery:
-            st.write(f'**Replan from {case.recovery.cutoff:%Y-%m-%d %H:%M:%S}** · Simulated execution')
-            st.caption('Completed and running work stays exact. A started cleaning also commits its immediately following batch; batches cannot be interrupted.')
+    if current is None and not st.session_state.get('integrated_mode') and case.recovery is None:
+        render_recovery_controls(case,None)
     if not st.session_state.get('integrated_mode') and case.recovery is None:
         return False
     if st.button('Generate schedule', type='primary', icon=':material/calendar_month:', key='integrated_generate'):
@@ -56,6 +33,7 @@ def render_options(case, source, budget, settings, show_schedule):
             st.error('Input/history conflict or unsupported model range: ' + str(exc))
     cache = st.session_state.get('integrated_options')
     if not cache or cache[:2] != (case.fingerprint, signature):
+        render_recovery_controls(case,None)
         st.info('No current recovery/option result. Generate schedule explicitly; previous schedules remain historical.')
         from app.planning_changes_view import render_planning_changes
         render_planning_changes(case)
@@ -99,3 +77,32 @@ def render_options(case, source, budget, settings, show_schedule):
                 st.json(summary)
     render_cp_result(case, run, show_schedule, source=source, context_marker=marker)
     return True
+
+
+def render_recovery_controls(case,current):
+    with st.expander('Recovery and alternative objectives', expanded=case.recovery is not None):
+        st.write('Optional: compare two planning priorities, or protect work already started in a simulated reference plan.')
+        st.caption('Optional comparisons use CP-SAT only. Legacy fallback remains available in the standard full-horizon workflow; it does not implement these objective and history checks.')
+        if st.button('Compare both plan options', type='primary', key='compare_integrated'):
+            st.session_state.integrated_mode = True
+            st.session_state.integrated_solve_requested = True
+            st.rerun()
+        if current and current.schedule is not None:
+            default = min(p.process_start for p in current.schedule.placements) + timedelta(hours=1)
+            st.caption('Select this current verified schedule as the reference. This is simulated execution, not factory telemetry.')
+            with st.form('select_recovery_reference'):
+                day = st.date_input('Replan from date', value=default.date(),key='integrated_cutoff_date')
+                clock = st.time_input('Replan from time', value=default.time(), step=timedelta(seconds=1),key='integrated_cutoff_time')
+                confirm = st.form_submit_button('Use current verified plan as reference')
+            if confirm:
+                try:
+                    st.session_state.planning_case = select_reference(case, current, datetime.combine(day, clock))
+                    st.session_state.integrated_mode = True
+                    st.session_state.pop('integrated_options', None)
+                    st.session_state.pop('selected_answer', None)
+                    st.rerun()
+                except ValueError as exc:
+                    st.error(str(exc))
+        if case.recovery:
+            st.write(f'**Replan from {case.recovery.cutoff:%Y-%m-%d %H:%M:%S}** · Simulated execution')
+            st.caption('Completed and running work stays exact. A started cleaning also commits its immediately following batch; batches cannot be interrupted.')

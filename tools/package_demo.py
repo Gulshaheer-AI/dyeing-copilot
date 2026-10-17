@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_FOLDERS = ("01_sitara_faisalabad", "02_synthetic_thread_dyeing")
-OUTPUT = ROOT / "dist/dyeing-copilot-plan-history-v1-2026-10-17.zip"
+OUTPUT = ROOT / "dist/dyeing-copilot-erp-interface-v1-2026-10-18.zip"
 
 
 def sha(data):
@@ -35,6 +35,10 @@ def selected_files(root=ROOT):
     report_docs = [f"milestone_{i}_verification.md" for i in range(1, 11)] + [
         "milestone_10_1_verification.md", "cp_sat_model.md", "milestone_8_1_verification.md", "milestone_8_2_verification.md", "amd_setup.md", "resource_model_card.md", "resource_training_protocol.md", "scenario_model.md", "source_rule_audit.md"]
     paths.extend(root / "reports" / name for name in report_docs)
+    for name in ('erp_interface_verification.md','erp_interface_preservation.json','erp_interface_tests.txt',
+                 'erp_interface_test_result.json','erp_interface_browser.json','erp_interface_integrity.json','erp_interface_changed_files.json'):
+        if (root/'reports'/name).exists():paths.append(root/'reports'/name)
+    paths.extend((root/'reports/erp_interface_screenshots').glob('*.png'))
     for name in ('plan_history_verification.md','plan_history_preservation.json','plan_history_tests.txt',
                  'plan_history_test_result.json','plan_history_browser.json','plan_history_integrity.json'):
         if (root/'reports'/name).exists():paths.append(root/'reports'/name)

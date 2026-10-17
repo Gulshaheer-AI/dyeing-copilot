@@ -300,9 +300,9 @@ def render_simulator(result):
     with st.sidebar.expander('Planning engine and technical settings'):
         engine=st.selectbox('Planning engine',[CP_ENGINE,LEGACY_ENGINE],key='planning_backend')
         budget=st.number_input('Total CP-SAT budget (seconds)',min_value=0.01,max_value=60.0,
-            value=st.session_state.get('saved_cp_budget',10.0),step=1.0)
+            value=st.session_state.get('saved_cp_budget',10.0),step=1.0,key='planning_budget')
         fallback=st.checkbox('Explicitly allow labelled heuristic fallback if CP-SAT has no verified schedule',
-            value=st.session_state.get('saved_cp_fallback',False))
+            value=st.session_state.get('saved_cp_fallback',False),key='planning_fallback')
     st.session_state.saved_backend_engine=engine
     st.session_state.saved_cp_budget=budget
     st.session_state.saved_cp_fallback=fallback
@@ -321,13 +321,15 @@ def render_simulator(result):
         return
     settings=digest({'engine':engine,'budget':budget,'fallback':fallback,'solver_version':CP_VERSION})
     st.session_state.selected_backend_settings=settings
-    setup=st.sidebar if st.session_state.get('sim_comparison') else st
-    with setup.container(key='dashboard_setup' if setup is st else 'sidebar_setup'):
-        if setup is st:
-            from app.dashboard_style import panel_heading
-            panel_heading('Build your dyeing production plan',f'{len(result.records)} published orders are ready. Load the demo machines and review the cleaning rules to begin.')
-        with setup.expander('Machines and cleaning rules',expanded=not bool(st.session_state.get('sim_comparison'))):
-            if setup is not st:st.metric('Orders to schedule',len(result.records))
+    setup=st
+    with setup.container(key='dashboard_setup'):
+        from app.dashboard_style import panel_heading
+        panel_heading('Planning setup',f'{len(result.records)} validated orders | Published order data' if st.session_state.get('order_import_mode','Bundled Sitara case')=='Bundled Sitara case' else f'{len(result.records)} validated orders | Current imported case')
+        st.caption('Illustrative machines and cleaning rules | Review before generating. Change the dataset in Dataset / upload in the module menu.')
+        if st.button('Inspect loaded orders',icon=':material/table_view:'):
+            st.session_state.pending_view='Orders'
+            st.rerun()
+        with st.container():
             if st.button('Load demo setup',icon=':material/settings:',type='primary' if not st.session_state.sim_config.strip() else 'secondary'):
                 st.session_state.sim_config=to_json(demo_config(result))
                 st.session_state.sim_permission=False
@@ -351,15 +353,17 @@ def render_simulator(result):
                 st.session_state.sim_context={'source_sha256':result.sha256,'config':None,'comparison':None,'marker':digest(text)}
                 return
             case=prepare_case(result,base_config)
-            st.dataframe(pd.DataFrame([{'Machine':machine_name(m.virtual_id),'Machine ID':m.virtual_id,'Vessel / fabric':'; '.join(' / '.join(p) for p in m.compatible_pairs),
+            with st.expander('Review machines and capacities',expanded=not bool(st.session_state.get('sim_cp_result'))):
+                st.dataframe(pd.DataFrame([{'Machine':machine_name(m.virtual_id),'Machine ID':m.virtual_id,'Vessel / fabric':'; '.join(' / '.join(p) for p in m.compatible_pairs),
                 'Capacity (source quantity)':str(m.capacity),'Initially clean':m.initially_clean} for m in case.config.machines]),hide_index=True,width='stretch')
             st.caption(f'Each required cleaning takes {case.config.cleaning_hours} assumed hours. Terminal cleaning: {case.config.terminal_cleaning}.')
             with st.expander('Full assumptions, calendars and exact cleaning permissions'):st.json(to_json(case.config))
+        generate_slot=st.empty()
     marker=digest({'scenario':case.fingerprint,'settings':settings})
     st.session_state.sim_context={'source_sha256':result.sha256,'config':case.config,'case':case,'comparison':None,'marker':marker}
     from app.recovery_view import render_options
     if render_options(case,result,budget,settings,_show_schedule):return
-    if setup.button('Generate schedule',type='primary',icon=':material/calendar_month:'):
+    if generate_slot.button('Generate schedule',type='primary',icon=':material/calendar_month:'):
         with st.spinner('Planning and independently verifying…',show_time=True):
             comparison=plan(case.orders,case.config)
         st.session_state.sim_comparison=(case.fingerprint,comparison)
@@ -376,7 +380,7 @@ def render_simulator(result):
                     allow_fallback=fallback,case_fingerprint=case.fingerprint)
         except (ValueError,OverflowError) as exc:st.error(f'Cannot model this plan: {exc}');return
         st.session_state.sim_cp_result=(marker,run)
-        # Reflow setup into the sidebar immediately after the first solve.
+        # Render the cached result after the first solve.
         # The verified result is cached, so this rerun cannot solve again.
         st.rerun()
     else:run=cached[1]
