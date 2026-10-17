@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_FOLDERS = ("01_sitara_faisalabad", "02_synthetic_thread_dyeing")
-OUTPUT = ROOT / "dist/dyeing-copilot-integrated-recovery-v1-2026-10-16.zip"
+OUTPUT = ROOT / "dist/dyeing-copilot-plan-history-v1-2026-10-17.zip"
 
 
 def sha(data):
@@ -35,6 +35,17 @@ def selected_files(root=ROOT):
     report_docs = [f"milestone_{i}_verification.md" for i in range(1, 11)] + [
         "milestone_10_1_verification.md", "cp_sat_model.md", "milestone_8_1_verification.md", "milestone_8_2_verification.md", "amd_setup.md", "resource_model_card.md", "resource_training_protocol.md", "scenario_model.md", "source_rule_audit.md"]
     paths.extend(root / "reports" / name for name in report_docs)
+    for name in ('plan_history_verification.md','plan_history_preservation.json','plan_history_tests.txt',
+                 'plan_history_test_result.json','plan_history_browser.json','plan_history_integrity.json'):
+        if (root/'reports'/name).exists():paths.append(root/'reports'/name)
+    history_browser=root/'reports/plan_history_browser.json'
+    if history_browser.exists():
+        for screen in json.loads(history_browser.read_text(encoding='utf-8')).get('screens',[]):
+            if not screen['name'].startswith('failed_'):
+                path=(root/screen['path']).resolve()
+                if not path.is_relative_to((root/'reports/plan_history_screenshots').resolve()):
+                    raise ValueError('Invalid history screenshot path.')
+                paths.append(path)
     for name in ('demo_polish_verification.md','demo_polish_integrity.json',
                  'demo_polish_tests.txt','demo_polish_preservation.json','demo_polish_initial_tests.txt',
                  'selected_numeric_contract_verification.md','selected_numeric_contract_live_check.json',

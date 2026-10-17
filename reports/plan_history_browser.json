@@ -1,0 +1,66 @@
+{
+  "browser": "Microsoft Edge headless via CDP",
+  "live_amd_calls": 0,
+  "screens": [
+    {
+      "name": "empty_history",
+      "width": 1440,
+      "height": 1100,
+      "path": "reports/plan_history_screenshots/empty_history.png"
+    },
+    {
+      "name": "saved_without_explanation",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/plan_history_screenshots/saved_without_explanation.png"
+    },
+    {
+      "name": "archived_selected",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/plan_history_screenshots/archived_selected.png"
+    },
+    {
+      "name": "archived_selected_narrow",
+      "width": 680,
+      "height": 1200,
+      "path": "reports/plan_history_screenshots/archived_selected_narrow.png"
+    },
+    {
+      "name": "archived_baseline",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/plan_history_screenshots/archived_baseline.png"
+    },
+    {
+      "name": "archived_verification",
+      "width": 1440,
+      "height": 1200,
+      "path": "reports/plan_history_screenshots/archived_verification.png"
+    },
+    {
+      "name": "returned_active_planner",
+      "width": 1440,
+      "height": 1100,
+      "path": "reports/plan_history_screenshots/returned_active_planner.png"
+    }
+  ],
+  "permissions_enabled": true,
+  "idempotent_click_confirmed": true,
+  "archived_download": {
+    "run_id": "d490e40d-0c43-40e3-8ef1-1c98c5174eaa",
+    "verified": true,
+    "same_schedule_and_scenario": true,
+    "no_explanation_required": true,
+    "session_identifier_exported": false,
+    "cleaning_count": 28,
+    "on_time": 35
+  },
+  "returned_active_plan_unchanged": true,
+  "solver_receipt_unchanged": true,
+  "title_round_trip": true,
+  "duplicate_after_return_prevented": true,
+  "streamlit_exceptions": 0,
+  "outcome": "passed_real_browser_inspected_screens",
+  "browser_version": "Edg/155.0.4283.45"
+}

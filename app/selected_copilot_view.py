@@ -16,10 +16,10 @@ STATUS_LABELS={"pending_review":"Pending review","accepted_for_further_review":"
 def render_selected_copilot(case,run,source=None,context_marker=None):
     st.subheader('Explain and review this plan')
     st.caption('Explain the verified plan, changed orders and what a supervisor should review.')
-    question=st.text_input('Ask about this plan',value='Explain this selected schedule and what the planner should review.',max_chars=2000)
+    question=st.text_input('Ask about this plan',value='Explain this selected schedule and what the planner should review.',max_chars=2000,key='selected_question')
     try:bundle=build_selected_evidence(case,run,question,source=source,context_marker=context_marker)
     except ValueError as exc:st.error(str(exc));return None,None
-    mode_label=st.radio('Selected schedule explanation source',['Live AMD','Mock demonstration (no API call)'],horizontal=True)
+    mode_label=st.radio('Selected schedule explanation source',['Live AMD','Mock demonstration (no API call)'],horizontal=True,key='selected_explanation_mode')
     mode='live_amd' if mode_label=='Live AMD' else 'mock'
     signature=digest({'evidence':bundle['fingerprint'],'question':question,'mode':mode})
     stored=st.session_state.get('selected_answer')

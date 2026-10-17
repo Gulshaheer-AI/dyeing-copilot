@@ -116,7 +116,7 @@ def render_cp_result(case,run,show_schedule,*,source=None,context_marker=None):
             st.write('Generated deadline-first baseline · same effective orders and constraints · both independently verified')
         else:st.write('Recovery uses the explicitly selected historical reference, not EDD.' if case.recovery else 'Comparison chart unavailable: no verified generated deadline-first baseline for this effective scenario.')
     if message:=st.session_state.pop('planning_applied_message',None):st.success(message)
-    tabs=st.tabs(['Machine schedule','Request a change','Review & export'])
+    tabs=st.tabs(['Machine schedule','Request a change','Review & export'],key='planner_result_tabs',on_change='rerun')
     with tabs[0]:
         render_timeline(case,run)
         with st.expander('Detailed schedule and cleaning events'):
@@ -144,6 +144,8 @@ def render_cp_result(case,run,show_schedule,*,source=None,context_marker=None):
             with download:
                 st.download_button('Download planner review package',export_backend(case,run,bundle=bundle,review=review),
                     file_name='dyeing_planner_review_package.json',mime='application/json',type='primary',icon=':material/download:')
+                from app.plan_history_view import render_save_history
+                render_save_history(case,run,source=source,bundle=bundle,review=review)
     with st.expander('Technical details: solver, modelled resources and audit'):
         if run.cp_sat:
             st.json({k:v for k,v in asdict(run.cp_sat).items() if k not in ('schedule','resources')})

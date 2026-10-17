@@ -273,6 +273,11 @@ def render_legacy_simulator(result):
     st.download_button("Export planner review package (JSON)", exported,
                        file_name="dyeing_planner_review_package.json", mime="application/json",
                        help="Planner review package: both schedules, assumptions, all transition changes and fresh verification; not production approval.")
+    from planner.backend import BackendRun
+    from app.plan_history_view import render_save_history
+    history_run=BackendRun(comparison.proposal,'legacy_heuristic',None,comparison,
+        digest({'orders':case.orders,'config':case.config}),case.fingerprint)
+    render_save_history(case,history_run,source=result)
 
 
 def render_simulator(result):

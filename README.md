@@ -6,7 +6,7 @@ requirements, respond to an outage or deadline change, and review a grounded
 AMD explanation before exporting a planner review package.
 
 **Live app:** [Open Dyeing Copilot](https://dyeing-copilot-jqoc5pzh9eq9gh5trxc58k.streamlit.app/).
-Hosting can lag the repository; check the recovery controls before assuming a new
+Hosting can lag the repository; check the Plan history entry and recovery controls before assuming a new
 release is running. AMD availability also depends on the hosted configuration.
 
 ![Dyeing Copilot industrial dashboard](reports/industrial_dashboard_screenshots/desktop_enabled_result.png)
@@ -36,6 +36,43 @@ a scenario result, not measured factory water, financial or realised savings.*
   selected plan invalidates mismatched explanation and supervisor-review evidence.
 - **Secondary workspaces:** browse/import orders, examine recorded resource
   analysis, or replay the separate synthetic daily-resource monitoring dataset.
+
+### Plan history
+
+Generate a verified ordinary or recovery plan, open **Review & export**, optionally
+enter a **History title**, then **Save to history**. No AMD explanation or supervisor
+decision is required. The same snapshot and trimmed title save only once.
+
+Open **Plan history** in the sidebar to browse saved runs newest first, inspect
+saved selected/reference timelines, assumptions, changes, cleaning counts, deadline
+metrics and verification, then **Download saved review package (JSON)**. Archives
+are read-only **planned results**, not actual execution or measured consumption.
+Opening history leaves the active planner unchanged; no restore action is provided.
+Recovery completed/running states retain their saved reference-cutoff explanation.
+
+**Saved planning snapshots for this session. Hosted storage may reset after an app
+restart or redeployment. Download a copy to keep it.** Each browser session gets a
+new opaque random scope. History reads/downloads require that scope; exported JSON
+contains no session identifier. No cross-session access, global public archive,
+permanent cloud storage or new account system is promised.
+
+SQLite history defaults to `data/plan_history.sqlite3`, separate from supervisor
+reviews. Set a private runtime path before launching if needed:
+
+```powershell
+$env:DYEING_PLAN_HISTORY_DB = 'D:\PrivateData\dyeing-plan-history.sqlite3'
+```
+
+Only already valid matching explanation evidence is attached. Review evidence must
+match and have been explicitly saved by this session; pending never means acceptance,
+and acceptance means further review only. Snapshots retain their canonical exports
+and saved display data without recalculating under subsequently edited assumptions.
+Schema/version and SHA256 checks detect unsupported/damaged snapshots; they are not
+an authenticated or tamper-proof audit system. Credential/private metadata screening
+rejects unsafe saves. Storage failures do not disable planning or existing downloads.
+Runtime databases and uploaded history records are excluded from Git and ZIPs.
+
+See [Plan history verification](reports/plan_history_verification.md).
 
 ## Run locally
 

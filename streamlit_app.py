@@ -18,17 +18,26 @@ if st.session_state.get('pending_view'):
 if st.session_state.pop('daily_open',False):st.session_state.view='Daily resource monitoring'
 labels={'Scheduling simulator':'Production planner','Orders':'Orders',
     'Resource analysis':'Source data / resource analysis','Daily resource monitoring':'Synthetic resource monitoring',
-    'Copilot':'Copilot & supervisor review'}
+    'Copilot':'Copilot & supervisor review','Plan history':'Plan history'}
 with st.sidebar:
     with st.expander('Order import',expanded=False):
         mode=st.radio('Import source',['Bundled Sitara case','Upload Sitara CSV'])
         uploaded=st.file_uploader('Choose the text-derived Sitara CSV',type=['csv']) if mode=='Upload Sitara CSV' else None
         st.caption('Uploads replace the case and use the same 35-order validation contract.')
     with st.container(key='sidebar_navigation'):
-        view=st.radio('Workspace',['Orders','Resource analysis','Scheduling simulator','Copilot','Daily resource monitoring'],
+        view=st.radio('Workspace',['Orders','Resource analysis','Scheduling simulator','Copilot','Daily resource monitoring','Plan history'],
             index=2,key='view',format_func=labels.get)
 previous_view=st.session_state.get('last_workspace')
 st.session_state.last_workspace=view
+if view=='Plan history':
+    from app.plan_history_view import render_plan_history,retain_planner_widgets,pause_planner_controls
+    if previous_view!='Plan history':pause_planner_controls(st.session_state)
+    retain_planner_widgets(st.session_state)
+    render_plan_history()
+    st.stop()
+if view=='Scheduling simulator' and '_history_paused_controls' in st.session_state:
+    from app.plan_history_view import resume_planner_controls
+    resume_planner_controls(st.session_state)
 if view=='Copilot' and previous_view=='Daily resource monitoring' and st.session_state.get('daily_context'):
     st.session_state.copilot_requested_topic='Explain selected synthetic resource day'
 if view=='Daily resource monitoring':

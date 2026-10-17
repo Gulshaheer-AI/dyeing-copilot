@@ -17,7 +17,8 @@ def render_timeline(case,run):
         else:frame,lo,hi=timeline_rows(case.orders,case.config,run.schedule)
         ids=[m.virtual_id for m in case.config.machines]
         with st.container(horizontal=True,wrap=True,vertical_alignment='bottom'):
-            machines=st.multiselect('Machines',ids,default=ids,format_func=machine_name,key='timeline_machines',width=680)
+            machines=st.multiselect('Machines',ids,default=None if 'timeline_machines' in st.session_state else ids,
+                format_func=machine_name,key='timeline_machines',width=680)
             full=st.checkbox('Show full schedule',key='timeline_full',width='content')
         if not machines:st.info('Select a machine to inspect its activity.');return
         default,_=useful_window(frame,lo,hi,machines)

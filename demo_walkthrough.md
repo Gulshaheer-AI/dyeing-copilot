@@ -6,6 +6,28 @@ repository. Local startup below remains available independently of hosted status
 
 Launch `.venv/Scripts/python.exe -m streamlit run streamlit_app.py`, then open http://localhost:8501.
 
+
+## Save and inspect a planned result
+
+1. In **Production planner**, select **Load demo setup**, review rules and explicitly
+   **Generate schedule**. Permissions remain opt-in. No AMD call is needed.
+2. Open **Review & export**, optionally enter a **History title**, then **Save to history**.
+   A second click keeps the same entry. No explanation or review decision is required.
+3. Open **Plan history** in the sidebar. Inspect the saved cleaning/on-time metrics,
+   switch between **Selected planned result** and the saved baseline/reference, and
+   inspect the archived inputs, assumptions, changes and verification expanders.
+4. Select **Download saved review package (JSON)**. Return to **Production planner**:
+   the active schedule and constraints are unchanged. Repeat with a verified recovery
+   result to retain its exact reference/cutoff, protected-work audit and selected priority.
+
+History contains planned results, not actual factory production or measured resources.
+Completed/running recovery labels are simulated states at the saved reference cutoff.
+Saved planning snapshots are for this session only. Hosted storage may reset after
+restart/redeployment; download a copy to keep it. A new session starts with empty
+history. No cross-session access or restore-into-planner action is provided.
+
+## Existing integrated planning demonstration
+
 1. **Initial plan.** Production planner is the landing page. Select **Load demo setup**. Review machines and cleaning rules; permissions start off. Explicitly select **Use illustrative cleaning permissions** for this demonstration, then **Generate schedule**. The generated deadline-first baseline is a scenario comparator, not factory performance. Inspect cleaning counts, on-time orders and the smallest deadline buffer. The published-order reference run recorded 34 baseline versus 28 CP-SAT cleaning events; screen values always come from current verified results.
 2. **Alternative priorities.** Open **Recovery and alternative objectives** and select **Compare both plan options** to compare Fewer cleanings with More deadline protection under identical constraints. Each option has independent verification and a share of the displayed solve budget. Select the plan to inspect. Identical plans are reported honestly; optimality badges depend on actual solver receipts.
 3. **Simulate production having started.** From the verified current plan, enter **Replan from date** `2019-12-01` and **Replan from time** `05:00:00`, then select **Use current verified plan as reference**. Selection does not solve or call AMD. The reference is simulated execution, not telemetry. Completed/running processing and cleaning stay exact; a started cleaning commits the immediately following batch. Future work cannot start before the cutoff.
